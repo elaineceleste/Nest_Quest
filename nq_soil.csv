@@ -1,4 +1,4 @@
-﻿site,year,nest_ID,quadrat_no,distance,wt_gms,wt_pebbles,perc_pebbles,perc_sand,perc_silt,perc_clay,dry_time_hr,dry_tempC,dry_tempF,sample_date,observer,soil_type
+site,year,nest_ID,quadrat_no,distance,wt_gms,wt_pebbles,perc_pebbles,perc_sand,perc_silt,perc_clay,dry_time_hr,dry_tempC,dry_tempF,sample_date,observer,soil_type
 crow_GC,2024,Crow_imp_gc,1M_NESW,1,110.88,0.32,0.002886003,,,,24,65.55555556,150,8/20/2024,,Soilmu_a_mn163
 crow_GC,2024,Crow_imp_gc,10N,10,20.5,0.25,0.012195122,16,,,24,65.55555556,150,8/20/2024,,Soilmu_a_mn163
 crow_GC,2024,Crow_imp_gc,10E,10,29.3,0.5,0.017064846,15,,,24,65.55555556,150,8/20/2024,,Soilmu_a_mn163
@@ -39,4 +39,3 @@ le_gc,2024,no_nest,25M,25,27.27,2.56,0.093876054,11,,,24,65.55555556,150,8/27/20
 le_gc,2024,no_nest,50M,50,22.06,0.18,0.008159565,8,,,24,65.55555556,150,8/27/2024,,Soilmu_a_mn163
 le_gc,2024,no_nest,75M,75,23.75,0.33,0.013894737,13,,,24,65.55555556,150,8/27/2024,,Soilmu_a_mn163
 le_gc,2024,no_nest,100M,100,22.99,3.05,0.132666377,9,,,24,65.55555556,150,8/27/2024,,Soilmu_a_mn163
-,,,,,,,#DIV/0!,14 (caladonia,,,,-17.77777778,,,,
