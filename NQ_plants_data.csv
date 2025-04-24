@@ -1,0 +1,544 @@
+site,date,nest_ID,quadrat_no,plant_name,stem_count,field_name,needs_id,Identifer
+crow_GC,8_20_24,Crow_imp_gc,1N,Symphyotrichum oolentangiense,5,sympho?,same as 8/19 sample,SD
+crow_GC,8_20_24,Crow_imp_gc,1N,Penstemon grandiflorus,2,,,
+crow_GC,8_20_24,Crow_imp_gc,1N,Solidago rigida,5,,,
+crow_GC,8_20_24,Crow_imp_gc,1N,Solidago speciosa,5,,,
+crow_GC,8_20_24,Crow_imp_gc,1N,Symphyotrichum ericoides,15,,,
+crow_GC,8_20_24,Crow_imp_gc,1N,Ulmus pumila,2,,,
+crow_GC,8_20_24,Crow_imp_gc,1N,Asclepias verticillata,12,,,
+crow_GC,8_20_24,Crow_imp_gc,1N,Solidago canadensis,1,,,
+crow_GC,8_20_24,Crow_imp_gc,1N,Ambrosia artemisiifolia,2,mystery #1 -> ragweed???,j photo,
+crow_GC,8_20_24,Crow_imp_gc,1E,Symphyotrichum oolentangiense,3,sympho?,,SD
+crow_GC,8_20_24,Crow_imp_gc,1E,Silene vulgaris,3,beardtongue,e photo,SD
+crow_GC,8_20_24,Crow_imp_gc,1E,Silene sp.,2,linear vein,j photo,SD
+crow_GC,8_20_24,Crow_imp_gc,1E,Symphyotrichum lanceolatum,2,aster baby,sample,SD
+crow_GC,8_20_24,Crow_imp_gc,1S,Asclepias verticillata,3,,,
+crow_GC,8_20_24,Crow_imp_gc,1S,Solidago canadensis,14,,,
+crow_GC,8_20_24,Crow_imp_gc,1S,Symphyotrichum oolentangiense,3,sympho?,,SD
+crow_GC,8_20_24,Crow_imp_gc,1S,Ratibida pinnata,10,,,
+crow_GC,8_20_24,Crow_imp_gc,1W,Symphyotrichum oolentangiense,1,long sympho,j photo,SD
+crow_GC,8_20_24,Crow_imp_gc,1W,Ambrosia artemisiifolia,4,mytery #1,j photo,SD
+crow_GC,8_20_24,Crow_imp_gc,1W,Solidago canadensis,16,,,
+crow_GC,8_20_24,Crow_imp_gc,1W,Symphyotrichum lanceolatum,14,aster baby,sample,SD
+crow_GC,8_20_24,Crow_imp_gc,1W,,1,fuzzy,e photo,
+crow_GC,8_20_24,Crow_imp_gc,1W,Convolvulus sp.,1,viney,e photo,SD
+crow_GC,8_20_24,Crow_imp_gc,1W,,2,mystery #2,j photo,
+crow_GC,8_20_24,Crow_imp_gc,10N,Plantago major,1,mysterystar,,SD
+crow_GC,8_20_24,Crow_imp_gc,10N,Solidago rigida,24,,,
+crow_GC,8_20_24,Crow_imp_gc,10N,Solidago canadensis,28,,,
+crow_GC,8_20_24,Crow_imp_gc,10N,Asclepias verticillata,14,,,
+crow_GC,8_20_24,Crow_imp_gc,10N,Symphyotrichum ericoides,24,,,
+crow_GC,8_20_24,Crow_imp_gc,10N,Monarda fistulosa,2,,,
+crow_GC,8_20_24,Crow_imp_gc,10N,Achillea millefolium,1,,,
+crow_GC,8_20_24,Crow_imp_gc,10N,Potentilla recta,1,bell,,SD
+crow_GC,8_20_24,Crow_imp_gc,10N,Erigeron strigosus,7,floppy,,SD
+crow_GC,8_20_24,Crow_imp_gc,50N,Solidago rigida,8,,,
+crow_GC,8_20_24,Crow_imp_gc,50N,Ratibida pinnata,81,,,
+crow_GC,8_20_24,Crow_imp_gc,50N,Monarda fistulosa,32,,,
+crow_GC,8_20_24,Crow_imp_gc,10W,Solidago canadensis,25,,,
+crow_GC,8_20_24,Crow_imp_gc,10W,Achillea millefolium,21,,,
+crow_GC,8_20_24,Crow_imp_gc,10W,Monarda fistulosa,24,,,
+crow_GC,8_20_24,Crow_imp_gc,10W,Artemisia absinthium,2,,,
+crow_GC,8_20_24,Crow_imp_gc,10W,,43,tall sympho,,
+crow_GC,8_20_24,Crow_imp_gc,10W,,1,fuzzy,,
+crow_GC,8_20_24,Crow_imp_gc,50W,Asclepias verticillata,6,,,
+crow_GC,8_20_24,Crow_imp_gc,50W,Rubus occidentalis,1,,,
+crow_GC,8_20_24,Crow_imp_gc,50W,Silene latifolia,1,,,
+crow_GC,8_20_24,Crow_imp_gc,50W,Euthamia graminifolia,12,baby aster,,SD
+crow_GC,8_20_24,Crow_imp_gc,50W,Trifolium hybridum,1,clover,,SD
+crow_GC,8_20_24,Crow_imp_gc,50N,Achillea millefolium,5,,,
+crow_GC,8_20_24,Crow_imp_gc,50N,Asclepias verticillata,16,,,
+crow_GC,8_20_24,Crow_imp_gc,50N,Symphyotrichum ericoides,5,,,
+crow_GC,8_20_24,Crow_imp_gc,50N,Symphyotrichum oolentangiense,6,sympho?,,SD
+crow_GC,8_20_24,Crow_imp_gc,50N,Artemisia absinthium,7,,,
+crow_GC,8_20_24,Crow_imp_gc,50N,Ambrosia artemisiifolia,1,mystery #1,,SD
+crow_GC,8_20_24,Crow_imp_gc,10E,Ambrosia artemisiifolia,3,mystery #1,e photo,
+crow_GC,8_20_24,Crow_imp_gc,10E,Ratibida pinnata,8,,,
+crow_GC,8_20_24,Crow_imp_gc,10E,Monarda fistulosa,no count,,,
+crow_GC,8_20_24,Crow_imp_gc,10E,Symphyotrichum lanceolatum,1,aster baby,,SD
+crow_GC,8_20_24,Crow_imp_gc,10E,Solidago rigida,1,,,
+crow_GC,8_20_24,Crow_imp_gc,10E,Asclepias verticillata,2,,,
+crow_GC,8_20_24,Crow_imp_gc,10E,Symphyotrichum ericoides,1,,,
+crow_GC,8_20_24,Crow_imp_gc,10E,,1,fuzzy,,
+crow_GC,8_20_24,Crow_imp_gc,50E,Solidago rigida,20,,,
+crow_GC,8_20_24,Crow_imp_gc,50E,Solidago canadensis,20,,,
+crow_GC,8_20_24,Crow_imp_gc,50E,Monarda fistulosa,6,,,
+crow_GC,8_20_24,Crow_imp_gc,50E,Ratibida pinnata,34,,,
+crow_GC,8_20_24,Crow_imp_gc,50E,,3,tall sympho,,
+crow_GC,8_20_24,Crow_imp_gc,50E,Melilotus sp.,2,three,e photo,SD
+crow_GC,8_20_24,Crow_imp_gc,10S,Solidago rigida,27,,,
+crow_GC,8_20_24,Crow_imp_gc,10S,Monarda fistulosa,16,,,
+crow_GC,8_20_24,Crow_imp_gc,10S,Ratibida pinnata,3,,,
+crow_GC,8_20_24,Crow_imp_gc,10S,Ambrosia artemisiifolia,3,mystery#1,,
+crow_GC,8_20_24,Crow_imp_gc,10S,Symphyotrichum oolentangiense,1,sympho?,,SD
+crow_GC,8_20_24,Crow_imp_gc,10S,Symphyotrichum lanceolatum,3,aster baby,,SD
+crow_GC,8_20_24,Crow_imp_gc,50S,Solidago canadensis,45,,,
+crow_GC,8_20_24,Crow_imp_gc,50S,Physostegia virginiana,2,,,
+crow_GC,8_20_24,Crow_imp_gc,50S,Solidago canadensis,24,SD,,
+crow_GC,8_20_24,Crow_imp_gc,50S,Ambrosia artemisiifolia,6,SD,,SD
+crow_GC,8_20_24,Crow_imp_gc,50S,Cirsium arvense,1,plume thistle,,SD
+crow_GC,8_20_24,Crow_imp_gc,50S,Cirsium arvense,3,thistle2,,SD
+crow_GC,8_20_24,Crow_imp_gc,50S,Cichorieae,1,big thistle,e photo,SD
+crow_GC,8_20_24,Crow_imp_gc,50S,,2,clover,e photo,
+crow_GC,8_20_24,Crow_imp_gc,50S,Bidens frondosa,1,beggarticks?,e photo,SD
+crow_GC,8_20_24,Crow_imp_gc,50S,Pilea pumila,no count,pointy,,SD
+crow_2,8_19_2024,Crow2_imp_1,1N,Symphyotrichum ericoides,6,,,
+crow_2,8_19_2024,Crow2_imp_1,1N,Geranium maculatum,1,,,
+crow_2,8_19_2024,Crow2_imp_1,1N,,1,fuzzy,eloise photos,
+crow_2,8_19_2024,Crow2_imp_1,1N,Symphyotrichum oolentangiense,36,sympho?,aka red!!! sample,SD
+crow_2,8_19_2024,Crow2_imp_1,1N,Symphyotrichum sericeum,1,sympho 2,,SD
+crow_2,8_19_2024,Crow2_imp_1,1N,Dalea candida,1,,,
+crow_2,8_19_2024,Crow2_imp_1,1W,Solidago speciosa,9,,,
+crow_2,8_19_2024,Crow2_imp_1,1W,Symphyotrichum oolentangiense,27,sympho?,,SD
+crow_2,8_19_2024,Crow2_imp_1,1W,,6,fuzzy,elise photos,
+crow_2,8_19_2024,Crow2_imp_1,1W,Lespedeza capitata,4,,,
+crow_2,8_19_2024,Crow2_imp_1,1W,Amorpha canescens,1,,,
+crow_2,8_19_2024,Crow2_imp_1,1W,Monarda fistulosa,2,,,
+crow_2,8_19_2024,Crow2_imp_1,1W,Hieracium longipilum,3,sunny,,SD
+crow_2,8_19_2024,Crow2_imp_1,1S,Symphyotrichum oolentangiense,46,sympho?,,SD
+crow_2,8_19_2024,Crow2_imp_1,1S,Pycnanthemum virginianum,16,,,
+crow_2,8_19_2024,Crow2_imp_1,1S,Solidago speciosa,6,,,
+crow_2,8_19_2024,Crow2_imp_1,1S,,1,thistle?,jayden photos,
+crow_2,8_19_2024,Crow2_imp_1,1S,,5,rubus?,,
+crow_2,8_19_2024,Crow2_imp_1,1S,Monarda fistulosa,8,,,
+crow_2,8_19_2024,Crow2_imp_1,1E,Symphyotrichum oolentangiense,30,Sympho?,,SD
+crow_2,8_19_2024,Crow2_imp_1,1E,Monarda fistulosa,7,,,
+crow_2,8_19_2024,Crow2_imp_1,1E,,8,rubus?,,
+crow_2,8_19_2024,Crow2_imp_1,1E,Symphyotrichum sericeum,1,new guy,jayden photos,SD
+crow_2,8_19_2024,Crow2_imp_1,1E,Amorpha canescens,6,,,
+crow_2,8_19_2024,Crow2_imp_1,1E,Pycnanthemum virginianum,17,,,
+crow_2,8_19_2024,Crow2_imp_1,1E,Oxalis stricta,6,,,
+crow_2,8_19_2024,Crow2_imp_1,10S,,33,rubus sp,,
+crow_2,8_19_2024,Crow2_imp_1,10S,Monarda fistulosa,18,,,
+crow_2,8_19_2024,Crow2_imp_1,10S,Linaria vulgaris,1,,,
+crow_2,8_19_2024,Crow2_imp_1,10S,Symphyotrichum oolentangiense,6,sympho?,,SD
+crow_2,8_19_2024,Crow2_imp_1,10S,,8,fuzzy,,
+crow_2,8_19_2024,Crow2_imp_1,10N,,21,rubus?,jayden photo,
+crow_2,8_19_2024,Crow2_imp_1,10N,,7,fuzzy,elise photo (look like fuzzy succulent),
+crow_2,8_19_2024,Crow2_imp_1,10N,Impatiens sp.,12,oval,sample,SD
+crow_2,8_19_2024,Crow2_imp_1,10N,Monarda fistulosa,9,,,
+crow_2,8_19_2024,Crow2_imp_1,10N,Symphyotrichum ericoides,33,,,
+crow_2,8_19_2024,Crow2_imp_1,10N,Symphyotrichum oolentangiense,32,sympho?,,SD
+crow_2,8_19_2024,Crow2_imp_1,10N,Amorpha canescens,15,,,
+crow_2,8_19_2024,Crow2_imp_1,10N,Achillea millefolium,19,,,
+crow_2,8_19_2024,Crow2_imp_1,10W,Symphyotrichum oolentangiense,120,sympho?,sample,SD
+crow_2,8_19_2024,Crow2_imp_1,10W,Amorpha canescens,30,,,
+crow_2,8_19_2024,Crow2_imp_1,10W,Lespedeza capitata,26,,,
+crow_2,8_19_2024,Crow2_imp_1,10W,Achillea millefolium,3,,,
+crow_2,8_19_2024,Crow2_imp_1,10W,Geranium maculatum,2,,,
+crow_2,8_19_2024,Crow2_imp_1,10W,Pycnanthemum virginianum,9,,,
+crow_2,8_19_2024,Crow2_imp_1,10W,Solidago speciosa,6,,,
+crow_2,8_19_2024,Crow2_imp_1,10W,Antennaria neglecta,9,,,
+crow_2,8_19_2024,Crow2_imp_1,10E,Cirsium arvense,3,thistle 2,,SD
+crow_2,8_19_2024,Crow2_imp_1,10E,Solidago canadensis,47,,,
+crow_2,8_19_2024,Crow2_imp_1,10E,Monarda fistulosa,6,,,
+crow_2,8_19_2024,Crow2_imp_1,10E,,22,rubus?,,
+crow_2,8_19_2024,Crow2_imp_1,10E,Phryma leptostachya,6,lopspeed?,,SD
+crow_2,8_19_2024,Crow2_imp_1,10E,,no count,weirdo,,
+crow_2,8_19_2024,Crow2_imp_1,10E,,4,,,
+crow_2,8_19_2024,Crow2_imp_1,10E,,4,sympho,,
+crow_2,8_19_2024,Crow2_imp_1,10E,Plantago major,5,fuzzy,,SD
+crow_2,8_19_2024,Crow2_imp_1,10E,Oxalis stricta,2,,,
+crow_2,8_19_2024,Crow2_imp_1,50S,Osmorhiza claytonii,1,,,
+crow_2,8_19_2024,Crow2_imp_1,50S,Geranium maculatum,4,,,
+crow_2,8_19_2024,Crow2_imp_1,50S,Acer saccharinum,10,,,
+crow_2,8_19_2024,Crow2_imp_1,50S,Monarda fistulosa,5,,,
+crow_2,8_19_2024,Crow2_imp_1,50S,Quercus sp.,13,quercus,sample,SD
+crow_2,8_19_2024,Crow2_imp_1,50S,Quercus sp.,2,SD,sample,
+crow_2,8_19_2024,Crow2_imp_1,50S,Ribes sp.,1,,,
+crow_2,8_19_2024,Crow2_imp_1,50N,Amorpha canescens,112,,,
+crow_2,8_19_2024,Crow2_imp_1,50N,Achillea millefolium,9,,,
+crow_2,8_19_2024,Crow2_imp_1,50N,Liatris aspera,4,,,
+crow_2,8_19_2024,Crow2_imp_1,50N,Solidago speciosa,7,,,
+crow_2,8_19_2024,Crow2_imp_1,50N,Lespedeza capitata,10,,,
+crow_2,8_19_2024,Crow2_imp_1,50N,Symphyotrichum sericeum,8,sympho 2,sample,SD
+crow_2,8_19_2024,Crow2_imp_1,50N,Monarda fistulosa,6,,,
+crow_2,8_19_2024,Crow2_imp_1,50N,,1,fuzzy,elise photos,
+crow_2,8_19_2024,Crow2_imp_1,50N,Symphyotrichum oolentangiense,28,sympho?,,
+crow_2,8_19_2024,Crow2_imp_1,50N,Pycnanthemum virginianum,4,,,
+crow_2,8_19_2024,Crow2_imp_1,50N,Dalea candida,2,,,
+crow_2,8_19_2024,Crow2_imp_1,50N,,5,rubus?,,
+crow_2,8_19_2024,Crow2_imp_1,50N,Linaria vulgaris,3,,,
+crow_2,8_19_2024,Crow2_imp_1,50W,Symphyotrichum oolentangiense,52,sympho?,same as sample above,SD
+crow_2,8_19_2024,Crow2_imp_1,50W,Dalea purpurea,12,,,
+crow_2,8_19_2024,Crow2_imp_1,50W,Lespedeza capitata,5,,,
+crow_2,8_19_2024,Crow2_imp_1,50W,Solidago speciosa,1,,,
+crow_2,8_19_2024,Crow2_imp_1,50W,Lupinus perennis,26,fab?,sample,SD
+crow_2,8_19_2024,Crow2_imp_1,50E,Fraxinus sp.,4,almond,jayden photos,SD
+crow_2,8_19_2024,Crow2_imp_1,50E,Acer saccharum,9,,,
+crow_2,8_19_2024,Crow2_imp_1,50E,Monarda fistulosa,15,,,
+crow_2,8_19_2024,Crow2_imp_1,50E,Actaea rubra,1,cohosh,sample,SD
+crow_2,8_19_2024,Crow2_imp_1,50E,Parthenocissus inserta,1,,,
+crow_2,8_19_2024,Crow2_imp_1,50E,Fraxinus sp.,1,ash,elise photo,SD
+crow_2,8_19_2024,Crow2_imp_1,50E,Rudbeckia triloba,1,mitten,jayden photo,SD
+crow_2,8_19_2024,Crow2_imp_1,50E,,1,palm,jayden photo,
+hyland_prairie,7_18_2024,HP_gris1,1S,Monarda fistulosa,13,,,
+hyland_prairie,7_18_2024,HP_gris1,1S,Pycnanthemum virginianum,1,,,
+hyland_prairie,7_18_2024,HP_gris1,1S,Hypericum perforatum,2,,,
+hyland_prairie,7_18_2024,HP_gris1,1S,Artemisia ludoviciana,3,,,
+hyland_prairie,7_18_2024,HP_gris1,1S,Solidago canadensis,3,,,
+hyland_prairie,7_18_2024,HP_gris1,1S,Linaria vulgaris,2,,,
+hyland_prairie,7_18_2024,HP_gris1,1S,Solidago sp.,4,,,
+hyland_prairie,7_18_2024,HP_gris1,1S,Dichanthelium linearifolium,47,?1,x,SD
+hyland_prairie,7_18_2024,HP_gris1,1S,Securigera varia,1,,,
+hyland_prairie,7_18_2024,HP_gris1,1E,Monarda fistulosa,16,,,
+hyland_prairie,7_18_2024,HP_gris1,1E,Artemisia ludoviciana,2,,,
+hyland_prairie,7_18_2024,HP_gris1,1E,Dichanthelium linearifolium,45,?1,x,SD
+hyland_prairie,7_18_2024,HP_gris1,1E,Desmodium canadense,8,,,
+hyland_prairie,7_18_2024,HP_gris1,1E,Solidago canadensis,1,,,
+hyland_prairie,7_18_2024,HP_gris1,1E,Symphyotrichum lateriflorum,2,aster? (2),x,SD
+hyland_prairie,7_18_2024,HP_gris1,1N,Monarda fistulosa,2,,,
+hyland_prairie,7_18_2024,HP_gris1,1N,Solidago canadensis,5,,,
+hyland_prairie,7_18_2024,HP_gris1,1N,Hypericum perforatum,5,,,
+hyland_prairie,7_18_2024,HP_gris1,1N,Viola sororia,4,,,
+hyland_prairie,7_18_2024,HP_gris1,1N,Dichanthelium linearifolium,44,?1,,SD
+hyland_prairie,7_18_2024,HP_gris1,1N,Symphyotrichum ericoides,7,Sol?,,SD
+hyland_prairie,7_18_2024,HP_gris1,1W,Monarda fistulosa,7,,,
+hyland_prairie,7_18_2024,HP_gris1,1W,Artemisia ludoviciana,3,,,
+hyland_prairie,7_18_2024,HP_gris1,1W,Solidago canadensis,1,,,
+hyland_prairie,7_18_2024,HP_gris1,1W,Desmodium canadense,1,,,
+hyland_prairie,7_18_2024,HP_gris1,1W,Symphyotrichum ericoides,1,Sol?,,SD
+hyland_prairie,7_18_2024,HP_gris1,1W,Dichanthelium linearifolium,80,?1,,SD
+hyland_prairie,8_2_2024,HP_gris1,10N,Heliopsis helianthoides,2,,,
+hyland_prairie,8_2_2024,HP_gris1,10N,Galium boreale,34,purple spike,sample collected,SD
+hyland_prairie,8_2_2024,HP_gris1,10N,Symphyotrichum oolentangiense,5,plantain 1,jayden photos,SD
+hyland_prairie,8_2_2024,HP_gris1,10N,Solidago rigida,2,plantain 2,jayden photos,SD
+hyland_prairie,8_2_2024,HP_gris1,10N,Solidago rigida,1,,,
+hyland_prairie,8_2_2024,HP_gris1,10N,Viola sororia,7,violet?,,SD
+hyland_prairie,8_2_2024,HP_gris1,10N,Solidago rigida,6,plantain 3,jayden photos,SD
+hyland_prairie,8_2_2024,HP_gris1,10N,Euphorbia corollata,3,frank,jayden photos,SD
+hyland_prairie,8_2_2024,HP_gris1,10N,Comandra umbellata,5,legume 1,elise photos,SD
+hyland_prairie,8_2_2024,HP_gris1,10E,Pycnanthemum virginianum,6,,,
+hyland_prairie,8_2_2024,HP_gris1,10E,Galium boreale,2,purple spike,,SD
+hyland_prairie,8_2_2024,HP_gris1,10E,Erigeron strigosus,8,aster?,sample collected,SD
+hyland_prairie,8_2_2024,HP_gris1,10E,Symphyotrichum oolentangiense,7,plantain 1,,SD
+hyland_prairie,8_2_2024,HP_gris1,10E,Solidago rigida,12,plantain 3,,SD
+hyland_prairie,8_2_2024,HP_gris1,10S,Pycnanthemum virginianum,11,,,
+hyland_prairie,8_2_2024,HP_gris1,10S,Solidago speciosa,9,,,
+hyland_prairie,8_2_2024,HP_gris1,10S,,2,spade,,
+hyland_prairie,8_2_2024,HP_gris1,10S,Solidago rigida,15,plantain 3,jayden photos,SD
+hyland_prairie,8_2_2024,HP_gris1,10S,Solidago rigida,2,plantain 2,jayden photos,SD
+hyland_prairie,8_2_2024,HP_gris1,10S,Symphyotrichum oolentangiense,2,plantain 1,jayden photos,SD
+hyland_prairie,8_2_2024,HP_gris1,10W,Monarda fistulosa,16,,,
+hyland_prairie,8_2_2024,HP_gris1,10W,Viola sororia,2,violet?,jayden photos,SD
+hyland_prairie,8_2_2024,HP_gris1,10W,Artemisia ludoviciana,13,,,
+hyland_prairie,8_2_2024,HP_gris1,10W,Solidago rigida,2,plantain 3,,SD
+hyland_prairie,8_2_2024,HP_gris1,50W,Monarda fistulosa,6,,,
+hyland_prairie,8_2_2024,HP_gris1,50W,Solidago rigida,34,plantain 3,jayden photos,SD
+hyland_prairie,8_2_2024,HP_gris1,50W,,5,spade,,
+hyland_prairie,8_2_2024,HP_gris1,50W,Solidago speciosa,17,,,
+hyland_prairie,8_2_2024,HP_gris1,50S,Solidago canadensis,7,,,
+hyland_prairie,8_2_2024,HP_gris1,50S,Monarda fistulosa,18,,,
+hyland_prairie,8_2_2024,HP_gris1,50S,Solidago rigida,4,plantain 3,,SD
+hyland_prairie,8_2_2024,HP_gris1,50S,Solidago rigida,2,plantain 2,,SD
+hyland_prairie,8_2_2024,HP_gris1,50E,Securigera varia,19,,,
+hyland_prairie,8_2_2024,HP_gris1,50E,,5,spade,,
+hyland_prairie,8_2_2024,HP_gris1,50E,Symphyotrichum oolentangiense,11,plantain 1,,SD
+hyland_prairie,8_2_2024,HP_gris1,50E,Solidago rigida,3,plantain 3,,SD
+hyland_prairie,8_2_2024,HP_gris1,50E,Symphyotrichum oolentangiense,1,chomp,jayden photos,SD
+hyland_prairie,8_2_2024,HP_gris1,50N,Leonurus cardiaca,11,floppy maple,elise photos,SD
+hyland_prairie,8_2_2024,HP_gris1,50N,Circaea alpina,3,,,
+hyland_prairie,8_2_2024,HP_gris1,50N,Rhamnus cathartica,109,,,
+hyland_prairie,8_2_2024,HP_gris1,50N,Prunus sp.,1,rose?,jayden photos,SD
+hyland_prairie,8_7_2024,HP_imp1,1E,Symphyotrichum ericoides,2,,,
+hyland_prairie,8_7_2024,HP_imp1,1E,Symphyotrichum oolentangiense,30,red,sample,SD
+hyland_prairie,8_7_2024,HP_imp1,1E,Lespedeza capitata,1,"legume, no vein","sample, jayden photos",SD
+hyland_prairie,8_7_2024,HP_imp1,1E,,5,little guy,elise photos,
+hyland_prairie,8_7_2024,HP_imp1,1E,Rudbeckia hirta,1,soft & serrate,,SD
+hyland_prairie,8_7_2024,HP_imp1,1N,Solidago rigida,1,,,
+hyland_prairie,8_7_2024,HP_imp1,1N,Solidago speciosa,1,,,
+hyland_prairie,8_7_2024,HP_imp1,1N,Symphyotrichum ericoides,5,,,
+hyland_prairie,8_7_2024,HP_imp1,1N,Solidago rigida,3,rough,jayden photos:338,SD
+hyland_prairie,8_7_2024,HP_imp1,1N,Symphyotrichum oolentangiense,29,red,sample above,SD
+hyland_prairie,8_7_2024,HP_imp1,1N,Lespedeza capitata,2,,,
+hyland_prairie,8_7_2024,HP_imp1,1W,Amorpha canescens,10,,,
+hyland_prairie,8_7_2024,HP_imp1,1W,Lespedeza capitata,4,,,
+hyland_prairie,8_7_2024,HP_imp1,1W,Symphyotrichum ericoides,17,,,
+hyland_prairie,8_7_2024,HP_imp1,1W,Monarda fistulosa,4,,,
+hyland_prairie,8_7_2024,HP_imp1,1W,Symphyotrichum oolentangiense,36,red,sample (this is aster sp.),SD
+hyland_prairie,8_7_2024,HP_imp1,1S,Solidago speciosa,4,,,
+hyland_prairie,8_7_2024,HP_imp1,1S,Symphyotrichum oolentangiense,6,red tall ,sample,SD
+hyland_prairie,8_7_2024,HP_imp1,1S,Pycnanthemum virginianum,6,,,
+hyland_prairie,8_7_2024,HP_imp1,1S,,2,tiny,jayden photos,
+hyland_prairie,8_7_2024,HP_imp1,1S,Rudbeckia hirta,2,fuzzy,,SD
+hyland_prairie,8_7_2024,HP_imp1,1S,Monarda fistulosa,1,,,
+hyland_prairie,8_7_2024,HP_imp1,1S,Heuchera richardsonii,1,,,
+hyland_prairie,8_7_2024,HP_imp1,1S,Lespedeza capitata,1,legume no vein,,SD
+hyland_prairie,8_7_2024,HP_imp1,1S,Symphyotrichum oolentangiense,37,red,,SD
+hyland_prairie,8_7_2024,HP_imp1,10E,Pycnanthemum virginianum,101,,,
+hyland_prairie,8_7_2024,HP_imp1,10E,Symphyotrichum oolentangiense,9,tall red,,SD
+hyland_prairie,8_7_2024,HP_imp1,10E,Solidago rigida,3,,,
+hyland_prairie,8_7_2024,HP_imp1,10E,Monarda fistulosa,3,,,
+hyland_prairie,8_7_2024,HP_imp1,10E,,1,pale gentian,,
+hyland_prairie,8_7_2024,HP_imp1,10E,Symphyotrichum oolentangiense,46,red,,SD
+hyland_prairie,8_7_2024,HP_imp1,10N,Oxalis sp.,1,sorrell,,
+hyland_prairie,8_7_2024,HP_imp1,10N,Symphyotrichum oolentangiense,9,tall red,,SD
+hyland_prairie,8_7_2024,HP_imp1,10N,Symphyotrichum oolentangiense,12,red,,SD
+hyland_prairie,8_7_2024,HP_imp1,10N,Lactuca sp.,2,thistle?,,SD
+hyland_prairie,8_14_2024,HP_imp1,10S,Monarda fistulosa,17,,,
+hyland_prairie,8_14_2024,HP_imp1,10S,Pycnanthemum virginianum,5,,,
+hyland_prairie,8_14_2024,HP_imp1,10S,Solidago speciosa,22,,,
+hyland_prairie,8_14_2024,HP_imp1,10S,Lespedeza capitata,1,,,
+hyland_prairie,8_14_2024,HP_imp1,10S,Symphyotrichum oolentangiense,30,red,sample and photos from last week,SD
+hyland_prairie,8_14_2024,HP_imp1,10S,Anemone cylindrica,3,cilantro,jayden photos,SD
+hyland_prairie,8_14_2024,HP_imp1,10W,Solidago canadensis,22,,,
+hyland_prairie,8_14_2024,HP_imp1,10W,Monarda fistulosa,8,,,
+hyland_prairie,8_14_2024,HP_imp1,10W,Symphyotrichum oolentangiense,2,tall red,,SD
+hyland_prairie,8_14_2024,HP_imp1,10W,Symphyotrichum oolentangiense,15,red,,SD
+hyland_prairie,8_14_2024,HP_imp1,10W,,1,opposite,,
+hyland_prairie,8_14_2024,HP_imp1,50N,Solidago rigida,6,,,
+hyland_prairie,8_14_2024,HP_imp1,50N,Solidago speciosa,4,,,
+hyland_prairie,8_14_2024,HP_imp1,50N,Securigera varia,40,,,
+hyland_prairie,8_14_2024,HP_imp1,50N,Symphyotrichum oolentangiense,6,tall red,,SD
+hyland_prairie,8_14_2024,HP_imp1,50N,Securigera varia,10,spade,jayden photos,SD
+hyland_prairie,8_14_2024,HP_imp1,50N,Lathyrus palustris,1,,,
+hyland_prairie,8_14_2024,HP_imp1,50N,,5,rat?,sample,SD
+hyland_prairie,8_14_2024,HP_imp1,50N,Viola canadensis,8,pointy,jayden photos,SD
+hyland_prairie,8_14_2024,HP_imp1,50N,,2,clover?,elise photos,
+hyland_prairie,8_14_2024,HP_imp1,50N,Comandra umbellata,1,poofy,jayden photos,SD
+hyland_prairie,8_14_2024,HP_imp1,50N,Solidago rigida,4,tall soft,jayden photos,SD
+hyland_prairie,8_14_2024,HP_imp1,50W,Pycnanthemum virginianum,7,,,
+hyland_prairie,8_14_2024,HP_imp1,50W,Symphyotrichum oolentangiense,9,tall red,,SD
+hyland_prairie,8_14_2024,HP_imp1,50W,Symphyotrichum oolentangiense,8,red,,SD
+hyland_prairie,8_14_2024,HP_imp1,50W,Monarda fistulosa,9,,,
+hyland_prairie,8_14_2024,HP_imp1,50S,Pycnanthemum virginianum,3,,,
+hyland_prairie,8_14_2024,HP_imp1,50S,Solidago speciosa,9,,,
+hyland_prairie,8_14_2024,HP_imp1,50S,Symphyotrichum oolentangiense,16,red,,SD
+hyland_prairie,8_14_2024,HP_imp1,50E,Pycnanthemum virginianum,24,,,
+hyland_prairie,8_14_2024,HP_imp1,50E,Symphyotrichum oolentangiense,11,tall red,,SD
+hyland_prairie,8_14_2024,HP_imp1,50E,Monarda fistulosa,17,,,
+hyland_prairie,8_14_2024,HP_imp1,50E,Solidago speciosa,3,,,
+hyland_prairie,8_14_2024,HP_imp1,50E,Solidago rigida,1,short soft,jayden photos,SD
+hyland_prairie,8_14_2024,HP_imp1,50E,Symphyotrichum oolentangiense,9,red,,SD
+hyland_prairie,8_22_24,HP_imp2,1W,Rubus occidentalis,4,,,
+hyland_prairie,8_22_24,HP_imp2,1W,Monarda fistulosa,8,,,
+hyland_prairie,8_22_24,HP_imp2,1W,Geranium maculatum,4,,,
+hyland_prairie,8_22_24,HP_imp2,1W,Solidago canadensis,5,,,
+hyland_prairie,8_22_24,HP_imp2,1W,Asclepias tuberosa,1,soft guy,e photo,SD
+hyland_prairie,8_22_24,HP_imp2,1W,Erigeron strigosus,4,SD,,
+hyland_prairie,8_22_24,HP_imp2,1W,Viola sp.,5,spade,,SD
+hyland_prairie,8_22_24,HP_imp2,1W,Toxicodendron rydbergii,1,,,
+hyland_prairie,8_22_24,HP_imp2,1W,Galium boreale,1,bedstraw?,,SD
+hyland_prairie,8_22_24,HP_imp2,1W,Artemisia ludoviciana,1,,,
+hyland_prairie,8_22_24,HP_imp2,1W,Phryma leptostachya,5,,,
+hyland_prairie,8_22_24,HP_imp2,1W,Galium boreale,51,little dude,sample,SD
+hyland_prairie,8_22_24,HP_imp2,1W,Securigera varia,54,,,
+hyland_prairie,8_22_24,HP_imp2,10N,Rubus occidentalis,3,,,
+hyland_prairie,8_22_24,HP_imp2,10N,Erigeron strigosus,15,fluffy vine,,SD
+hyland_prairie,8_22_24,HP_imp2,10N,Asclepias syriaca,1,,,
+hyland_prairie,8_22_24,HP_imp2,10N,Desmodium glutinosum,10,,,
+hyland_prairie,8_22_24,HP_imp2,10N,Galium boreale,5,bedstraw?,,SD
+hyland_prairie,8_22_24,HP_imp2,10N,Monarda fistulosa,1,,,
+hyland_prairie,8_22_24,HP_imp2,10N,Securigera varia,113,,,
+hyland_prairie,8_22_24,HP_imp2,50N,Rhamnus cathartica,212,,,
+hyland_prairie,8_22_24,HP_imp2,50N,Oxalis stricta,4,,,
+hyland_prairie,8_22_24,HP_imp2,50N,Persicaria punctata,1,smartweed,e photo,SD
+hyland_prairie,8_22_24,HP_imp2,50N,Prunus serotina,1,green,e photo,SD
+hyland_prairie,8_22_24,HP_imp2,50N,,1,tree?,e photo,
+hyland_prairie,8_22_24,HP_imp2,10E,Artemisia ludoviciana,1,,,
+hyland_prairie,8_22_24,HP_imp2,10E,Desmodium glutinosum,5,,,
+hyland_prairie,8_22_24,HP_imp2,10E,Symphyotrichum oolentangiense,2,sympho?,,SD
+hyland_prairie,8_22_24,HP_imp2,10E,Phryma leptostachya,1,,,
+hyland_prairie,8_22_24,HP_imp2,10E,Monarda fistulosa,6,,,
+hyland_prairie,8_22_24,HP_imp2,10E,Geranium maculatum,2,,,
+hyland_prairie,8_22_24,HP_imp2,10E,Galium boreale,10,bedstraw?,,SD
+hyland_prairie,8_22_24,HP_imp2,10E,,3,"Elise Bernstein note says thy dio, cant find which plant in list",,
+hyland_prairie,8_22_24,HP_imp2,10E,Erigeron strigosus,11,fluffy vine,,SD
+hyland_prairie,8_22_24,HP_imp2,10E,Securigera varia,61,,,
+hyland_prairie,8_22_24,HP_imp2,1N,Rubus occidentalis,15,,,
+hyland_prairie,8_22_24,HP_imp2,1N,Monarda fistulosa,13,,,
+hyland_prairie,8_22_24,HP_imp2,1N,Erigeron strigosus,18,fluffy vine,sample,SD
+hyland_prairie,8_22_24,HP_imp2,1N,Asclepias syriaca,1,,,
+hyland_prairie,8_22_24,HP_imp2,1N,Galium boreale,36,bed straw?,sample,SD
+hyland_prairie,8_22_24,HP_imp2,1N,Circaea canadensis,11,,,
+hyland_prairie,8_22_24,HP_imp2,1N,Desmodium glutinosum,2,,,
+hyland_prairie,8_22_24,HP_imp2,1N,Solidago canadensis,5,,,
+hyland_prairie,8_22_24,HP_imp2,1N,Ribes cynosbati,2,,,
+hyland_prairie,8_22_24,HP_imp2,1N,Artemisia ludoviciana,3,,,
+hyland_prairie,8_22_24,HP_imp2,1N,Symphyotrichum oolentangiense,2,sympho?,,SD
+hyland_prairie,8_22_24,HP_imp2,1N,Securigera varia,1,,,
+hyland_prairie,8_22_24,HP_imp2,1N,Veronicastrum virginicum,2,threes,e photo,SD
+hyland_prairie,8_22_24,HP_imp2,1N,Geranium maculatum,1,,,
+hyland_prairie,8_22_24,HP_imp2,1N,Agastache foeniculum,2,mint?,e photo,SD
+hyland_prairie,8_22_24,HP_imp2,1E,Solidago speciosa,2,,,
+hyland_prairie,8_22_24,HP_imp2,1E,Solidago canadensis,8,,,
+hyland_prairie,8_22_24,HP_imp2,1E,Artemisia ludoviciana,4,,,
+hyland_prairie,8_22_24,HP_imp2,1E,Symphyotrichum novae-angliae,7,goldenrod?,e photo,SD
+hyland_prairie,8_22_24,HP_imp2,1E,Monarda fistulosa,6,,,
+hyland_prairie,8_22_24,HP_imp2,1E,Ceanothus americanus,1,little tree ,e photo,SD
+hyland_prairie,8_22_24,HP_imp2,1E,Securigera varia,10,,,
+hyland_prairie,8_22_24,HP_imp2,1E,Erigeron strigosus,21,fluffy vine,,
+hyland_prairie,8_22_24,HP_imp2,1E,Galium boreale,16,bedstraw?,,SD
+hyland_prairie,8_22_24,HP_imp2,1E,Symphyotrichum oolentangiense,5,sympho?,,SD
+hyland_prairie,8_22_24,HP_imp2,1E,Geranium maculatum,1,,,
+hyland_prairie,8_22_24,HP_imp2,1E,Viola sp.,1,spade,,SD
+hyland_prairie,8_22_24,HP_imp2,1S,Asclepias syriaca,1,,,
+hyland_prairie,8_22_24,HP_imp2,1S,Monarda fistulosa,4,,,
+hyland_prairie,8_22_24,HP_imp2,1S,Solidago canadensis,5,,,
+hyland_prairie,8_22_24,HP_imp2,1S,Erigeron strigosus,3,fluffy vine,,SD
+hyland_prairie,8_22_24,HP_imp2,1S,Apocynum cannabinum,1,mystery,,SD
+hyland_prairie,8_22_24,HP_imp2,1S,Securigera varia,60,,,
+hyland_prairie,8_22_24,HP_imp2,1S,Viola sp.,1,spade,,SD
+hyland_prairie,8_22_24,HP_imp2,1S,Desmodium glutinosum,1,,,
+hyland_prairie,8_22_24,HP_imp2,1S,Silene stellata,1,,,
+hyland_prairie,8_22_24,HP_imp2,50E,Helianthus hirsutus,11,sunflower,e photo,SD
+hyland_prairie,8_22_24,HP_imp2,50E,,2,spikey,sample,
+hyland_prairie,8_22_24,HP_imp2,50E,Symphyotrichum sp.,15,shorty,sample,SD
+hyland_prairie,8_22_24,HP_imp2,50S,Solidago speciosa,8,,,
+hyland_prairie,8_22_24,HP_imp2,50S,Monarda fistulosa,2,,,
+hyland_prairie,8_22_24,HP_imp2,50S,Galium boreale,3,bedstraw?,,SD
+hyland_prairie,8_22_24,HP_imp2,50S,Pycnanthemum virginianum,5,,,
+hyland_prairie,8_22_24,HP_imp2,50S,Symphyotrichum oolentangiense,33,sympho?,,SD
+hyland_prairie,8_22_24,HP_imp2,50S,Symphyotrichum ericoides,2,,,
+hyland_prairie,8_22_24,HP_imp2,50W,Solidago rigida,3,,,
+hyland_prairie,8_22_24,HP_imp2,50W,Euphorbia corollata,9,spurge?,,SD
+hyland_prairie,8_22_24,HP_imp2,50W,Galium boreale,22,bedstraw?,,SD
+hyland_prairie,8_22_24,HP_imp2,50W,Monarda fistulosa,3,,,
+hyland_prairie,8_22_24,HP_imp2,50W,Viola sp.,11,spade,,SD
+hyland_prairie,8_22_24,HP_imp2,50W,Artemisia ludoviciana,2,,,
+hyland_prairie,8_22_24,HP_imp2,50W,Symphyotrichum ericoides,7,,,
+hyland_prairie,8_22_24,HP_imp2,50W,,,,,
+hyland_prairie,8_22_24,HP_imp2,50W,,,,,
+hyland_prairie,8_22_24,HP_imp2,10S,Viola sp.,7,spade,,SD
+hyland_prairie,8_22_24,HP_imp2,10S,Galium boreale,5,bedstraw?,,SD
+hyland_prairie,8_22_24,HP_imp2,10S,Monarda fistulosa,2,,,
+hyland_prairie,8_22_24,HP_imp2,10S,Solidago speciosa,2,,,
+hyland_prairie,8_22_24,HP_imp2,10S,Artemisia ludoviciana,1,,,
+hyland_prairie,8_22_24,HP_imp2,10S,Securigera varia,75,,,
+hyland_prairie,8_22_24,HP_imp2,10W,Galium boreale,32,bedstraw?,,SD
+hyland_prairie,8_22_24,HP_imp2,10W,Erigeron strigosus,10,fluffy vine,,SD
+hyland_prairie,8_22_24,HP_imp2,10W,Monarda fistulosa,3,,,
+hyland_prairie,8_22_24,HP_imp2,10W,Solidago canadensis,7,,,
+hyland_prairie,8_22_24,HP_imp2,10W,Solidago speciosa,1,,,
+hyland_prairie,8_22_24,HP_imp2,10W,Helianthus pauciflorus,1,tall sandpaper,e photo,SD
+hyland_prairie,8_22_24,HP_imp2,10W,Securigera varia,61,,,
+hyland_prairie,8_22_24,HP_imp2,50E,Amorpha canescens,8,,,
+hyland_prairie,8_22_24,HP_imp2,50E,Artemisia ludoviciana,2,,,
+hyland_prairie,8_22_24,HP_imp2,50E,Symphyotrichum ericoides,10,,,
+hyland_prairie,8_22_24,HP_imp2,50E,Symphyotrichum oolentangiense,3,sympho?,,SD
+hyland_prairie,8_22_24,HP_imp2,50E,Euphorbia corollata,4,spurge?,e photo,SD
+leb_eq2,8_1_2024,LH_Eq2_imp1,1S,Monarda fistulosa,77,,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,1S,Linaria vulgaris,9,,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,1S,Lespedeza capitata,2,,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,1E,Linaria vulgaris,8,,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,1E,Lespedeza capitata,1,,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,1E,Monarda fistulosa,54,,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,1N,Solidago canadensis,3,,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,1N,Linaria vulgaris,17,,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,1N,Monarda fistulosa,11,,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,1W,Rubus occidentalis,7,,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,1W,Monarda fistulosa,20,,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,1W,Linaria vulgaris,11,,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,1W,,1,chickweed?,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,1W,Oxalis stricta,8,,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,10S,Hieracium caespitosum,2,? - Elise photo,,SD
+leb_eq2,8_1_2024,LH_Eq2_imp1,10S,Linaria vulgaris,7,,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,10S,Oxalis stricta,7,,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,10S,Erigeron strigosus,2,? erigeron : sample,sample,SD
+leb_eq2,8_1_2024,LH_Eq2_imp1,10S,Rubus occidentalis,5,,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,10S,Monarda fistulosa,34,,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,10S,Hieracium caespitosum,1,? - Elise photo,,SD
+leb_eq2,8_1_2024,LH_Eq2_imp1,10E,Euphorbia commutata,3,,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,10E,Tradescantia occidentalis,8,,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,10E,Linaria vulgaris,14,,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,10E,Solidago canadensis,13,,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,10E,Rhus typhina,1,,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,10E,Lespedeza capitata,1,,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,10E,Monarda fistulosa,22,,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,10E,Hieracium caespitosum,4,? - Elise photo,,SD
+leb_eq2,8_1_2024,LH_Eq2_imp1,10E,Rudbeckia hirta,8,,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,10E,,1,Hog pea??,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,10N,Lespedeza capitata,5,,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,10N,Linaria vulgaris,14,,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,10N,Monarda fistulosa,47,,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,10N,Securigera varia,1,chickweed,,SD
+leb_eq2,8_1_2024,LH_Eq2_imp1,10N,Cornus sericea,2,dogwood,,SD
+leb_eq2,8_1_2024,LH_Eq2_imp1,10N,Antennaria parlinii,1,plantainy?,,SD
+leb_eq2,8_1_2024,LH_Eq2_imp1,10W,Linaria vulgaris,38,,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,10W,Vicia cracca,1,,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,10W,,3,baby,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,50W,Ageratina altissima,3,,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,50W,Rubus occidentalis,8,,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,50W,Rubus sp.,2,rubus sp.,,SD
+leb_eq2,8_1_2024,LH_Eq2_imp1,50W,Parthenocissus quinquefolia,NA,,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,50W,Zanthoxylum americanum,1,,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,50W,Vitis riparia,1,,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,50W,Symphyotrichum puniceum,2,woodland aster?,,SD
+leb_eq2,8_1_2024,LH_Eq2_imp1,50S,Verbascum thapsus,4,,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,50S,Prunella vulgaris,4,,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,50S,Monarda fistulosa,46,,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,50S,Solidago canadensis,2,,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,50S,,11,baby,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,50S,Rhus typhina,1,,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,50S,Linaria vulgaris,2,,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,50S,Cerastium arvense,1,Chickweed,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,50S,Agastache foeniculum,3,,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,50S,Potentilla sp.,4,,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,50E,Rubus sp.,3,rubus sp.,,SD
+leb_eq2,8_1_2024,LH_Eq2_imp1,50E,Ribes missouriense,3,,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,50E,Parthenocissus quinquefolia,2,,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,50E,Desmodium glutinosum,8,,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,50E,,1,hog pea?,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,50N,Linaria vulgaris,25,,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,50N,Achillea millefolium,2,,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,50N,Oxalis stricta,4,,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,50N,Trifolium pratense,3,,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,50N,,8,"viney raspberry, jayden photos",,
+leb_eq2,8_1_2024,LH_Eq2_imp1,50N,Solidago canadensis,5,,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,50N,Rubus occidentalis,7,,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,50N,Monarda fistulosa,31,,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,50N,Quercus rubra,1,,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,50N,Centaurea stoebe,1,,,
+leb_eq2,8_1_2024,LH_Eq2_imp1,50N,,46,scrawny baby,sample,SD
+le_iw,8_27_24,no_nest,0M,Solanum dulcamara,15,,,
+le_iw,8_27_24,no_nest,0M,Urtica dioica,15,,,
+le_iw,8_27_24,no_nest,0M,Cirsium arvense,9,,,
+le_iw,8_27_24,no_nest,25M,Cirsium arvense,14,,,
+le_iw,8_27_24,no_nest,50M,Solidago canadensis,5,,,
+le_iw,8_27_24,no_nest,50M,Erigeron philadelphicus,80,erigeron?,sample,SD
+le_iw,8_27_24,no_nest,50M,Solidago rigida,3,basal #1,e photo,SD
+le_iw,8_27_24,no_nest,50M,Echinacea sp.,,basal #2,e photo,SD
+le_iw,8_27_24,no_nest,50M,Oxalis stricta,1,,,
+le_iw,8_27_24,no_nest,75M,Solidago rigida,4,basal #1,,SD
+le_iw,8_27_24,no_nest,75M,Lactuca canadensis,3,lettuce,e photo,SD
+le_iw,8_27_24,no_nest,100M,Solidago canadensis,1,,,
+le_iw,8_27_24,no_nest,100M,Oxalis stricta,2,,,
+le_iw,8_27_24,no_nest,100M,Daucus carota,28,SD,sample,
+le_iw,8_27_24,no_nest,100M,Solidago rigida,1,basal #1,,SD
+le_gc,8_27_24,no_nest,0M,Achillea millefolium,12,,,
+le_gc,8_27_24,no_nest,0M,Solidago canadensis,11,,,
+le_gc,8_27_24,no_nest,0M,Rubus sp.,7,rubus?,j photo,SD
+le_gc,8_27_24,no_nest,0M,Helianthus pauciflorus,25,stiff sunflower?,,SD
+le_gc,8_27_24,no_nest,0M,Securigera varia,4,,,
+le_gc,8_27_24,no_nest,25M,Desmodium canadense,3,,,
+le_gc,8_27_24,no_nest,25M,Monarda fistulosa,5,,,
+le_gc,8_27_24,no_nest,25M,Ratibida pinnata,17,,,
+le_gc,8_27_24,no_nest,25M,Ageratina altissima,24,dotty,sample,Brian Charles
+le_gc,8_27_24,no_nest,25M,Solidago canadensis,3,,,
+le_gc,8_27_24,no_nest,50M,Solidago canadensis,32,,,
+le_gc,8_27_24,no_nest,50M,Solidago rigida,2,,,
+le_gc,8_27_24,no_nest,50M,Desmodium canadense,3,,,
+le_gc,8_27_24,no_nest,50M,Monarda fistulosa,3,,,
+le_gc,8_27_24,no_nest,50M,Securigera varia,14,,,
+le_gc,8_27_24,no_nest,50M,Ratibida pinnata,1,,,
+le_gc,8_27_24,no_nest,50M,Impatiens sp.,1,bubbles,j photo,SD
+le_gc,8_27_24,no_nest,75M,Monarda fistulosa,51,,,
+le_gc,8_27_24,no_nest,75M,Solidago rigida,61,,,
+le_gc,8_27_24,no_nest,75M,Solidago sp.,2,golden spy,e photos,SD
+le_gc,8_27_24,no_nest,75M,Cirsium arvense,2,thistle?,e photos,SD
+le_gc,8_27_24,no_nest,75M,Rubus sp.,12,dewberry,sample,Brian Charles
+le_gc,8_27_24,no_nest,100M,Monarda fistulosa,11,,,
+le_gc,8_27_24,no_nest,100M,Solidago canadensis,18,,,
+le_gc,8_27_24,no_nest,100M,Solidago speciosa,3,,,
+le_gc,8_27_24,no_nest,100M,Solidago rigida,4,,,
+le_gc,8_27_24,no_nest,100M,Desmodium canadense,2,,,
+le_gc,8_27_24,no_nest,100M,Ratibida pinnata,12,,,
+le_gc,8_27_24,no_nest,100M,Symphyotrichum ericoides,8,aster?,e photo,SD
+le_gc,8_27_24,no_nest,100M,Echinacea sp.,1,serrate ,e photo,SD
+le_gc,8_27_24,no_nest,100M,Achillea millefolium,5,,,
+le_gc,8_27_24,no_nest,100M,,5,fuzzy basal (maybe few-leaved sunflower),e photo,
+le_gc,8_27_24,no_nest,100M,Impatiens sp.,2,bubbles,,SD
+le_gc,8_27_24,no_nest,100M,Helianthus maximiliani,2,,,
+le_gc,8_27_24,no_nest,100M,Rudbeckia hirta,1,,,
+,8_19_2024,,1N,Amorpha canescens,6,,,
+,8_19_2024,,1N,Monarda fistulosa,1,,,
