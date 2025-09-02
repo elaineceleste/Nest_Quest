@@ -49,7 +49,7 @@ occurrence <- plants %>% count(plant_name, sort =TRUE) #occurrence of all plants
  nest_plant_comm %>% 
    filter(nest_ID == "Crow_imp_gc") %>% 
  ggplot(aes(x = reorder(plant_name, plant.n), y = plant.n)) +
-   geom_bar(stat = "identity") + coord_flip 
+   geom_bar(stat = "identity") + coord_flip() 
   # labs(x = "Response (on a 1 to 5 scale)", y = "Number of respondents")
  
  
@@ -69,56 +69,59 @@ occurrence <- plants %>% count(plant_name, sort =TRUE) #occurrence of all plants
  
  nest_quad_plant_n<- nest_quadrats %>% count(plant_name, nest_ID, quadrat_distance) %>% rename(plant.n = n) #getting number of plants for each species
  
- nest_quadrats <- full_join(nest_quadrats, nest_quad_plant_n) %>% mutate(stem_density = plant.n/total_stems, round, 2)# joining to main dataframe
+ nest_quadrats <- full_join(nest_quadrats, nest_quad_plant_n) %>% mutate(stem_density = plant.n/total_stems) #, round, 2) # joining to main dataframe
  
  #plotting by plant abundance and quadrat distance, one plot per nest
  nest_quadrats %>% 
    filter(nest_ID == "Crow_imp_gc") %>% 
-   ggplot(aes(y = reorder(plant_name, plant.n), x = plant.n)) +
+   ggplot(aes(y = reorder(plant_name, stem_density), x = stem_density)) +
    geom_bar(stat = "identity") +
    facet_wrap(vars(quadrat_distance), ncol = 3) +
- labs(x = "plant abundance", y = "plant species") + 
+ labs(x = "stem_density", y = "plant species") + 
    ggtitle("Crow_imp_gc")
  
  nest_quadrats %>% 
    filter(nest_ID == "Crow2_imp_1") %>% 
-   ggplot(aes(y = reorder(plant_name, plant.n), x = plant.n)) +
+   ggplot(aes(y = reorder(plant_name, stem_density), x = stem_density)) +
    geom_bar(stat = "identity") +
    facet_wrap(vars(quadrat_distance), ncol = 3) +
-   labs(x = "plant abundance", y = "plant species") + 
+   labs(x = "stem_density", y = "plant species") + 
    ggtitle("Crow2_imp_1")
  
  nest_quadrats %>% 
    filter(nest_ID == "HP_gris1") %>% 
-   ggplot(aes(y = reorder(plant_name, plant.n), x = plant.n)) +
+   ggplot(aes(y = reorder(plant_name, stem_density), x = stem_density)) +
    geom_bar(stat = "identity") +
    facet_wrap(vars(quadrat_distance), ncol = 3) +
-   labs(x = "plant abundance", y = "plant species") + 
+   labs(x = "stem_density", y = "plant species") + 
    ggtitle("HP_gris1")
  
  nest_quadrats %>% 
    filter(nest_ID == "HP_imp1") %>% 
-   ggplot(aes(y = reorder(plant_name, plant.n), x = plant.n)) +
+   ggplot(aes(y = reorder(plant_name, stem_density), x = stem_density)) +
    geom_bar(stat = "identity") +
    facet_wrap(vars(quadrat_distance), ncol = 3) +
-   labs(x = "plant abundance", y = "plant species") + 
+   labs(x = "stem_density", y = "plant species") + 
    ggtitle("HP_imp1")
  
  nest_quadrats %>% 
    filter(nest_ID == "HP_imp2") %>% 
-   ggplot(aes(y = reorder(plant_name, plant.n), x = plant.n)) +
+   ggplot(aes(y = reorder(plant_name, stem_density), x = stem_density)) +
    geom_bar(stat = "identity") +
    facet_wrap(vars(quadrat_distance), ncol = 3) +
-   labs(x = "plant abundance", y = "plant species") + 
+   labs(x = "stem_density", y = "plant species") + 
    ggtitle("HP_imp2")
  
  nest_quadrats %>% 
    filter(nest_ID == "LH_Eq2_imp1") %>% 
-   ggplot(aes(y = reorder(plant_name, plant.n), x = plant.n)) +
+   ggplot(aes(y = reorder(plant_name, stem_density), x = stem_density)) +
    geom_bar(stat = "identity") +
    facet_wrap(vars(quadrat_distance), ncol = 3) +
-   labs(x = "plant abundance", y = "plant species") + 
+   labs(x = "stem_density", y = "plant species") + 
    ggtitle("LH_Eq2_imp1")
  
+ 
+ # Reading in habitat assessment data. This data included percent cover and litter data. 
  nq_habitat <- read.csv("nq_habitat.csv")
+ 
   
