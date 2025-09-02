@@ -20,9 +20,9 @@ crow_GC,8_20_24,Crow_imp_gc,1W,Symphyotrichum oolentangiense,1,long sympho,j pho
 crow_GC,8_20_24,Crow_imp_gc,1W,Ambrosia artemisiifolia,4,mytery #1,j photo,SD
 crow_GC,8_20_24,Crow_imp_gc,1W,Solidago canadensis,16,,,
 crow_GC,8_20_24,Crow_imp_gc,1W,Symphyotrichum lanceolatum,14,aster baby,sample,SD
-crow_GC,8_20_24,Crow_imp_gc,1W,,1,fuzzy,e photo,
-crow_GC,8_20_24,Crow_imp_gc,1W,Convolvulus sp.,1,viney,e photo,SD
-crow_GC,8_20_24,Crow_imp_gc,1W,,2,mystery #2,j photo,
+crow_GC,8_20_24,Crow_imp_gc,1W,,1,fuzzy,e photo_ no photo,
+crow_GC,8_20_24,Crow_imp_gc,1W,Fallopia convolvulus,1,viney,e photo,SD
+crow_GC,8_20_24,Crow_imp_gc,1W,Ambrosia artemisiifolia,2,mystery #2,j photo,
 crow_GC,8_20_24,Crow_imp_gc,10N,Plantago major,1,mysterystar,,SD
 crow_GC,8_20_24,Crow_imp_gc,10N,Solidago rigida,24,,,
 crow_GC,8_20_24,Crow_imp_gc,10N,Solidago canadensis,28,,,
@@ -39,8 +39,8 @@ crow_GC,8_20_24,Crow_imp_gc,10W,Solidago canadensis,25,,,
 crow_GC,8_20_24,Crow_imp_gc,10W,Achillea millefolium,21,,,
 crow_GC,8_20_24,Crow_imp_gc,10W,Monarda fistulosa,24,,,
 crow_GC,8_20_24,Crow_imp_gc,10W,Artemisia absinthium,2,,,
-crow_GC,8_20_24,Crow_imp_gc,10W,,43,tall sympho,,
-crow_GC,8_20_24,Crow_imp_gc,10W,,1,fuzzy,,
+crow_GC,8_20_24,Crow_imp_gc,10W,,43,tall sympho,no photo,
+crow_GC,8_20_24,Crow_imp_gc,10W,,1,fuzzy,no photo,
 crow_GC,8_20_24,Crow_imp_gc,50W,Asclepias verticillata,6,,,
 crow_GC,8_20_24,Crow_imp_gc,50W,Rubus occidentalis,1,,,
 crow_GC,8_20_24,Crow_imp_gc,50W,Silene latifolia,1,,,
@@ -79,7 +79,7 @@ crow_GC,8_20_24,Crow_imp_gc,50S,Ambrosia artemisiifolia,6,SD,,SD
 crow_GC,8_20_24,Crow_imp_gc,50S,Cirsium arvense,1,plume thistle,,SD
 crow_GC,8_20_24,Crow_imp_gc,50S,Cirsium arvense,3,thistle2,,SD
 crow_GC,8_20_24,Crow_imp_gc,50S,Cichorieae,1,big thistle,e photo,SD
-crow_GC,8_20_24,Crow_imp_gc,50S,,2,clover,e photo,
+crow_GC,8_20_24,Crow_imp_gc,50S,Oxalis stricta,2,clover,e photo,
 crow_GC,8_20_24,Crow_imp_gc,50S,Bidens frondosa,1,beggarticks?,e photo,SD
 crow_GC,8_20_24,Crow_imp_gc,50S,Pilea pumila,no count,pointy,,SD
 crow_2,8_19_2024,Crow2_imp_1,1N,Symphyotrichum ericoides,6,,,
@@ -540,5 +540,5 @@ le_gc,8_27_24,no_nest,100M,,5,fuzzy basal (maybe few-leaved sunflower),e photo,
 le_gc,8_27_24,no_nest,100M,Impatiens sp.,2,bubbles,,SD
 le_gc,8_27_24,no_nest,100M,Helianthus maximiliani,2,,,
 le_gc,8_27_24,no_nest,100M,Rudbeckia hirta,1,,,
-,8_19_2024,,1N,Amorpha canescens,6,,,
-,8_19_2024,,1N,Monarda fistulosa,1,,,
+crow_2,8_19_2024,Crow2_imp_1,1N,Amorpha canescens,6,,,
+crow_2,8_19_2024,Crow2_imp_1,1N,Monarda fistulosa,1,,,
