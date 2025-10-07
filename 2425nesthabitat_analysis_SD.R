@@ -100,6 +100,6 @@ nest_cover2 <- nest_cover2 %>%
             avg_forb = mean(per_forb),
             avg_grass = mean(per_grass))
   
-
+# hi sami
 
 
