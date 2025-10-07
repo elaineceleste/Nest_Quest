@@ -17,7 +17,7 @@ plants$stem_count <- as.integer(plants$stem_count) #error where "no count" is co
 plants$stem_count <- plants$stem_count %>% replace(is.na(.), 0) #turning those NA's into 0's
 
 
-#removing unessecary columns for simplicity
+#removing unnecessary columns for simplicity
 plants <- plants %>% select(-c('field_name', 'needs_id', 'Identifer'))
 
 
@@ -121,7 +121,20 @@ occurrence <- plants %>% count(plant_name, sort =TRUE) #occurrence of all plants
    ggtitle("LH_Eq2_imp1")
  
  
- # Reading in habitat assessment data. This data included percent cover and litter data. 
- nq_habitat <- read.csv("nq_habitat.csv")
+ # Reading in habitat assessment data. This data includes percent cover and litter data. 
+ nq_habitat_assessments2024 <- read.csv("nq_habitat24.csv")
  
-  
+ # Cleaning 2024 habitat assessment data
+ nq_habitat_assessments2024 <- nq_habitat_assessments2024 %>% 
+   mutate_if(is.character, ~na_if(., '')) %>%
+   mutate_if(is.character, ~na_if(., 'na'))# Converting all blank values to NA
+
+ # Classifying variables
+ nq_habitat_assessments2024$site <- as.factor(nq_habitat_assessments2024$site) #site as factor
+ # one of the values for quadrats is "about_45S". I am lumping it into 50s for simplicity. 
+ nq_habitat_assessments2024$quadrat_no[nq_habitat_assessments2024$quadrat_no == 'about_45S'] <- '50S' # replacing value
+ table(nq_habitat_assessments2024$quadrat_no) #check
+ nq_habitat_assessments2024$quadrat_no <- as.factor(nq_habitat_assessments2024$quadrat_no) # quadrat as factor, should be 12 levels
+ # table(nq_habitat_assessments2024$nest_ID) #check for typos
+ 
+ 
