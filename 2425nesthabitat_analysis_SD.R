@@ -52,7 +52,7 @@ habitat_all <- mutate(habitat_all, mean_litter_depth = rowMeans(select(habitat_a
 #### Creating data set that includes quadrant distances
 nest_quadrats <- habitat_all %>% 
   group_by(nest_ID, quadrant_no, year) %>% 
-  mutate(quadrant_distance = case_when(quadrant_no == "1N" ~ "1m",
+  mutate(quadrant_distance = case_when(quadrant_no == "1N" ~ "1m", # column with groupings of quadrat distance
                                       quadrant_no == "1S" ~ "1m",
                                       quadrant_no == "1E" ~ "1m",
                                       quadrant_no == "1W" ~ "1m",
@@ -64,7 +64,24 @@ nest_quadrats <- habitat_all %>%
                                       startsWith(quadrant_no, "0") ~ "0m",
                                       startsWith(quadrant_no, "100M") ~ "100m",
                                       startsWith(quadrant_no, "25M") ~ "25m",
-                                      startsWith(quadrant_no, "75M") ~ "75m")) # lumping quadrant distances together
+                                      startsWith(quadrant_no, "75M") ~ "75m"),
+         proximity = case_when(quadrant_no == "1N" ~ "near", # lumps quadrats into near (1m) nest and far from nest (10m and 50m) 
+                              quadrant_no == "1S" ~ "near",
+                              quadrant_no == "1E" ~ "near",
+                              quadrant_no == "1W" ~ "near",
+                              quadrant_no == "10N" ~ "far",
+                              quadrant_no == "10S" ~ "far",
+                              quadrant_no == "10E" ~ "far",
+                              quadrant_no == "10W" ~ "far", 
+                              quadrant_no == "50N" ~ "far",
+                              quadrant_no == "50S" ~ "far",
+                              quadrant_no == "50E" ~ "far",
+                              quadrant_no == "50W" ~ "far", 
+                              startsWith(quadrant_no, "50") ~ "transect",
+                              startsWith(quadrant_no, "0") ~ "transect",
+                              startsWith(quadrant_no, "100M") ~ "transect",
+                              startsWith(quadrant_no, "25M") ~ "transect",
+                              startsWith(quadrant_no, "75M") ~ "transect")) # lumping quadrant distances together
 
 ##### Habitat Analysis. Cover  and litter depth data here ####
 nest_cover <- nest_quadrats %>% select(.,c("nest_ID",
@@ -102,4 +119,25 @@ nest_cover2 <- nest_cover2 %>%
 ##### soil density analysis #####
 # hi sami
 
+### Habitat analaysis for soil density data. EB 10/7/25 ###
+
+nest_cover_psi <- nest_quadrats %>% select(.,c("nest_ID", 
+                                              "year", 
+                                              "psi_avg", 
+                                              "quadrant_distance")) #create new data frame to isolate soil density data
+
+nest_cover_psi <- nest_cover_psi %>%
+  group_by(nest_ID, quadrant_distance, year) %>%
+  summarize(mean_psi = mean(psi_avg))
+
+
+#barplot(mean_psi ~ nest_ID, data = nest_cover_psi)
+
+nest_cover_psi %>% 
+  filter(nest_ID == "ah_lowerupper_imp1") %>% 
+  ggplot(aes(y = mean_psi, x = quadrant_distance)) +
+  geom_bar(stat = "identity") +
+  #facet_wrap(vars(quadrat_distance), ncol = 3) +
+  labs(x = "quadrat distance", y = "mean psi :)") + 
+  ggtitle("Arden hills lower upper impatiens nest 1")
 
