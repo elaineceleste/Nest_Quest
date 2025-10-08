@@ -47,6 +47,7 @@ table(habitat_all$quadrant_no) # check. do all values look right?
 
 #percent cover data
 
+habitat_all <- mutate(habitat_all, mean_litter_depth = rowMeans(select(habitat_all, starts_with("leaf_lit")), na.rm = TRUE))
 
 #### Creating data set that includes quadrant distances
 nest_quadrats <- habitat_all %>% 
@@ -65,16 +66,15 @@ nest_quadrats <- habitat_all %>%
                                       startsWith(quadrant_no, "25M") ~ "25m",
                                       startsWith(quadrant_no, "75M") ~ "75m")) # lumping quadrant distances together
 
-##### habitat analysis. Cover  and litter depth data here
+##### Habitat Analysis. Cover  and litter depth data here ####
 nest_cover <- nest_quadrats %>% select(.,c("nest_ID",
                                            "year",
                                            "per_bare", 
                                            "per_forb", 
                                            "per_grass", 
-                                           "leaf_lit_cm_1", 
-                                           "leaf_lit_cm_2", 
-                                           "leaf_lit_cm_3",
+                                           "mean_litter_depth",
                                            "quadrant_distance")) #simplifying data set for cover and litter analysis. Only selecting certain columns here.
+
 
 # I think having a number 1-5 for to represent % ranges of cover in each quadrant will be good to average. 
 # Goal is to average each distance.
@@ -92,14 +92,14 @@ nest_cover2 <- nest_cover %>%
 # 50_to_75 = 4
 # 75_to_100 = 5
 
-mutate(nest_cover, litter_mean = rowMeans(select(nest_cover, starts_with("leaf_lit")), na.rm = TRUE))
-
 nest_cover2 <- nest_cover2 %>% 
-  group_by(nest_ID, quadrant_distance, year) %>% 
+  #group_by(nest_ID, quadrant_distance, year) %>% 
   summarize(avg_bare = mean(per_bare),
             avg_forb = mean(per_forb),
             avg_grass = mean(per_grass))
   
+
+##### soil density analysis #####
 # hi sami
 
 
