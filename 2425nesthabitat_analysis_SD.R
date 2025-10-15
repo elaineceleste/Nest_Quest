@@ -185,6 +185,17 @@ nest_cover_all %>%
   ylim(0,5)+
   labs(x = "nest_ID", y = "mean grass cover") 
 
+## box and whisker plot for grass cover for each nest 
+ggplot(nest_cover2, aes(x = nest_ID, y = per_grass)) +
+  geom_boxplot() +
+  theme(axis.text.x = element_text(angle = 50, vjust = 0.5), 
+        panel.grid.major = element_blank()) +
+  ylim(0,5)+
+  labs(title = "Grass Cover Variability", 
+       x = "nest_ID",
+       y = "Percent grass cover")
+
+
 ####
 ##### soil density analysis #####
 # hi sami
@@ -194,20 +205,43 @@ nest_cover_all %>%
 nest_cover_psi <- nest_quadrats %>% select(.,c("nest_ID", 
                                               "year", 
                                               "psi_avg", 
-                                              "quadrant_distance")) #create new data frame to isolate soil density data
+                                              "quadrant_distance", 
+                                              "proximity")) #create new data frame to isolate soil density data
 
 nest_cover_psi <- nest_cover_psi %>%
-  group_by(nest_ID, quadrant_distance, year) %>%
+  group_by(nest_ID, proximity, year) %>%
   summarize(mean_psi = mean(psi_avg))
 
 
 #barplot(mean_psi ~ nest_ID, data = nest_cover_psi)
 
-nest_cover_psi %>% 
-  filter(nest_ID == "ah_lowerupper_imp1") %>% 
-  ggplot(aes(y = mean_psi, x = quadrant_distance)) +
-  geom_bar(stat = "identity") +
+## to create a barplot for one individual nest
+#nest_cover_psi %>%
+  #filter(nest_ID == "ah_lowerupper_imp1") %>% 
+  #ggplot(aes(y = mean_psi, x = quadrant_distance)) +
+  #geom_bar(stat = "identity") +
   #facet_wrap(vars(quadrat_distance), ncol = 3) +
-  labs(x = "quadrat distance", y = "mean psi :)") + 
-  ggtitle("Arden hills lower upper impatiens nest 1")
+  #labs(x = "quadrat distance", y = "mean psi :)") + 
+ #ggtitle("Arden hills lower upper impatiens nest 1")
+
+nest_cover_psi %>%
+ggplot(aes(y = mean_psi, x = nest_ID, fill = proximity)) +
+  geom_bar(stat = "identity", position = 'dodge', color = 'black')+ 
+  theme(axis.text.x = element_text(angle = 50, vjust = 0.5), 
+        panel.grid.major = element_blank()) +
+  facet_wrap(vars(year), ncol = 2, scale = "free") +
+  ylim(0,400)+
+  labs(x = "nest_ID", y = "mean soil compaction (psi)") +
+  scale_fill_manual(values = c("purple", "pink", "blue"))
+
+#Create a box and whisker plot for soil compaction variability 
+
+ggplot(habitat_all, aes(x = nest_ID, y = psi_avg)) +
+  geom_boxplot() +
+  theme(axis.text.x = element_text(angle = 50, vjust = 0.5), 
+        panel.grid.major = element_blank()) +
+  ylim(0,400)+
+  labs(title = "Soil Compaction Variability", 
+       x = "nest_ID",
+       y = "soil density (psi)")
 
