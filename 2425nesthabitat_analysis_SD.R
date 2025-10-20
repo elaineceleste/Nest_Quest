@@ -117,7 +117,8 @@ nest_cover3 <- nest_cover2 %>%
             avg_forb = mean(per_forb),
             avg_grass = mean(per_grass),
             mean_of_means_litter_cm = mean(mean_litter_depth))
-
+hist(nest_cover3$avg_grass)
+qqnorm(nest_cover3$avg_grass)
 #visualizing cover data
 ### plotting bare ground for each nest
 nest_cover3 %>% 
@@ -196,9 +197,77 @@ ggplot(nest_cover2, aes(x = nest_ID, y = per_grass)) +
        y = "Percent grass cover")
 
 
+#### Habitat Cover Statistical Analysis ####
+
+## Testing with values averaged for each nest. These are data where each nest has their ranked choices averaged.
+
+#habitat_t_test <- nest_cover3 %>% 
+#                    filter(!is.na(avg_grass)) %>% 
+#                    filter(!proximity == "transect") %>% 
+#                    filter(!nest_ID == "no_nest")
+#hist(habitat_t_test$avg_grass)
+#qqnorm(habitat_t_test$avg_grass)
+#qqline(habitat_t_test$avg_grass)
+
+
+#result <- t.test(avg_grass ~ proximity, data = habitat_t_test, conf.level = 0.95, paired = FALSE)
+#print(result)
+#if (result$p.value < 0.05) {
+#  print("There is a significant difference in the amount of grass cover in far plots and near plots.")
+#} else {
+#  print("There is no significant difference in the amount of grass cover in far plots and near plots.")
+#}
+
+
+### Test for data in it's ordinal state, where each value is representative of our percent cover ranking.
+  ##  Basically, 1 = no cover and 5 = the highest cover 
+## The question: Is there a difference between habitat cover near the nest, versus far from the nest? 
+  ## Something to note, is that the "far" category includes 10 and 50 meter measurements, 
+    # while the "near" category represents only the 1 meter measurements.
+    # Therefore, the sample size for the far category is bigger.
+
+habitat_t_test_standard <- nest_cover2 %>% 
+  filter(!is.na(per_grass)) %>% 
+  filter(!proximity == "transect") %>% 
+  filter(!nest_ID == "no_nest") # removing NA's. Also only interested in habitat data at nests for this test. 
+## these data are only representative for 2025 for the moment, as 2024 is missing grass data. 
+
+hist(habitat_t_test_standard$per_grass) # the data is skewed right. it is NOT NORMAL!!
+#qqplot(habitat_t_test_standard$per_grass)
+#qqline(habitat_t_test_standard$per_grass)
+
+## I was running a t-test at first, before realizing the data was not normal.
+
+#result_2 <- t.test(per_grass ~ proximity, data = habitat_t_test_standard, conf.level = 0.95, paired = FALSE)
+#print(result_2)
+#if (result_2$p.value < 0.05) {
+#  print("There is a significant difference in the amount of grass cover in far plots and near plots.")
+#} else {
+#  print("There is no significant difference in the amount of grass cover in far plots and near plots.")
+#}
+
+## Because the data is not normal, I decided to try a Wilcox Rank Sum test for these data. 
+  ## Our data is ordinal, meaning there are rankings. For us it is 1 to 5, to represent our percent cover classes. 
+
+# Performing the Wilxocon Rank Sum Test
+# null hypothesis = there is no difference between habitat cover measurements near and far from the nest. 
+# alternative = There is a difference between habitat cover measurements near and far from the nest. 
+wilcox.test(per_grass~proximity, data = habitat_t_test_standard) # p = 0.008668 < 0.05 | There is difference between grass measurements far and near the nest.
+wilcox.test(per_forb~proximity, data = habitat_t_test_standard)  # p = 0.07669  > 0.05 | There is no difference between forb measurements far and near the nest.
+wilcox.test(per_bare~proximity, data = habitat_t_test_standard)  # p = 0.3274   > 0.05 | There is no difference between bare ground measurements far and near the nest.
+
+## I also decided to run a Chi-Square test to see if the variables are independent of each other. 
+  ## I am still learning about interpreting this, and am not sure if it is relevant. 
+
+# Running Chi Square Test
+cont_table = table(habitat_t_test_standard$per_grass,habitat_t_test_standard$proximity) 
+print(cont_table)
+print(chisq.test(cont_table))
+
 ####
 ##### soil density analysis #####
 # hi sami
+# hi elise!!!! If you see this, I'm proud of you for pulling code :) 10/20/2025
 
 ### Habitat analaysis for soil density data. EB 10/7/25 ###
 
