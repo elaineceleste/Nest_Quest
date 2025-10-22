@@ -15,6 +15,7 @@ library(lubridate)
 
 #load data
 habitat_all <- read.csv("nq_habitat2425.csv") #reading in the data from github
+sites <- read.csv("nest_survey_site_data.csv") # 10/22/2025, SD made this .csv for looking at some site specific things
 
 ### Classifying Variables ###
 #site column name needs fixed in spreadsheet? 
@@ -25,6 +26,8 @@ habitat_all$nest_ID <- as.factor(habitat_all$nest_ID)
 
 #first look at data
 print(unique(habitat_all$nest_ID)) # 18 unique nests. no_nest is not a nest value.
+habitat_all %>% filter(year == "2024") %>% distinct(nest_ID) # 6 nests in 2024
+habitat_all %>% filter(year == "2025") %>% distinct(nest_ID) # 12 nests in 2025, not including no_nest value
 
 print(unique(habitat_all$per_bare)) # looks good
 
@@ -33,6 +36,27 @@ print(unique(habitat_all$per_forb)) # looks good
 print(unique(habitat_all$per_grass)) # there is a level in here "" that is just a blank space
 habitat_all$per_grass[habitat_all$per_grass == "" ] <- NA # changing to NA
 print(unique(habitat_all$per_grass)) #check. if "" is gone, then we are good. 
+
+
+### Site data ###
+
+sites <- sites %>% filter(!site =='crow_gc') # removing grow_gc since it will not be used in analysis
+
+sites_2024 <- sites %>%
+  filter(year == '2024' | year == 'both')  %>%
+  mutate(year = case_when(year == 'both' ~ '2024', .default = as.character(year)))
+
+sites_2025 <- sites %>% 
+  filter(year == '2025' | year == 'both')%>%
+  mutate(year = case_when(year == 'both' ~ '2025', .default = as.character(year)))
+
+sites_all <- rbind(sites_2024, sites_2025)
+
+
+total_area <- sites_all %>% group_by(year) %>% summarize(.,
+                    total_acres = sum(area_acres),
+                    total_hectares = total_acres * 0.4)
+
 
 ### Data Cleaning ###
 #quadrat_no
