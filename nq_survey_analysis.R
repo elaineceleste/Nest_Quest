@@ -31,14 +31,73 @@ surveys_no_flower$site[surveys_no_flower$site == 'LH_eq2'] <- 'lh_eq2'
 surveys_no_flower$site[surveys_no_flower$site == 'HP_sled'] <- 'hp_sled'
 table(surveys_no_flower$site) #check
   
+### Bumble bee observations, catergorical data 
 table(surveys_no_flower$bombus_obs) # first look at bumble bee observation data
 
-# How many surveys for each site/plot?
+bombus_summary <- surveys_no_flower %>% select(.,c('site',
+                                                   'year',
+                                                   'bombus_obs')) %>%
+  drop_na(bombus_obs)
+
+bombus_counts <- bombus_summary %>% 
+  group_by(year, bombus_obs) %>% 
+  tally()
+  
+
+#
+ggplot(bombus_counts, aes(x = bombus_obs, y = n, fill = year )) +
+  geom_bar(stat = 'identity', position = 'dodge') +
+  theme(axis.text.x = element_text(angle = 50, vjust = 0.5, size = 12, color = 'black'),#rotate x-axis text
+        axis.text.y = element_text(size = 12, color = 'black'),
+        axis.title = element_text(size = 14),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.ticks.x = element_blank(),
+        strip.text = element_text(size = 14)) +
+  ylim(0,40)+
+  labs(x = "Bombus seen",
+       y = "n") +
+  scale_x_discrete(limits = c('0',
+                              'less than 5',
+                              '5 to 10',
+                              '10 to 19',
+                              '20 to 39',
+                              'more than 40'))+ 
+  facet_wrap(vars(year), ncol = 2, strip.position = 'top') 
+
+
+### How many surveys for each site/plot?
 
 site_summary <- surveys_no_flower %>% 
   group_by(site, Volunteer_or_staff, year) %>% 
   summarize(total_survey_sum = sum(survey_count, na.rm = TRUE),
-            total_unique_observers = n_distinct(Primary.observer, na.rm = TRUE)) # NOTE TO SAMI, OBSERVER COLUMN NEEDS CLEANED
+            total_unique_observers = n_distinct(Primary.observer, na.rm = TRUE), .groups ="drop") # NOTE TO SAMI, OBSERVER COLUMN NEEDS CLEANED
+
+#site_summary <- site_summary %>% 
+ # complete(., site, Volunteer_or_staff, year, fill = list(Volunteer_or_staff = 'volunteer')) %>% 
+#  mutate(., total_survey_sum = ifelse(is.na(total_survey_sum), 0, total_survey_sum))
+  #drop_na(total_unique_observers)
+
+site_summary2 <- full_join(nests, site_summary)
+
+site_summary %>% 
+  ggplot(aes(y = -desc(total_survey_sum), x = site, fill = Volunteer_or_staff)) + # defining x and y values. 'fill' is how to get the groupings based on a column. 
+  geom_bar(stat = "identity", colour = 'black') +
+  theme(axis.text.x = element_text(angle = 50, vjust = 0.8, size = 12, color = 'black'),#rotate x-axis text
+        axis.text.y = element_text(size = 12, color = 'black'),
+        axis.title = element_text(size = 14),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.ticks.x = element_blank(),
+        strip.text = element_text(size = 14)) + 
+  facet_wrap(vars(year), ncol = 2, scale = "free",
+             strip.position = 'top')+  # separate data by year
+  ylim(0,15) + # set scale manually
+  labs(x = "Site", y = "Total Surveys") + #labels
+  scale_fill_manual(values = c("#FFA500", "#56B4E9")) # changing color
+
 
 # How many nests at each site/plot?
 all_nests <- all_nests %>% 
@@ -49,19 +108,7 @@ nests <- all_nests %>%
   count(., .drop = FALSE) %>% 
   rename(total_nests = n) 
 
- total_nests <- sum(nests$total_nests)
-
-site_summary2 <- full_join(nests, site_summary)
-
-site_summary %>% 
-  ggplot(aes(y = total_survey_sum, x = -desc(site))) + # defining x and y values. 'fill' is how to get the groupings based on a column. 
-  geom_bar(stat = "identity") 
-  theme(axis.text.x = element_text(angle = 50, vjust = 0.5), #rotate x-axis text
-        panel.grid.major = element_blank()) + 
-  facet_wrap(vars(year), ncol = 2, scale = "free") + # separate data by year
-  ylim(0,5)+ # set scale manually
-  labs(x = "nest_ID", y = "mean bare ground cover") + #labels
-  scale_fill_manual(values = c("purple", "pink", "blue")) # changing color
+total_nests <- sum(nests$total_nests)
 
 
                     
