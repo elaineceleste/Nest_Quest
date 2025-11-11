@@ -27,7 +27,8 @@ table(surveys_no_flower$site) # check sites
 surveys_no_flower <- surveys_no_flower %>% # removing invalid rows based on site
   filter(., site != c("Crow hassan", "Hyand queen search", "Queen searching Hyland")) # for some reason this needs to run twice to work?
 
-surveys_no_flower$year <-as.character(surveys_no_flower$year)
+surveys_no_flower$year <-as.character(surveys_no_flower$year)  # making year a character 
+
 
 # replacing site values so all match
 surveys_no_flower$site[surveys_no_flower$site == "Hp1"] <- 'hp1' 
@@ -65,15 +66,16 @@ table(surveys_no_flower$survey_count)
 # How many nests at each site/plot?
 all_nests <- all_nests %>% 
   filter(., site != c("")) %>% 
-  mutate( separate(., col = "date", into = c("month","day","year"),  sep = "/"))
+  mutate( separate(., col = "date", into = c("month","day","year"),  sep = "/")) %>%  # separated date values so they all have a unique column. 
+  rename(found_on_survey = Did.you.discover.this.nest.during.your.one.hour.survey.time.)
 
 nests <- all_nests %>% 
   group_by(site) %>% 
   count(., .drop = FALSE) %>% 
-  rename(total_nests = n) 
+  rename(total_nests = n) # counting the number of nests at each site.
 
 sites <- right_join(nests, sites) 
-sites <- sites %>%  mutate(total_nests = ifelse(is.na(total_nests), 0, total_nests))
+sites <- sites %>%  mutate(total_nests = ifelse(is.na(total_nests), 0, total_nests)) # joining nest data to match sites. This is a nice summary table
 
 #total_nests <- sum(nests$total_nests)
 
@@ -194,22 +196,48 @@ ggplot(bombus_counts, aes(x = bombus_obs, y = n)) +
 survey_nest <- surveys_no_flower %>% select(., "year", 
                                             'date', 
                                             'site', 
-                                            'time_spent', 
+                                            'time_spent',
+                                            'survey_count',
                                             'Volunteer_or_staff', 
                                             'observer1',
-                                            'bombus_obs') # picking variables of interest for analysis. 
+                                            'bombus_obs',
+                                            'bloom_area') # picking variables of interest for analysis. 
 
 all_nests <- all_nests %>% rename(observer1 = primary_observer) # changing 
+
 
 # I want to create a binary column in survey_nest that signifies whether a nest was found during that survey or not.
 # I think I can do this by taking shared columns in survey_nest and all_nests, and combining them to make a unique ID of sorts.
 # date:site:observer1 SHOULD result in unique enough values to compare.
 # when there is a match between the two columns, R will say TRUE. If TRUE, a nest was found. If FALSE, a nest was not found. 
 
-
+#creating unique values to be matched between data frames
 survey_nest$date_site_observer1 <- as_factor(paste(survey_nest$date,":", survey_nest$site,":", survey_nest$observer1))
 all_nests$date_site_observer1 <- as_factor(paste(all_nests$date,":", all_nests$site,":", all_nests$observer1))
 
-match(all_nests$date_site_observer1, survey_nest$date_site_observer1)
+all_survey_nests <- all_nests %>% filter(., found_on_survey == 'yes') # only selecting rows where nest was found during survey
 
-                    
+survey_nest$nest_found <- match(survey_nest$date_site_observer1, all_survey_nests$date_site_observer1,  nomatch = 0) # match data frames, giving a 0 when there is no match meaning no nest was found.
+survey_nest <- survey_nest %>% mutate(., nest_found = as.character(ifelse(nest_found > 0, 1, 0))) # make values a binary 0:1 
+     
+survey_nest[survey_nest$nest_found == '1', ]
+survey_nest[192, 11] = 0 # Changing one specific value based on position. There is one incident of Jayden having two surveys (8/5/2025 and hp1) with the same date and location. 
+               # she found a nest in the first half of her survey, then stopped and started a new survey. R thinks a nest was found in both of these, when really it was just the first one
+                  # PSA: code as I suggest, not as I do. I'm crossing my fingers this little code won't cause problems later lol
+table(survey_nest$nest_found) # 0 = nest not found during survey, 1 = nest found during survey (There should be 12 nests found).     
+
+
+# nest finding success rate of volunteers
+volunteer_nests <- survey_nest %>% 
+  filter(., Volunteer_or_staff == "volunteer") # 110 total volunteer surveys
+
+tally(volunteer_nests, nest_found == '1') / 110 # volunteer survey success rate is 0.018 nests/survey
+
+# nest finding success rate of staff members
+staff_nests <- survey_nest %>% 
+  filter(., Volunteer_or_staff == "staff") # 155 total staff surveys
+
+tally(staff_nests, nest_found == '1') / 155 # staff survey success rate is 0.058 nest/survey
+
+survey_success_summary <- survey_nest %>% count(year, nest_found, Volunteer_or_staff) # summary
+
