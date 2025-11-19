@@ -5,7 +5,9 @@
 library(tidyverse) #dplyr package
 library(lubridate) #dealing with time and dates
 library(readr) # creating .csv files
+library(lme4) 
 
+##### Cleaning and loading in data #####
 #load data
 surveys <- read.csv('quest_survey123_data.csv', header = T, na.strings = c("","NA"))
 sites <- read.csv('nest_survey_site_data.csv')
@@ -64,6 +66,12 @@ surveys_no_flower <- surveys_no_flower %>%
                                   .default = as.character(survey_count)))
 table(surveys_no_flower$survey_count)
 
+surveys_no_flower <- surveys_no_flower %>%  filter(!row_number() %in% c(149)) # removing a row where data is missing. This row seems to a survey that was split up, but the second part of the survey happened the next day??
+
+#cleaning time spent column
+surveys_no_flower <- surveys_no_flower %>% mutate(time_spent = ifelse(is.na(time_spent), '1:00:00', time_spent)) # assuming NA values in this column are just an hour of surveying. 
+
+##### First look summary stats and exploration ####
 # How many nests at each site/plot?
 all_nests <- all_nests %>% 
   filter(., site != c("")) %>% 
@@ -111,7 +119,7 @@ site_summary2 <- site_summary2 %>% filter(., site != "crow_gc")
 
 site_summary2
 
-##### Plotting Survey amounts by year, and filled with volunteer or staff surveys.
+##### Plotting Survey amounts by year, and filled with volunteer or staff surveys. #####
 #png("total_NQ_surveys_bar_no_hline.png", units="in", width=12, height=10, res=1200)
 site_summary2 %>% 
   ggplot(aes(y = -desc(total_survey_sum), x = site, fill = Volunteer_or_staff, label = total_nests)) + # defining x and y values. 'fill' is how to get the groupings based on a column. 
@@ -142,9 +150,7 @@ site_summary2 %>%
 #dev.off()
 
 
-
-
-### Bumble bee observations, categorical data 
+##### Bumble bee observations, categorical data #####
 table(surveys_no_flower$bombus_obs)# first look at bumble bee observation data
 
 
@@ -157,12 +163,9 @@ bombus_summary <- surveys_no_flower %>%
 
 #bombus_summary$nest <- ifelse(employees$Salary > 60000, "Yes", "No")
 
-
-
 bombus_counts <- bombus_summary %>% 
   group_by(year, bombus_obs) %>% 
   tally()
-
 
 #
 ggplot(bombus_counts, aes(x = bombus_obs, y = n)) +
@@ -189,7 +192,7 @@ ggplot(bombus_counts, aes(x = bombus_obs, y = n)) +
 
 
 
-#### Looking at how various variables affect nest detection ####
+##### Looking at how various variables affect nest detection #####
 # Mainly interested in how the categorical variable of bumble bee abundance affects nest detection
 # Does the amount of bumble bees we saw on a survey affect our detection probability? Or occurrence probability? 
 
@@ -228,10 +231,13 @@ survey_nest[192, 11] = 0 # Changing one specific value based on position. There 
                   # PSA: code as I suggest, not as I do. I'm crossing my fingers this little code won't cause problems later lol
 table(survey_nest$nest_found) # 0 = nest not found during survey, 1 = nest found during survey (There should be 12 nests found).     
 survey_nest$survey_count <-as.numeric(surveys_no_flower$survey_count) 
+survey_nest$nest_found <- as.factor(survey_nest$nest_found)
 
+survey_nest$location <- sites$location[match(survey_nest$site, sites$site)] # adding location to each row. 
 
-##### Some summary analysis using this new dataframe. Lots of this is used for econoist summary #####
+##### Some summary analysis using this survey_nests. Lots of this is used for economist summary ##### #####
 # nest finding success rate of volunteers
+
 volunteer_nests <- survey_nest %>% 
   filter(., Volunteer_or_staff == "volunteer") # 110 total volunteer surveys
 
@@ -248,11 +254,12 @@ survey_nest %>% group_by(site, year) %>% summarize(sum = sum(survey_count, na.rm
 survey_success_summary <- survey_nest %>% count(year, nest_found, Volunteer_or_staff) # summary of success by year and observer type
 survey_nest %>% count(year,
                       site,
-                      nest_found,) # how many nests found per site/year combo? I entered this into the economist spreadsheet. 
+                      nest_found) %>% filter(.,nest_found == 1) # how many nests found per site/year combo? I entered this into the economist spreadsheet. 
 
 ## Total time spent surveying as recorded by survey123
 survey_nest$time_spent_hms <- hms(survey_nest$time_spent) # make column hms format
 survey_nest$time_spent_seconds <- period_to_seconds(survey_nest$time_spent_hms) # convert to seconds
+survey_nest$time_spent_hours <- round(survey_nest$time_spent_seconds/3600, digits = 2)
 
 survey_nest %>% 
   mutate_at(vars(time_spent_seconds), ~replace_na(., 3600)) %>% 
@@ -273,13 +280,37 @@ time_per_site <- time_per_site %>% pivot_wider(names_from = year,
 #write.csv(time_per_site, "C:\\Users\\chand\\Documents\\data\\nestquest\\nestquest\\time_per_site2.csv")
 
 # calculating pace of surveys
-survey123_tracks <- read.csv('survey123_tracks_meters.csv')
+survey123_tracks <- read.csv('cleaned_track_lengths.csv')
 survey123_tracks <- survey123_tracks %>% select(.,
                             'globalid',
                             'length') %>% 
   rename(GlobalID = globalid,
-         length_meters = length) %>% na.omit()
+         length_meters = length) %>% na.omit() #removing lines that don't have a track recorded before joining.
 
-survey_nest <- left_join(survey_nest, survey123_tracks)
+survey_nest <- left_join(survey_nest, survey123_tracks) %>% # join track length to main analysis dataframe
+  mutate(length_meters = if_else(duplicated(GlobalID), NA, length_meters))  #removing duplicated values in length_meters upon matching. Some lengths were duplicated upon joining, despite no track being recorded
+
+survey_nest$length_meters <- round(survey_nest$length_meters, digits = 2) # make values a bit more readable. 
+
+survey_nest <- survey_nest %>% 
+  mutate(., pace_meters_per_hour = length_meters / time_spent_hours) # meters/hour pace
+
+pace_summary <- survey_nest %>% 
+  group_by(., year, Volunteer_or_staff) %>% 
+  summarize(mean_pace = mean(pace_meters_per_hour, na.rm = TRUE,),
+            mean_length = mean(length_meters, na.rm = TRUE))
+
+ggplot(survey_nest, aes(x = Volunteer_or_staff, y = pace_meters_per_hour)) + 
+  geom_boxplot(fill="slateblue", alpha=0.2) +
+  facet_wrap(vars(year), ncol = 2, strip.position = 'top')
+  scale_y_continuous(limits = c(0, ))
 
 
+  
+  
+  
+##### Survey success analysis using the binary variable 0 and 1 of nest found #####
+  glmer(nest_found ~ bombus_obs + (1|location),
+        data = survey_nest,
+        family = binomial(link = 'logit'))
+  
