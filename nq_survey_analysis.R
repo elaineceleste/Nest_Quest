@@ -27,6 +27,8 @@ surveys_no_flower <- surveys_no_flower %>% # changing names of giant column name
          observer2 = Secondary.observer)
 
 table(surveys_no_flower$site) # check sites
+
+### RUN THIS TWICE (IDK WHY BUT THATS WHAT YOU HAVE TO DO)
 surveys_no_flower <- surveys_no_flower %>% # removing invalid rows based on site
   filter(., site != c("Crow hassan", "Hyand queen search", "Queen searching Hyland")) # for some reason this needs to run twice to work?
 
@@ -77,17 +79,16 @@ all_nests <- all_nests %>%
   filter(., site != c("")) %>% 
   mutate( separate(., col = "date", into = c("month","day","year"),  sep = "/")) %>%  # separated date values so they all have a unique column. 
   rename(found_on_survey = Did.you.discover.this.nest.during.your.one.hour.survey.time.)
+head(all_nests)
 
 nests <- all_nests %>% 
   group_by(site) %>% 
   count(., .drop = FALSE) %>% 
   rename(total_nests = n) # counting the number of nests at each site.
+nests
 
 sites <- right_join(nests, sites) 
 sites <- sites %>%  mutate(total_nests = ifelse(is.na(total_nests), 0, total_nests)) # joining nest data to match sites. This is a nice summary table
-
-#total_nests <- sum(nests$total_nests)
-
 
 ### How many surveys for each site/plot?
 
@@ -98,6 +99,7 @@ site_summary <- surveys_no_flower %>%
   summarize(total_survey_sum = format(round(sum(as.numeric(survey_count), na.rm = TRUE), digits = 4)), # survey totals
             total_unique_observers = n_distinct(observer1, na.rm = TRUE), .groups ="drop") # total unique surveyors for each plot. 
 site_summary$total_survey_sum <- as.numeric(site_summary$total_survey_sum)
+site_summary
 
 #site_summary <- site_summary %>% 
  # complete(., site, Volunteer_or_staff, year, fill = list(Volunteer_or_staff = 'volunteer')) %>% 
@@ -107,20 +109,10 @@ site_summary$total_survey_sum <- as.numeric(site_summary$total_survey_sum)
 site_summary2 <- full_join(nests, site_summary) # note that total_nests column does not represent nests differentiated by surveyor type
 site_summary2 <- site_summary2 %>% mutate(total_nests = ifelse(is.na(total_nests), 0, total_nests)) #NA's in nest column to 0
 site_summary2 <- site_summary2 %>% filter(., site != "crow_gc")
-
-## Code I was trying to do to get labels above bars. Did not work. 
-#plot_labels <- site_summary2 %>% distinct(site) 
-
-#plot_labels %>% mutate(nest = if_else(site_summary2$total_nests > 1, 'yes', 'no'))
-
-#df <- data.frame(site = distinct(site_summary2, site),
-            #     nest = c('yes', 'yes', 'yes','yes', ' yes','yes', 'yes', 'yes' ,'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no'),
-             #    x = c())
-
 site_summary2
 
 ##### Plotting Survey amounts by year, and filled with volunteer or staff surveys. #####
-#png("total_NQ_surveys_bar_no_hline.png", units="in", width=12, height=10, res=1200)
+#png("total_NQ_surveys_bar_no_hline.png", units="in", width=12, height=10, res=1200) #uncomment this to create a png
 site_summary2 %>% 
   ggplot(aes(y = -desc(total_survey_sum), x = site, fill = Volunteer_or_staff, label = total_nests)) + # defining x and y values. 'fill' is how to get the groupings based on a column. 
   geom_bar(stat = "identity", colour = 'black') +
@@ -147,13 +139,15 @@ site_summary2 %>%
   #annotate("text", x = 2, y = 17, label = "!!", size = unit(8, "pt")) +
   #geom_text(aes(label = ifelse(total_nests > 0, "!!", "" & Volunteer_or_staff == 'Staff'), group = site))
   #geom_text(aes(label = total_nests))
-#dev.off()
+#dev.off() #uncomment this to create a png
 
 
 ##### Bumble bee observations, categorical data #####
 table(surveys_no_flower$bombus_obs)# first look at bumble bee observation data
 
-
+surveys_no_flower <- surveys_no_flower %>%  mutate(per_bare = recode(per_bare, '0' = 0, '1_to_5' = 1, '25_to_50' = 3, '5_to_25' = 2, '50_to_75' = 4, '75_to_100' = 5),
+         per_forb = recode(per_forb, '0' = 0, '1_to_5' = 1, '25_to_50' = 3, '5_to_25' = 2, '50_to_75' = 4, '75_to_100' = 5),
+         per_grass = recode(per_grass, '0' = 0, '1_to_5' = 1, '25_to_50' = 3, '5_to_25' = 2, '50_to_75' = 4, '75_to_100' = 5))
 
 bombus_summary <- surveys_no_flower %>%
   select(.,c('site',
@@ -161,13 +155,11 @@ bombus_summary <- surveys_no_flower %>%
              'bombus_obs')) %>%
   drop_na(bombus_obs)
 
-#bombus_summary$nest <- ifelse(employees$Salary > 60000, "Yes", "No")
-
 bombus_counts <- bombus_summary %>% 
-  group_by(year, bombus_obs) %>% 
+  group_by(year, site, bombus_obs) %>% 
   tally()
 
-#
+## Bar chart of total bumble observations by category
 ggplot(bombus_counts, aes(x = bombus_obs, y = n)) +
   geom_bar(stat = 'identity', position = 'dodge') +
   theme(axis.text.x = element_text(angle = 50, vjust = 0.5, size = 12, color = 'black'),#rotate x-axis text
@@ -190,6 +182,29 @@ ggplot(bombus_counts, aes(x = bombus_obs, y = n)) +
   scale_y_continuous() +
   facet_wrap(vars(year), ncol = 2, strip.position = 'top') 
 
+
+## bar chart of each plots bumble bee observatoins
+ggplot(bombus_counts, aes(x = site, fill = bombus_obs, y = n)) +
+  geom_bar(stat = 'identity', position = 'dodge') +
+  theme(axis.text.x = element_text(angle = 50, vjust = 0.5, size = 12, color = 'black'),#rotate x-axis text
+        axis.text.y = element_text(size = 12, color = 'black'),
+        axis.title = element_text(size = 14),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.ticks.x = element_blank(),
+        strip.text = element_text(size = 14)) +
+  ylim(0,8)+
+  labs(x = "Bombus seen",
+       y = "n") 
+  scale_x_discrete(limits = c('0',
+                              'less than 5',
+                              '5 to 10',
+                              '10 to 19',
+                              '20 to 39',
+                              'more than 40')) +
+  scale_y_continuous() +
+  facet_wrap(vars(year), ncol = 2, strip.position = 'top') 
 
 
 ##### Looking at how various variables affect nest detection #####
@@ -226,7 +241,7 @@ survey_nest$nest_found <- match(survey_nest$date_site_observer1, all_survey_nest
 survey_nest <- survey_nest %>% mutate(., nest_found = as.character(ifelse(nest_found > 0, 1, 0))) # make values a binary 0:1 
      
 survey_nest[survey_nest$nest_found == '1', ]
-survey_nest[192, 11] = 0 # Changing one specific value based on position. There is one incident of Jayden having two surveys (8/5/2025 and hp1) with the same date and location. 
+survey_nest[191, 12] = 0 # Changing one specific value based on position. There is one incident of Jayden having two surveys (8/5/2025 and hp1) with the same date and location. 
                # she found a nest in the first half of her survey, then stopped and started a new survey. R thinks a nest was found in both of these, when really it was just the first one
                   # PSA: code as I suggest, not as I do. I'm crossing my fingers this little code won't cause problems later lol
 table(survey_nest$nest_found) # 0 = nest not found during survey, 1 = nest found during survey (There should be 12 nests found).     
@@ -293,7 +308,9 @@ survey_nest <- left_join(survey_nest, survey123_tracks) %>% # join track length 
 survey_nest$length_meters <- round(survey_nest$length_meters, digits = 2) # make values a bit more readable. 
 
 survey_nest <- survey_nest %>% 
-  mutate(., pace_meters_per_hour = length_meters / time_spent_hours) # meters/hour pace
+  mutate(., pace_meters_per_hour = length_meters / time_spent_hours, # create meters/hour pace
+        pace_meters_per_hour = replace(pace_meters_per_hour, which(pace_meters_per_hour > 3500), NA)) # Removing a single outlier of Elise data where it seems unrealistic. 
+# some other outliers are contained here^^^
 
 pace_summary <- survey_nest %>% 
   group_by(., year, Volunteer_or_staff) %>% 
@@ -301,16 +318,83 @@ pace_summary <- survey_nest %>%
             mean_length = mean(length_meters, na.rm = TRUE))
 
 ggplot(survey_nest, aes(x = Volunteer_or_staff, y = pace_meters_per_hour)) + 
-  geom_boxplot(fill="slateblue", alpha=0.2) +
-  facet_wrap(vars(year), ncol = 2, strip.position = 'top')
-  scale_y_continuous(limits = c(0, ))
+  geom_boxplot(fill= "slateblue", alpha= 0.7) +
+  xlab('') +
+  ylab('Pace (meters/hour)') +
+  scale_x_discrete(labels = c("Staff", "Volunteer")) +
+  theme(axis.text.x = element_text(vjust = 0.5, size = 12, color = 'black'),#rotate x-axis text
+        axis.text.y = element_text(size = 12, color = 'black'),
+        axis.title = element_text(size = 14),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.ticks.x = element_blank(),
+        strip.text = element_text(size = 14)) +
+  facet_wrap(vars(year), ncol = 2, strip.position = 'top') 
 
 
-  
-  
   
 ##### Survey success analysis using the binary variable 0 and 1 of nest found #####
-  glmer(nest_found ~ bombus_obs + (1|location),
+
+# NULL: Volunteer_or_staff DOES NOT affect if a nest is found during a survey.
+# ALT: Volunteer_or_staff DOES not affect if a nest is found during a survey.
+observer_cont_table <- print(table(survey_nest$nest_found, survey_nest$Volunteer_or_staff)) # create contingency table
+chi_observer_nest_found <- chisq.test(observer_cont_table, simulate.p.value = TRUE) # p = 0.09095. Fail to reject NULL
+chi_observer_nest_found
+
+# fisher's exact test : better suited for small datasets like ours. 
+fisher_nest_found_obs <- fisher.test(observer_cont_table)
+fisher_nest_found_obs # p = 0.081 fail to reject NULL
+
+# NULL: bloom_area DOES NOT affect if a nest is found during a survey.
+# ALT: bloom_area DOES not affect if a nest is found during a survey.
+bloom_area_cont_table <- print(table(survey_nest$nest_found, survey_nest$bloom_area)) # create contingency table
+chi_bloom_area_nest_found <- chisq.test(bloom_area_cont_table, simulate.p.value = TRUE) # p = 1. Fail to reject NULL
+chi_bloom_area_nest_found
+
+# fisher's exact test : better suited for small datasets like ours. 
+fisher_nest_found_bloom <- fisher.test(bloom_area_cont_table)
+fisher_nest_found_bloom # p = 1. fail to reject NULL
+
+# Chisquare tests for categorical variables
+  # NULL: bombus_obs DOES NOT affect if a nest is found during a survey.
+  # ALT: bombus obs DOES affect if a nest is found during a survey.
+  bombus_cont_table <- print(table(survey_nest$nest_found, survey_nest$bombus_obs, useNA = 'no')) # create contingency table
+  chi_bombus_nest_found <- chisq.test(bombus_cont_table, simulate.p.value = FALSE) # p = 0.02849. REJECT NULL
+  chi_bombus_nest_found
+  
+# fisher's exact test : better suited for small datasets like ours. 
+  fisher_nest_found_bombus <- fisher.test(bombus_cont_table)
+  fisher_nest_found_bombus # p = 0.03321* REJECT NULL
+
+# Plot of nest_found vs bombus category. Sites are included
+ggplot(data = subset(survey_nest, !is.na(bombus_obs)), aes(x = factor(bombus_obs, 
+                                                          levels = c('0',
+                                                          'less than 5',
+                                                          '5 to 10', 
+                                                          '10 to 19',
+                                                          '20 to 39', 
+                                                          'more than 40')), 
+                                                          y = nest_found,
+                                                          color = location)) + 
+  geom_point(position = position_jitterdodge(jitter.height = 0.2, jitter.width = 0),
+             size = 2) +
+  ylab('Nest found?') +
+  xlab('Number of BB observed') +
+  theme(axis.text.x = element_text(vjust = 0.7, angle = 0, size = 12, color = 'black'),#rotate x-axis text
+        axis.text.y = element_text(size = 12, color = 'black'),
+        axis.title = element_text(size = 14),
+        axis.ticks.x = element_blank(),
+        strip.text = element_text(size = 14)) +
+  scale_y_discrete(labels = c("No", "Yes"))
+
+                                                
+  # attempting a generalized linear mixed effect model
+  survey_nest$bombus_obs <- as.factor(survey_nest$bombus_obs)
+  bb <- glmer(nest_found ~ bombus_obs + (1|location),
         data = survey_nest,
         family = binomial(link = 'logit'))
+  
+  summary(bb)
+  
   
