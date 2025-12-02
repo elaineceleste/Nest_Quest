@@ -145,10 +145,6 @@ site_summary2 %>%
 ##### Bumble bee observations, categorical data #####
 table(surveys_no_flower$bombus_obs)# first look at bumble bee observation data
 
-surveys_no_flower <- surveys_no_flower %>%  mutate(per_bare = recode(per_bare, '0' = 0, '1_to_5' = 1, '25_to_50' = 3, '5_to_25' = 2, '50_to_75' = 4, '75_to_100' = 5),
-         per_forb = recode(per_forb, '0' = 0, '1_to_5' = 1, '25_to_50' = 3, '5_to_25' = 2, '50_to_75' = 4, '75_to_100' = 5),
-         per_grass = recode(per_grass, '0' = 0, '1_to_5' = 1, '25_to_50' = 3, '5_to_25' = 2, '50_to_75' = 4, '75_to_100' = 5))
-
 bombus_summary <- surveys_no_flower %>%
   select(.,c('site',
              'year',
@@ -238,7 +234,7 @@ all_nests$date_site_observer1 <- as_factor(paste(all_nests$date,":", all_nests$s
 all_survey_nests <- all_nests %>% filter(., found_on_survey == 'yes') # only selecting rows where nest was found during survey
 
 survey_nest$nest_found <- match(survey_nest$date_site_observer1, all_survey_nests$date_site_observer1,  nomatch = 0) # match data frames, giving a 0 when there is no match meaning no nest was found.
-survey_nest <- survey_nest %>% mutate(., nest_found = as.character(ifelse(nest_found > 0, 1, 0))) # make values a binary 0:1 
+survey_nest <- survey_nest %>% mutate(., nest_found = ifelse(nest_found > 0, 1, 0)) # make values a binary 0:1 
      
 survey_nest[survey_nest$nest_found == '1', ]
 survey_nest[191, 12] = 0 # Changing one specific value based on position. There is one incident of Jayden having two surveys (8/5/2025 and hp1) with the same date and location. 
@@ -333,14 +329,41 @@ ggplot(survey_nest, aes(x = Volunteer_or_staff, y = pace_meters_per_hour)) +
   facet_wrap(vars(year), ncol = 2, strip.position = 'top') 
 
 
+#
+observer_surveys <- survey_nest %>% count(observer1, sort = TRUE)
+observer_summary <- survey_nest %>% 
+  group_by(., 
+           observer1,
+           Volunteer_or_staff) %>% 
+  summarize(.,
+            total_hours = sum(time_spent_hours),
+            total_survey_sum = sum(survey_count, na.rm = TRUE))
+            
+observer_summary <- left_join(observer_summary, observer_surveys) 
+observer_summary <- observer_summary %>% rename(total_unique_surveys = n)
+
+observer_nests <- survey_nest %>% 
+  count(observer1, nest_found) %>% 
+  filter(nest_found == 1) %>%
+  select(., 'observer1', 'n') 
+
+observer_summary <- left_join(observer_summary, observer_nests) %>% 
+  rename(total_nests = n) %>% 
+  mutate(total_nests = ifelse(is.na(total_nests), 0, total_nests))
+
+#write.csv(observer_summary, "C:\\Users\\chand\\OneDrive\\Documents\\data\\nestquest\\nestquest\\observer_summary.csv")
+
+
+site_unique_surveys<- survey_nest %>% count(site, year, sort = TRUE)
+#write.csv(site_unique_surveys, "C:\\Users\\chand\\OneDrive\\Documents\\data\\nestquest\\nestquest\\site_unique_surveys.csv")
   
 ##### Survey success analysis using the binary variable 0 and 1 of nest found #####
 
 # NULL: Volunteer_or_staff DOES NOT affect if a nest is found during a survey.
 # ALT: Volunteer_or_staff DOES not affect if a nest is found during a survey.
-observer_cont_table <- print(table(survey_nest$nest_found, survey_nest$Volunteer_or_staff)) # create contingency table
-chi_observer_nest_found <- chisq.test(observer_cont_table, simulate.p.value = TRUE) # p = 0.09095. Fail to reject NULL
-chi_observer_nest_found
+#observer_cont_table <- print(table(survey_nest$nest_found, survey_nest$Volunteer_or_staff)) # create contingency table
+#chi_observer_nest_found <- chisq.test(observer_cont_table, simulate.p.value = TRUE) # p = 0.09095. Fail to reject NULL
+#chi_observer_nest_found
 
 # fisher's exact test : better suited for small datasets like ours. 
 fisher_nest_found_obs <- fisher.test(observer_cont_table)
@@ -348,9 +371,9 @@ fisher_nest_found_obs # p = 0.081 fail to reject NULL
 
 # NULL: bloom_area DOES NOT affect if a nest is found during a survey.
 # ALT: bloom_area DOES not affect if a nest is found during a survey.
-bloom_area_cont_table <- print(table(survey_nest$nest_found, survey_nest$bloom_area)) # create contingency table
-chi_bloom_area_nest_found <- chisq.test(bloom_area_cont_table, simulate.p.value = TRUE) # p = 1. Fail to reject NULL
-chi_bloom_area_nest_found
+# bloom_area_cont_table <- print(table(survey_nest$nest_found, survey_nest$bloom_area)) # create contingency table
+# chi_bloom_area_nest_found <- chisq.test(bloom_area_cont_table, simulate.p.value = TRUE) # p = 1. Fail to reject NULL
+# chi_bloom_area_nest_found
 
 # fisher's exact test : better suited for small datasets like ours. 
 fisher_nest_found_bloom <- fisher.test(bloom_area_cont_table)
@@ -359,9 +382,9 @@ fisher_nest_found_bloom # p = 1. fail to reject NULL
 # Chisquare tests for categorical variables
   # NULL: bombus_obs DOES NOT affect if a nest is found during a survey.
   # ALT: bombus obs DOES affect if a nest is found during a survey.
-  bombus_cont_table <- print(table(survey_nest$nest_found, survey_nest$bombus_obs, useNA = 'no')) # create contingency table
-  chi_bombus_nest_found <- chisq.test(bombus_cont_table, simulate.p.value = FALSE) # p = 0.02849. REJECT NULL
-  chi_bombus_nest_found
+ # bombus_cont_table <- print(table(survey_nest$nest_found, survey_nest$bombus_obs, useNA = 'no')) # create contingency table
+#  chi_bombus_nest_found <- chisq.test(bombus_cont_table, simulate.p.value = FALSE) # p = 0.02849. REJECT NULL
+ # chi_bombus_nest_found
   
 # fisher's exact test : better suited for small datasets like ours. 
   fisher_nest_found_bombus <- fisher.test(bombus_cont_table)
@@ -388,13 +411,39 @@ ggplot(data = subset(survey_nest, !is.na(bombus_obs)), aes(x = factor(bombus_obs
         strip.text = element_text(size = 14)) +
   scale_y_discrete(labels = c("No", "Yes"))
 
-                                                
-  # attempting a generalized linear mixed effect model
-  survey_nest$bombus_obs <- as.factor(survey_nest$bombus_obs)
-  bb <- glmer(nest_found ~ bombus_obs + (1|location),
+                                              
+# attempting a generalized linear mixed effect model
+  
+# glmer(nest_found ~ bombus_obs + (1|location),
+#       data = survey_nest,
+#      family = binomial(link = 'logit')) # It turns out this doesn't work because of "complete separation" of the dataset. 
+
+# An alternative to this would be to use Firth's Logistic Regression, which accounts for this
+library(logistf) # loading package
+
+lrf1 <- logistf(nest_found ~ bombus_obs, 
         data = survey_nest,
-        family = binomial(link = 'logit'))
-  
-  summary(bb)
-  
+        firth = TRUE)
+summary(lrf1) # ran this test, appears that results are non-significant
+
+ggplot(data = subset(survey_nest, !is.na(bombus_obs)), aes(x = factor(bombus_obs, 
+                                                                      levels = c('0',
+                                                                                 'less than 5',
+                                                                                 '5 to 10', 
+                                                                                 '10 to 19',
+                                                                                 '20 to 39', 
+                                                                                 'more than 40')), 
+                                                           y = nest_found,
+                                                           color = location)) + 
+  geom_point(position = position_jitterdodge(jitter.height = 0.2, jitter.width = 0),
+             size = 2) +
+  geom_point(aes(y = lrf1$predict), position = 'identity') +
+  ylab('Nest found?') +
+  xlab('Number of BB observed') +
+  theme(axis.text.x = element_text(vjust = 0.7, angle = 0, size = 12, color = 'black'),#rotate x-axis text
+        axis.text.y = element_text(size = 12, color = 'black'),
+        axis.title = element_text(size = 14),
+        axis.ticks.x = element_blank(),
+        strip.text = element_text(size = 14)) 
+ 
   
