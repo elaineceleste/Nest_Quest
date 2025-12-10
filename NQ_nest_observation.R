@@ -8,6 +8,26 @@ library(lme4)
 
 #load data 
 activity_raw <- read.csv('nest_observation.csv')
+activity_raw_survey123 <- read.csv('survey123_nest_traffic.csv')
+
+# cleaning survery123 data to be joined with main dataset
+
+#first, renaming
+activity_raw_survey123 <- activity_raw_survey123 %>% 
+  rename(., 
+        observer1 = Primary.observer,
+        observer2 = Secondary.observer,
+        nest_ID = Nest.ID,
+        tempF = Temperature_F,
+        wind = Wind.speed,
+        ent_shade = How.much.shade.is.there.by.the.primary.entrance.,
+        activity_pollen = Number.of.bees.entering.nest.with.evident.pollen.loads,
+        S = Number.of.small.pollen.loads,
+        M = Number.of.medium.pollen.loads,
+        L = Number.of.large.pollen.loads,
+        activity_no_pollen = Number.of.bees.entering.nest.with.NO.evident.pollen.loads,
+        activity_exit = Number.of.bees.exiting.nest) 
+
 
 #cleaning
 activity_raw <- activity_raw %>% filter(., site != '')# %>% # removing empty rows
@@ -53,44 +73,46 @@ all_activity <- all_activity %>% rename(.,
                    grepl('gris', nest_ID) ~ 'griseocollis',
                    grepl('ferv', nest_ID) ~ 'fervidus'))
 
+
+
 all_activity <- unite(all_activity, date, day, month, year, sep = '-', remove = FALSE)
 all_activity <- all_activity %>% mutate(date = as.Date(date, "%d-%m-%Y"),
                                         week_true = as.factor(strftime(c(date), format = "%U")),
                                         floor_date = floor_date(date, 'week'),
                                         floor_date = format(floor_date, "%b-%d"),
-                                        start_time = hm(start_time),
-                                        end_time = hm(end_time))
+                                        duration = 20)
+all_activity <- unite(all_activity, site, nest_ID, date, start_time, end_time, observer1, sep = ":", remove = FALSE, col = unique_ID)
 
-                                        time_spent = difftime(end_time, start_time, units = "mins")
-
-
-
-                                        start_time = as.POSIXct(start_time, format = "%H:%M"),
-                                        end_time = hm(end_time),
-                                        end_time = as.POSIXct(end_time, format = "%H:%M:%S"))
-
-                                        start_time = format(start_time, "%R"))
-                                        time_spent = difftime(end_time, start_time, units = "mins"))
-
-                                        
-                                        start_time = strftime(start_time, format = "%R"))
-                                        end_time = hm(end_time),
-                                        time_spent = difftime(end_time, start_time, units = "mins"))
-
-
- all_activity  %>% group_by(species, 
-                            week_true, 
-                            floor_date, 
-                            nest_ID,
-                            start_time, 
-                            end_time) %>% 
+activity_summary <- all_activity  %>% group_by(
+                                               unique_ID,
+                                               species, 
+                                               week_true, 
+                                               floor_date, 
+                                               nest_ID,
+                                               start_time, 
+                                               end_time
+                                               ) %>% 
                    summarize(in_total = sum(activity == "enter", na.rm = TRUE),
-                   out_total = sum(activity == "exit", na.rm = TRUE),
-                   total_activity = in_total + out_total)
+                             out_total = sum(activity == "exit", na.rm = TRUE),
+                             total_activity = in_total + out_total) %>% 
+                   mutate(duration = 20,
+                          bees_per_min = total_activity/duration)
+activity_summary <- activity_summary %>% arrange(., week_true)
+
+ggplot(data = activity_summary, aes(x = week_true, y = bees_per_min)) +
+  geom_boxplot()
+
+ggplot(data = activity_summary, aes(x = week_true, y = bees_per_min, color = species, label = nest_ID )) +
+  geom_point() +
+  geom_text()
+
+ggplot(data = all_activity, aes(x = week_true, y = tempF)) +
+  geom_boxplot() +
+  geom_point()
+
    
    
-  mutate(mins = as.numeric(difftime(end_time, start_time, unit = "mins")),
-         bees_per_min = total_activity/mins) # main data frame to be used
+
 
 
 
