@@ -5,7 +5,9 @@
 library(tidyverse) #dplyr package
 library(lubridate) #dealing with time and dates
 library(readr) # creating .csv files
-library(lme4) 
+library(lme4) # GLM models
+library(gridExtra) # for creating plot grids
+library(grid)
 
 ##### Cleaning and loading in data #####
 #load data
@@ -74,13 +76,69 @@ surveys_no_flower <- surveys_no_flower %>%  filter(!row_number() %in% c(149)) # 
 surveys_no_flower <- surveys_no_flower %>% mutate(time_spent = ifelse(is.na(time_spent), '1:00:00', time_spent)) # assuming NA values in this column are just an hour of surveying. 
 
 ##### First look summary stats and exploration ####
-# How many nests at each site/plot?
-all_nests <- all_nests %>% 
-  filter(., site != c("")) %>% 
-  mutate( separate(., col = "date", into = c("month","day","year"),  sep = "/")) %>%  # separated date values so they all have a unique column. 
-  rename(found_on_survey = Did.you.discover.this.nest.during.your.one.hour.survey.time.)
-head(all_nests)
+all_nests <- all_nests %>% filter(., site != c("")) %>% 
+              mutate(separate(., col = "date", into = c("month","day","year"),  sep = "/")) %>% 
+              rename(found_on_survey = Did.you.discover.this.nest.during.your.one.hour.survey.time.,
+                     position = where.was.the.nest.located.,
+                     total_entrances = how.many.entrances.do.you.see.being.used.,
+                     nest_material = what.nest.materials.were.being.used.) 
 
+all_nests_selected <- all_nests %>% 
+  select(., nest_ID, found_on_survey, species, position, date, day, month, year, time, site) %>% 
+  mutate(., position = ifelse(position == 'on the surface of the ground', 'surface', 'underground'))
+#write.csv(all_nests_selected, "C:\\Users\\chand\\OneDrive\\Documents\\data\\nestquest\\nestquest\\nest_species_summary.csv") 
+
+nest_species <- all_nests_selected %>%group_by(species, position) %>%  summarize(count = n_distinct(nest_ID))
+
+
+nest_species_survey_only <- all_nests_selected %>% filter(., found_on_survey == 'yes') %>% group_by(species, position) %>% summarize(count = n_distinct(nest_ID))
+ 
+
+ggplot(nest_species, aes(x = factor(species, levels = c('impatiens',
+                                                        'griseocollis',
+                                                        'rufocinctus',
+                                                        'auricomus',
+                                                        'fervidus')), y = count, fill = position )) +
+  geom_bar(stat = 'identity', color = 'black') + 
+  theme(
+        axis.text.x = element_text(angle = 0, vjust = 0.8, size =12, color = 'black'),#rotate x-axis text
+        axis.text.y = element_text(size = 12, color = 'black'),
+        axis.title = element_text(size =16),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.ticks.x = element_blank(),
+        legend.text = element_text(size = 12), 
+        legend.position = c(0.8, 0.6)) +
+  scale_fill_manual(values = c( '#9ACD32', '#CDAA7D'),
+                    guide = guide_legend(title = NULL)) +
+  scale_y_continuous(breaks = seq(0, 12, by = 2)) +
+  labs(x = '', y = 'Number of nests')
+
+
+ggplot(nest_species_survey_only, aes(x = factor(species, levels = c('impatiens',
+                                                        'griseocollis',
+                                                        'rufocinctus',
+                                                        'auricomus',
+                                                        'fervidus')), y = count, fill = position )) +
+  geom_bar(stat = 'identity', color = 'black') + 
+  theme(
+    axis.text.x = element_text(angle = 0, vjust = 0.8, size =12, color = 'black'),#rotate x-axis text
+    axis.text.y = element_text(size = 12, color = 'black'),
+    axis.title = element_text(size =16),
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    panel.background = element_blank(),
+    axis.ticks.x = element_blank(),
+    legend.text = element_text(size = 12)) +
+  scale_fill_manual(values = c( '#9ACD32', '#CDAA7D'),
+                    guide = guide_legend(title = NULL)) +
+  scale_y_continuous(breaks = seq(0, 8, by = 2)) +
+  ylim(0,8) +
+  labs(x = 'Bombus species', y = 'Number of nests')
+
+
+# How many nests at each site/plot?
 nests <- all_nests %>% 
   group_by(site) %>% 
   count(., .drop = FALSE) %>% 
@@ -140,6 +198,54 @@ site_summary2 %>%
   #geom_text(aes(label = ifelse(total_nests > 0, "!!", "" & Volunteer_or_staff == 'Staff'), group = site))
   #geom_text(aes(label = total_nests))
 #dev.off() #uncomment this to create a png
+
+surveys_2024 <- site_summary2 %>% filter(., year == '2024')%>% 
+  ggplot(aes(y = -desc(total_survey_sum), x = site, fill = Volunteer_or_staff, label = total_nests)) + # defining x and y values. 'fill' is how to get the groupings based on a column. 
+  geom_bar(stat = "identity", colour = 'black') +
+  theme(#axis.text.x = element_blank(),
+        axis.text.x = element_text(angle = 90, hjust =  1.25, vjust = 0, size = 12, color = 'black'),
+        axis.text.y = element_text(size = 18, color = 'black'),
+        axis.title = element_text(size = 20),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.ticks.x = element_blank(),
+        strip.text = element_text(size = 20),
+        strip.background = element_rect(fill = 'seashell2', color = '#4D4D4D'),
+        legend.text = element_text(size = 18),
+        legend.key.size = unit(1, 'cm'), 
+        legend.position = "none") + 
+  scale_y_continuous(breaks = seq(0, 16, by = 2)) + # set scale manually
+  labs(x = "2024", y = "Total Surveys") + #labels
+  scale_fill_manual(values = c("#FFA500", "#56B4E9"), 
+                    labels = c("Staff", "Volunteer"),
+                    guide = guide_legend(title = NULL)) + # changing color
+  annotate('text', x = c(2, 3, 5, 8), y = c(16.5, 13.5, 7.5, 10.5), label = '!!', size = 8)
+
+ surveys_2025 <- site_summary2 %>% filter(., year == '2025')%>% 
+  ggplot(aes(y = -desc(total_survey_sum), x = site, fill = Volunteer_or_staff, label = total_nests)) + # defining x and y values. 'fill' is how to get the groupings based on a column. 
+  geom_bar(stat = "identity", colour = 'black') +
+  theme(#axis.text.x = element_blank(),
+        axis.text.x = element_text(angle = 90, hjust = 1  , vjust = 0, size = 8.5, color = 'black'),#rotate x-axis text
+        axis.text.y = element_text(size = 18, color = 'black'),
+        axis.title = element_text(size = 20),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.ticks.x = element_blank(),
+        strip.text = element_text(size = 20),
+        strip.background = element_rect(fill = 'seashell2', color = '#4D4D4D'),
+        legend.text = element_text(size = 18),
+        legend.key.size = unit(1, 'cm'),
+        legend.position = 'none') + 
+  scale_y_continuous(breaks = seq(0, 16, by = 2)) + # set scale manually
+  labs(x = "2025", y = "") + #labels
+  scale_fill_manual(values = c("#FFA500", "#56B4E9"),
+                    labels = c("Staff", "Volunteer"),
+                    guide = guide_legend(title = NULL)) + # changing color
+  annotate('text', x = c(2, 5, 6, 9, 10, 11, 14, 15), y = c(8, 6.5, 7.75, 7.75, 4.5, 7.75, 12.5, 16.5), label = '!!', size = 8)
+
+grid.arrange(surveys_2024, surveys_2025, ncol = 2)
 
 
 ##### Bumble bee observations, categorical data #####
@@ -254,11 +360,25 @@ volunteer_nests <- survey_nest %>%
 
 tally(volunteer_nests, nest_found == '1') / 110 # volunteer survey success rate is 0.018 nests/survey
 
+volunteer_count <- survey_nest %>% filter(., Volunteer_or_staff == 'volunteer') %>% count(observer1, Volunteer_or_staff)
+table(volunteer_count$n)
+ggplot(volunteer_count, aes(x=n)) + 
+  geom_histogram(binwidth = 1, fill = 'slateblue', color = 'black') +
+  scale_y_continuous(breaks = c(1:12)) +
+  scale_x_continuous(breaks = c(1:13)) + 
+  annotate('text', x = 13, y = 1.5, label = 'Dawn Peterson', angle = 0, size = 3) +
+  annotate('text', x = 10, y = 1.5, label = 'Kevin McKinney', size = 3) +
+  annotate('text', x = 8, y = 2.5, label = 'Maria Cicenas and Tom Patterson', size = 3) +
+  ylab('n') + xlab('Number of Surveys') +
+  theme(#panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank()) 
+        #panel.background = element_blank())
+
 # nest finding success rate of staff members
 staff_nests <- survey_nest %>% 
-  filter(., Volunteer_or_staff == "staff") # 155 total staff surveys
+  filter(., Volunteer_or_staff == "staff") # 154 total staff surveys
 
-tally(staff_nests, nest_found == '1') / 155 # staff survey success rate is 0.058 nest/survey
+tally(staff_nests, nest_found == '1') / 154 # staff survey success rate is 0.058 nest/survey
 
 survey_nest %>% group_by(site, year) %>% summarize(sum = sum(survey_count, na.rm = TRUE))
 
@@ -288,6 +408,36 @@ time_per_site <- survey_nest %>%
 time_per_site <- time_per_site %>% pivot_wider(names_from = year, 
                               values_from = c(total_hours), 
                               values_fill = 0)
+
+time_summary <- survey_nest %>% 
+  group_by(year,Volunteer_or_staff) %>% 
+  summarize(., hours = sum(time_spent_hours),
+               total_unique_observers = n_distinct(observer1, na.rm = TRUE), .groups ="drop")
+
+ggplot(time_summary, aes(x = year, y = hours, fill = Volunteer_or_staff)) +
+  geom_bar(stat = 'identity', position = 'dodge', color = 'black') +
+  annotate('text', x = 0.77, y = 66, label = '8', angle = 0, size = 5.5, color = 'white') +
+  annotate('text', x = 1.22, y = 42, label = '11', angle = 0, size = 5.5, color = 'white') +
+  annotate('text', x = 1.77, y = 53, label = '7', angle = 0, size = 5.5, color = 'white') +
+  annotate('text', x = 2.23, y = 73, label = '27', angle = 0, size = 5.5, color = 'white') +
+  theme(axis.text.x = element_text(angle = 0, vjust = 1, size = 12, color = 'black'),#rotate x-axis text
+        axis.text.y = element_text(size = 12, color = 'black'),
+        axis.title = element_text(size = 14),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.ticks.x = element_blank(),
+        strip.text = element_text(size = 14)) +
+  labs(x = "Year",
+       y = "Number of hours") +
+  scale_y_continuous(
+    limits = c(0, 80),
+   breaks = seq(0, 80, by = 15)
+    ) +
+  scale_fill_manual(values = c("#FFA500", "#56B4E9"), 
+                      labels = c("Staff", "Volunteer"),
+                      guide = guide_legend(title = NULL)) 
+
 #write.csv(time_per_site, "C:\\Users\\chand\\Documents\\data\\nestquest\\nestquest\\time_per_site2.csv")
 
 # calculating pace of surveys
@@ -308,10 +458,14 @@ survey_nest <- survey_nest %>%
         pace_meters_per_hour = replace(pace_meters_per_hour, which(pace_meters_per_hour > 3500), NA)) # Removing a single outlier of Elise data where it seems unrealistic. 
 # some other outliers are contained here^^^
 
+pace_data <- survey_nest %>% drop_na(length_meters)
+
 pace_summary <- survey_nest %>% 
   group_by(., year, Volunteer_or_staff) %>% 
   summarize(mean_pace = mean(pace_meters_per_hour, na.rm = TRUE,),
-            mean_length = mean(length_meters, na.rm = TRUE))
+            mean_length = mean(length_meters, na.rm = TRUE)) 
+
+
 
 ggplot(survey_nest, aes(x = Volunteer_or_staff, y = pace_meters_per_hour)) + 
   geom_boxplot(fill= "slateblue", alpha= 0.7) +
@@ -361,7 +515,7 @@ site_unique_surveys<- survey_nest %>% count(site, year, sort = TRUE)
 
 # NULL: Volunteer_or_staff DOES NOT affect if a nest is found during a survey.
 # ALT: Volunteer_or_staff DOES not affect if a nest is found during a survey.
-#observer_cont_table <- print(table(survey_nest$nest_found, survey_nest$Volunteer_or_staff)) # create contingency table
+observer_cont_table <- print(table(survey_nest$nest_found, survey_nest$Volunteer_or_staff)) # create contingency table
 #chi_observer_nest_found <- chisq.test(observer_cont_table, simulate.p.value = TRUE) # p = 0.09095. Fail to reject NULL
 #chi_observer_nest_found
 
@@ -371,7 +525,7 @@ fisher_nest_found_obs # p = 0.081 fail to reject NULL
 
 # NULL: bloom_area DOES NOT affect if a nest is found during a survey.
 # ALT: bloom_area DOES not affect if a nest is found during a survey.
-# bloom_area_cont_table <- print(table(survey_nest$nest_found, survey_nest$bloom_area)) # create contingency table
+bloom_area_cont_table <- print(table(survey_nest$nest_found, survey_nest$bloom_area)) # create contingency table
 # chi_bloom_area_nest_found <- chisq.test(bloom_area_cont_table, simulate.p.value = TRUE) # p = 1. Fail to reject NULL
 # chi_bloom_area_nest_found
 
@@ -382,7 +536,7 @@ fisher_nest_found_bloom # p = 1. fail to reject NULL
 # Chisquare tests for categorical variables
   # NULL: bombus_obs DOES NOT affect if a nest is found during a survey.
   # ALT: bombus obs DOES affect if a nest is found during a survey.
- # bombus_cont_table <- print(table(survey_nest$nest_found, survey_nest$bombus_obs, useNA = 'no')) # create contingency table
+ bombus_cont_table <- print(table(survey_nest$nest_found, survey_nest$bombus_obs, useNA = 'no')) # create contingency table
 #  chi_bombus_nest_found <- chisq.test(bombus_cont_table, simulate.p.value = FALSE) # p = 0.02849. REJECT NULL
  # chi_bombus_nest_found
   
