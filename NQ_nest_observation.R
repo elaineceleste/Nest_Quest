@@ -5,6 +5,7 @@ library(tidyverse) #dplyr package
 library(lubridate) #dealing with time and dates
 library(readr) # creating .csv files
 library(lme4) 
+library(colorBlindness)
 
 #load data 
 activity_raw <- read.csv('nest_observation.csv')
@@ -82,10 +83,26 @@ all_activity <- all_activity %>% mutate(date = as.Date(date, "%d-%m-%Y"),
                                         floor_date = format(floor_date, "%b-%d"),
                                         duration = 20)
 all_activity <- unite(all_activity, site, nest_ID, date, start_time, end_time, observer1, sep = ":", remove = FALSE, col = unique_ID)
+n_distinct(all_activity$unique_ID)
+# 66 monitoring ocassions 
+# 66 * 20 = 1320 minutes spent monitoring
+# 1320/60 = 22 hours 
+n_distinct(all_activity$nest_ID) 
+# 17 total nests monitored
+
+table(all_activity$pollen)
+# 9+26+46+8+32
+# 121
+# 121/451
+# 0.2682927
+
+table(all_activity$activity)
+
 
 activity_summary <- all_activity  %>% group_by(
                                                unique_ID,
                                                species, 
+                                               year,
                                                week_true, 
                                                floor_date, 
                                                nest_ID,
@@ -96,8 +113,22 @@ activity_summary <- all_activity  %>% group_by(
                              out_total = sum(activity == "exit", na.rm = TRUE),
                              total_activity = in_total + out_total) %>% 
                    mutate(duration = 20,
-                          bees_per_min = total_activity/duration)
-activity_summary <- activity_summary %>% arrange(., week_true)
+                          bees_per_min = total_activity/duration) # mean bee activity per minute per week
+
+mean_bees_min_week_group <- aggregate(activity_summary$bees_per_min, FUN=mean,# calculate mean bees per minute per week
+           by=list(species=activity_summary$species, year=activity_summary$year, week_true=activity_summary$week_true))
+mean_bees_min_week_group <- mean_bees_min_week_group %>% rename(., mean_bees_min_week_group = x)
+
+
+mean_bees_min_week_individual<- aggregate(activity_summary$bees_per_min, FUN=mean,# calculate mean bees per minute per week
+                                by=list(nest_ID=activity_summary$nest_ID, species=activity_summary$species, year=activity_summary$year, week_true=activity_summary$week_true))
+mean_bees_min_week_individual <- mean_bees_min_week_individual %>% rename(., mean_bees_min_week_indv = x)
+
+
+activity_summary <- left_join(activity_summary, mean_bees_min_week_group) # join with summary
+activity_summary <- left_join(activity_summary, mean_bees_min_week_individual)
+
+
 
 ggplot(data = activity_summary, aes(x = week_true, y = bees_per_min)) +
   geom_boxplot()
@@ -105,6 +136,44 @@ ggplot(data = activity_summary, aes(x = week_true, y = bees_per_min)) +
 ggplot(data = activity_summary, aes(x = week_true, y = bees_per_min, color = species, label = nest_ID )) +
   geom_point() +
   geom_text()
+
+ggplot(data = activity_summary, aes(x = week_true, y = mean_bees_min_week, color = species, shape = year)) +
+  geom_line() +
+  geom_point(size = 3) +
+  scale_shape_manual(values = c('2024' = 15, '2025' = 17)) 
+ 
+ggplot(data = activity_summary, aes(x = week_true, 
+                                    y = mean_bees_min_week_indv, 
+                                    group = nest_ID, 
+                                    shape = year,
+                                    color = nest_ID)) +
+  geom_line(stat = 'identity') +
+  geom_point(size = 2) +
+  scale_color_manual(values = c("#000000", "#004949", 
+                                "#009292","#ff6db6",
+                                "#ffb6db", "#490092",
+                                "#006ddb", "#b66dff", 
+                                "#6db6ff","#b6dbff",
+                                "#920000","#924900",
+                                "#db6d00", "#24ff24",
+                                "#ffff6d", "#ff0000", "#00ffb4")) +
+  
+  ylab('Mean bees/minute/week') +
+  xlab('Week') +
+  facet_wrap(vars(species, year), ncol = 2, strip.position = 'top') 
+
+ggplot(data = activity_summary, aes(x = week_true, 
+                                    y = mean_bees_min_week_group, 
+                                    color = species, 
+                                    group = species
+                                    )) +
+  geom_line(stat = 'identity') +
+  geom_point(size = 2) +
+  ylab('Mean bees/minute/week') +
+  xlab('Week') +
+  facet_wrap(vars(year), ncol = 1, strip.position = 'top') 
+  
+
 
 ggplot(data = all_activity, aes(x = week_true, y = tempF)) +
   geom_boxplot() +
