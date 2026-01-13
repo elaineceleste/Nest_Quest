@@ -6,9 +6,6 @@
   # Soil density data too.
 
 
-#### SET WORKING DIRECTORY
-# getwd() # this is used to see what your current working directory is. 
-# setwd() # this is the commmand you use to set a new working directory. 
 #load packages
 library(tidyverse) #dplyr package
 library(lubridate)
@@ -123,9 +120,9 @@ nest_cover <- nest_quadrats %>% select(.,c("nest_ID",
 
 nest_cover2 <- nest_cover %>% 
   group_by(nest_ID, quadrant_distance, proximity) %>% 
-  mutate(per_bare = recode(per_bare, '0' = 0, '1_to_5' = 1, '25_to_50' = 3, '5_to_25' = 2, '50_to_75' = 4, '75_to_100' = 5),
-         per_forb = recode(per_forb, '0' = 0, '1_to_5' = 1, '25_to_50' = 3, '5_to_25' = 2, '50_to_75' = 4, '75_to_100' = 5),
-         per_grass = recode(per_grass, '0' = 0, '1_to_5' = 1, '25_to_50' = 3, '5_to_25' = 2, '50_to_75' = 4, '75_to_100' = 5))
+  mutate(per_bare_midpoint = recode(per_bare, '0' = 0, '1_to_5' = 2.5, '25_to_50' = 37.5, '5_to_25' = 15, '50_to_75' = 62.5, '75_to_100' = 87.5),
+         per_forb_midpoint = recode(per_forb, '0' = 0, '1_to_5' = 2.5, '25_to_50' = 37.5, '5_to_25' = 15, '50_to_75' = 62.5, '75_to_100' = 87.5),
+         per_grass_midpoint = recode(per_grass, '0' = 0, '1_to_5' = 2.5, '25_to_50' = 37.5, '5_to_25' = 15, '50_to_75' = 62.5, '75_to_100' = 87.5))
      # assigned a numeric value to each of the percent cover categories. Now they should be able to be averaged
 # 0 = 0
 # 1_to_5 = 1
@@ -137,9 +134,9 @@ nest_cover2 <- nest_cover %>%
 # data frame for average cover for nest ID and year. 
 nest_cover3 <- nest_cover2 %>% 
   group_by(nest_ID, year, proximity) %>% 
-  summarize(avg_bare = mean(per_bare),
-            avg_forb = mean(per_forb),
-            avg_grass = mean(per_grass),
+  summarize(avg_bare = mean(per_bare_midpoint),
+            avg_forb = mean(per_forb_midpoint),
+            avg_grass = mean(per_grass_midpoint),
             mean_of_means_litter_cm = mean(mean_litter_depth))
 hist(nest_cover3$avg_grass)
 qqnorm(nest_cover3$avg_grass)
@@ -151,7 +148,7 @@ nest_cover3 %>%
   theme(axis.text.x = element_text(angle = 50, vjust = 0.5), #rotate x-axis text
         panel.grid.major = element_blank()) + 
   facet_wrap(vars(year), ncol = 2, scale = "free") + # separate data by year
-  ylim(0,5)+ # set scale manually
+  #ylim(0,5)+ # set scale manually
   labs(x = "nest_ID", y = "mean bare ground cover") + #labels
   scale_fill_manual(values = c("purple", "pink", "blue")) # changing color
   
@@ -162,7 +159,7 @@ nest_cover3 %>%
   theme(axis.text.x = element_text(angle = 50, vjust = 0.5), 
         panel.grid.major = element_blank()) +
   facet_wrap(vars(year), ncol = 2, scale = "free") +
-  ylim(0,5)+
+  #ylim(0,5)+
   labs(x = "nest_ID", y = "mean forb cover") +
   scale_fill_manual(values = c("purple", "pink", "blue"))
 
@@ -173,11 +170,11 @@ nest_cover3 %>%
   theme(axis.text.x = element_text(angle = 50, vjust = 0.5), 
         panel.grid.major = element_blank()) +
   facet_wrap(vars(year), ncol = 2, scale = "free") +
-  ylim(0,5)+
+  #ylim(0,5)+
   labs(x = "nest_ID", y = "mean grass cover") +
   scale_fill_manual(values = c("purple", "pink", "blue"))
 
-### plotting mean of means litter depth
+c### plotting mean of means litter depth
 nest_cover3 %>% 
   ggplot(aes(y = mean_of_means_litter_cm, x = nest_ID, fill = proximity)) +
   geom_bar(stat = "identity", position = 'dodge', color = 'black')+ 
