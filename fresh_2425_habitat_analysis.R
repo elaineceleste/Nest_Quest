@@ -8,6 +8,7 @@ library(gridExtra) # for creating plot grids
 library(grid) 
 library(glmmTMB) #beta distribution model
 library(ggeffects) # getting predicted values from model
+library(emmeans)
 
 #load data
 sites <- read.csv("nest_survey_site_data.csv") 
@@ -27,9 +28,14 @@ habitat_site_transect24 <- habitat_site_transect24 %>% mutate(., site = tolower(
 habitat25 <- subset(habitat25, year == '2025') # remove blank rows
 habitat25 <- habitat25 %>% mutate(soil_temp_C = as.numeric(soil_temp_C))
 
+penetrometer <- penetrometer %>% mutate(year = NULL, 
+                                      month = NULL, 
+                                      day = NULL) # dropping columns before joining
+
 # join data sets together
 habitat24 <- left_join(habitat24, habitat_site_transect24)
 all_habitat <- full_join(habitat25, habitat24)
+all_habitat <- left_join(all_habitat, penetrometer)
 all_habitat <- merge(all_habitat, sites[, c('location', 'site')], by= "site") # adding locations
 
 
@@ -43,7 +49,18 @@ all_habitat <- all_habitat %>% mutate(coord_Lat = NULL,
                                       coord_Lon = NULL, 
                                       coor_N = NULL,
                                       coor_W = NULL,
-                                      date_grass_collected = NULL)
+                                      date_grass_collected = NULL,
+                                      X3in_psi = NULL,
+                                      X6in._psi = NULL,
+                                      X9in_psi = NULL,
+                                      X12in_psi = NULL,
+                                      X15in_psi = NULL,
+                                      X18in_psi = NULL,
+                                      long_N = NULL,
+                                      lat_W = NULL)
+
+all_habitat <- all_habitat %>% rename(survey_plot = site,
+                                      site = location) #change site and location to survery_plot and site respectively. 
 
 #cleaning quadrat column
 table(all_habitat$quadrat_no) # values that are "about_x" should just be lumped with the closest quadrat distance
@@ -55,6 +72,7 @@ all_habitat$quadrat_no[all_habitat$quadrat_no == 'about_55E'] <- '50E'
 all_habitat$quadrat_no[all_habitat$quadrat_no == 'about_95M'] <- '100M'
 all_habitat$quadrat_no[all_habitat$quadrat_no == 'about_37E'] <- '50E'
 table(all_habitat$quadrat_no) # check. do all values look right?
+
 
 #percent cover data
 
@@ -88,11 +106,17 @@ all_habitat <- all_habitat %>%
                                quadrat_no == "50S" ~ "far",
                                quadrat_no == "50E" ~ "far",
                                quadrat_no == "50W" ~ "far", 
-                               startsWith(quadrat_no, "50") ~ "transect", # These are values to represent data at sites where no nest was found. 
+                               startsWith(quadrat_no, "50") ~ "transect", # These are values to represent data at survey_plots where no nest was found. 
                                startsWith(quadrat_no, "0") ~ "transect",
                                startsWith(quadrat_no, "100M") ~ "transect",
                                startsWith(quadrat_no, "25M") ~ "transect",
                                startsWith(quadrat_no, "75M") ~ "transect")) # lumping quadrat distances together
+
+# changing some penetrometer variable classes
+all_habitat <- all_habitat %>% 
+  mutate(., tip_size_in = as.factor(tip_size_in),#tip size to factor
+         quadrat_distance = as.factor(quadrat_distance)) %>% #quadrat_distance
+  drop_na(quadrat_distance) # remove NA's
 
 # creating mid points for habitat analysis
 all_habitat <- all_habitat %>% 
@@ -139,18 +163,48 @@ forb_boxplot <- all_habitat %>% filter(., nest_ID != 'no_nest') %>%
 grid.arrange(grass_boxplot, bare_boxplot, forb_boxplot, ncol = 3)
 
 
+# penetrometer data 
+
+ggplot(all_habitat, aes(x = nest_ID, y = psi_avg)) +
+  geom_point(position = position_jitterdodge(jitter.height = 0.2, jitter.width = 0)) +
+  theme(axis.text.x = element_text(angle =90))
+
+
+ggplot(all_habitat, aes(x = nest_ID, y = psi_avg)) +
+  geom_boxplot(  ) +
+  theme(axis.text.x = element_text(angle =90))
+
+ggplot(all_habitat, aes(x = site, y = psi_avg, fill = nest_ID)) +
+  geom_boxplot(  ) +
+  theme(axis.text.x = element_text(angle =90))
+
+penetrometer_boxplot <- all_habitat %>% filter(., nest_ID != 'no_nest') %>% 
+  ggplot(., aes(x = factor(quadrat_distance, levels = c('1m', '10m', '50m')), y = nest_ID)) +
+  geom_boxplot(outliers = FALSE, fill ='lightblue')  +
+  geom_point(position = position_jitterdodge(jitter.height = 0.3, jitter.width = 0.8), size = 2) +
+  #theme(axis.title.y = NULL) +
+  xlab('quadrat distance') +
+  ylab('')  +
+  ggtitle('Soil Compaction (penetrometer)') 
+penetrometer_boxplot
+summary(penetrometer$psi_avg)
+grid.arrange(grass_boxplot, bare_boxplot, forb_boxplot, penetrometer_boxplot, ncol = 2)
+
+
+
 # data frame for average cover for nest ID and year. 
 nest_habitat_summarized <- all_habitat %>% 
   filter(., nest_ID != 'no_nest') %>%  # removing no_nest counts for now
-  group_by(nest_ID, year, quadrat_distance, location, site) %>% 
+  group_by(nest_ID, year, quadrat_distance, site, survey_plot) %>% 
   summarize(avg_bare = mean(per_bare_midpoint), #using midpoints to create numeric values from categories
             avg_forb = mean(per_forb_midpoint),
             avg_grass = mean(per_grass_midpoint),
-            mean_of_means_litter_cm = mean(mean_litter_depth)) %>% 
+            mean_of_means_litter_cm = mean(mean_litter_depth),
+            compaction = mean(psi_avg)) %>% 
   mutate(., quadrat_distance = as.factor(quadrat_distance),
-         location = as.factor(location),
+         site = as.factor(site),
          year = as.factor(year),
-         site = as.factor(site))
+         survey_plot = as.factor(survey_plot))
 
 
 
@@ -174,7 +228,7 @@ ggplot(nest_habitat_summarized, aes(x = nest_ID,
                     labels = c("1M", "10M", '50M'),
                     guide = guide_legend(title = NULL)) 
 
-ggplot(nest_habitat_summarized, aes(x = site, 
+ggplot(nest_habitat_summarized, aes(x = survey_plot, 
                                     y = avg_bare, 
                                     fill = factor(quadrat_distance, levels = c('1m', '10m', '50m')))) +
   geom_bar(stat = 'identity', position = 'dodge', color = 'black') +
@@ -192,12 +246,30 @@ ggplot(nest_habitat_summarized, aes(x = site,
                     guide = guide_legend(title = NULL))  +
   facet_grid('year')
 
+
+ggplot(nest_habitat_summarized, aes(x = nest_ID, 
+                                    y = compaction, 
+                                    fill = factor(quadrat_distance, levels = c('1m', '10m', '50m')))) +
+  geom_bar(stat = 'identity', position = 'dodge', color = 'black') +
+  theme(#axis.text.x = element_blank(),
+    axis.text.x = element_text(angle = 90, hjust = 0  , vjust = 0, size = 8.5, color = 'black'),#rotate x-axis text
+    axis.text.y = element_text(size = 8, color = 'black'),
+    axis.title = element_text(size = 8),
+    # panel.grid.major = element_blank(),
+    #panel.grid.minor = element_blank(),
+    # panel.background = element_blank(),
+    axis.ticks.x = element_blank()) +
+  labs(x = "nest_ID", y = "mean soil compaction") + #labels
+  scale_fill_manual(values = c("#FFA500", "#56B4E9", '#ff6db6'),
+                    labels = c("1M", "10M", '50M'),
+                    guide = guide_legend(title = NULL)) 
+
 ##### are habitat measures different in the different quadrat distances? Which habitat measures are different? 
 
 all_habitat_nonest <- all_habitat %>% 
   filter(., nest_ID != 'no_nest') %>% # removing no_nest row from dataset for modeling
   mutate(., quadrat_distance = as.factor(quadrat_distance),
-         location = as.factor(location)) 
+         site = as.factor(site)) 
 
 nest_habitat_summarized <- nest_habitat_summarized %>% 
   mutate(., avg_grass_prop = avg_grass / 100, 
@@ -218,11 +290,18 @@ shapiro.test(nest_habitat_summarized$avg_grass)
 shapiro.test(log(nest_habitat_summarized$avg_grass))
 hist(nest_habitat_summarized$avg_grass)
 
-grass_model2 <- glmmTMB(avg_grass_prop ~ quadrat_distance + (1|location), 
+grass_model2 <- glmmTMB(avg_grass_prop ~ quadrat_distance + (1|site), 
                       data = nest_habitat_summarized2025, 
                       family = beta_family) # using means of each quadrat at each nest
 summary(grass_model2) # AIC = -82.3
-summary(aov(grass_model2)) # quadrat distance has a strong effect on the amount of grass, and there is a minor effect from location.
+summary(aov(grass_model2)) # quadrat distance has a strong effect on the amount of grass, and there is a minor effect from site.
+
+grass_model3 <- glmmTMB(avg_grass_prop ~ quadrat_distance + (1 + survey_plot|site), 
+                        data = nest_habitat_summarized2025, 
+                        family = beta_family) # using means of each quadrat at each nest
+summary(grass_model3) #
+summary(aov(grass_model3)) #
+
 
 ## forb vs quadrat distances - data is normal when log transformed
 shapiro.test(nest_habitat_summarized$avg_forb)
@@ -230,14 +309,23 @@ shapiro.test(log1p(nest_habitat_summarized$avg_forb))
 hist(nest_habitat_summarized$avg_forb)
 hist(log1p(nest_habitat_summarized$avg_forb))
 
-forb_model1 <- glmmTMB(log1p(avg_forb) ~ quadrat_distance + (1|location) + year, #log transform data to make normal
+forb_model1 <- glmmTMB(log1p(avg_forb) ~ quadrat_distance + (1|site) + year, #log transform data to make normal
                       data = nest_habitat_summarized, 
                       family = gaussian(link = 'identity'))
                      # start = list(theta = 0)) # using means of each quadrat at each nest
 summary(forb_model1) # AIC = 114.2
 
 ggpredict(forb_model1, terms = c("quadrat_distance")) |> plot()
-summary(aov(forb_model1)) #location is affecting the outcome of this model.
+summary(aov(forb_model1)) #site is affecting the outcome of this model.
+
+
+forb_model2 <- glmmTMB(log1p(avg_forb) ~ quadrat_distance + (1 + survey_plot|site) + year, #log transform data to make normal
+                       data = nest_habitat_summarized, 
+                       family = gaussian(link = 'identity'))
+# start = list(theta = 0)) # using means of each quadrat at each nest
+summary(forb_model2) # AIC = 
+summary(aov(forb_model2)) #survey_plot and year having a big effect on average forbs
+ggpredict(forb_model2, terms = c("quadrat_distance")) |> plot()
 
 # model using only 2025 data
 shapiro.test(nest_habitat_summarized2025$avg_forb)
@@ -245,69 +333,75 @@ shapiro.test(log1p(nest_habitat_summarized2025$avg_forb))
 hist(nest_habitat_summarized2025$avg_forb)
 hist(log1p(nest_habitat_summarized2025$avg_forb))
 
-forb_model1_2025 <- glmmTMB(log1p(avg_forb) ~ quadrat_distance + (1|location), #log transform data to make normal
+forb_model1_2025 <- glmmTMB(log1p(avg_forb) ~ quadrat_distance + (1|site), #log transform data to make normal
                        data = nest_habitat_summarized2025, 
                        family = gaussian(link = 'identity'))
 # start = list(theta = 0)) # using means of each quadrat at each nest
 summary(forb_model1_2025) # AIC = 52.4
 
 ggpredict(forb_model1_2025, terms = c("quadrat_distance")) |> plot()
-summary(aov(forb_model1_2025)) #location is affecting the outcome of this model.
+summary(aov(forb_model1_2025)) #site is affecting the outcome of this model.
 
 # bare vs quadrat distances - data NOT normal
 shapiro.test(nest_habitat_summarized$avg_bare)
 hist(nest_habitat_summarized$avg_bare)
 
-bare_model1 <- glmmTMB(avg_bare_prop ~ quadrat_distance + (1|location), 
+bare_model1 <- glmmTMB(avg_bare_prop ~ quadrat_distance + (1|site), 
                        data = nest_habitat_summarized, 
                        family = ordbeta(link = 'logit'))
 
-bare_model2 <- glmmTMB(avg_bare_prop ~ quadrat_distance + (1|location) + year, 
+bare_model2 <- glmmTMB(avg_bare_prop ~ quadrat_distance + (1|site) + year, 
                         data = nest_habitat_summarized, 
                         family = ordbeta(link = 'logit'))
 
+bare_model3 <- glmmTMB(avg_bare_prop ~ quadrat_distance + (1 + survey_plot|site), 
+                       data = nest_habitat_summarized, 
+                       family = ordbeta(link = 'logit'))
+
 summary(bare_model1) # AIC = 13.0
 summary(bare_model2) # AIC = 54.6
-summary(aov(bare_model1)) # location is affecting the outcome of this model. 
-summary(aov(bare_model2))  # large effect of year and location, small effect with quadrat distance
+summary(aov(bare_model1)) # site is affecting the outcome of this model. 
+summary(aov(bare_model2))# large effect of year and site, small effect with quadrat distance
+summary(bare_model3)
+summary(aov(bare_model3))
 ggpredict(bare_model1, terms = c("quadrat_distance")) |> plot()
 #ggpredict(bare_model2, terms = c("year")) |> plot()
 
-## 2025 data
+## 2025 data only
 shapiro.test(nest_habitat_summarized2025$avg_bare)
 hist(nest_habitat_summarized2025$avg_bare)
 
-bare_model1_2025 <- glmmTMB(avg_bare_prop ~ quadrat_distance + (1|location), 
+bare_model1_2025 <- glmmTMB(avg_bare_prop ~ quadrat_distance + (1|site), 
                        data = nest_habitat_summarized2025, 
                        family = ordbeta(link = 'logit'))
 
 summary(bare_model1_2025) # AIC = 13.0
-summary(aov(bare_model1_2025)) # location is affecting the outcome of this model. 
+summary(aov(bare_model1_2025)) # site is affecting the outcome of this model. 
 ggpredict(bare_model1_2025, terms = c("quadrat_distance")) |> plot()
 
 # calculating Emmeans and obtaining predicted values for plotting
 
 library(emmeans)
 ## grass model
-grass_emm<-emmeans(grass_model2, "quadrat_distance", type = "response")
+grass_emm<-emmeans(grass_model3, "quadrat_distance", type = "response")
 grass_emm
 
 plot(grass_emm, type="response")   # Link scale by default
 pairs(grass_emm, reverse = TRUE) # pairwise comparison
 
 # predicted values
-preds_grass <- predict(grass_model2, type = "response", se.fit = TRUE)
+preds_grass <- predict(grass_model3, type = "response", se.fit = TRUE)
 print(preds_grass)
 
 ## forb model
-forb_emm<-emmeans(forb_model1, "quadrat_distance", type = "response")
+forb_emm<-emmeans(forb_model2, "quadrat_distance", type = "response")
 forb_emm
 
 plot(forb_emm, type="response")   # Link scale by default
 pairs(forb_emm, reverse = TRUE) # pairwise comparison
 
 # predicted values
-preds_forb <- predict(forb_model1, type = "response", se.fit = TRUE)
+preds_forb <- predict(forb_model2, type = "response", se.fit = TRUE)
 print(preds_forb)
 
 ## bare model
@@ -339,7 +433,7 @@ nest_habitat_preds$bare_se <- preds_bare$se.fit
 
 nest_habitat_preds <- left_join(nest_habitat_preds, nest_habitat_preds2025)
 
-distance_predictions <- nest_habitat_preds %>% select(.,-c(nest_ID, location, year)) # create dataframe to be grouped by habitat only
+distance_predictions <- nest_habitat_preds %>% select(.,-c(nest_ID, site, year)) # create dataframe to be grouped by habitat only
 distance_predictions <- distance_predictions %>%
   group_by(quadrat_distance) %>% 
   summarize_if(is.numeric, mean, na.rm = TRUE, .groups = "drop") # condense data and find mean value of predictions
@@ -351,7 +445,7 @@ distance_predictions <- distance_predictions %>% # calculate confidence interval
          bare_LCI = bare_fit - bare_se,
          bare_UCI = bare_fit + bare_se)
 
-distance_predictions <- probs %>% group_by(habitat) %>% summarize_if(is.numeric, mean, na.rm = TRUE, .groups = "drop")
+#distance_predictions <- probs %>% group_by(habitat) %>% summarize_if(is.numeric, mean, na.rm = TRUE, .groups = "drop")
 
 # Shape data for plotting
 fit <- distance_predictions %>% 
@@ -402,13 +496,97 @@ fits_plot # data frame for plotting
 
 
 # plotting predicted values
-ggplot(data = fits_plot, aes(x = quadrat_distance, y = fit)) +
-  geom_point(size = 8, shape = 20
+bare_emmeans_plot <- fits_plot %>% filter(., cover == 'bare') %>% 
+ggplot(., aes(x = quadrat_distance, y = fit)) +
+  geom_point(size = 6, shape = 20
             # colour= c("olivedrab3", "forestgreen", "goldenrod2")
-             ) +
- # ylim(0,1) +
-#  scale_x_discrete(limits = c("Forest", "Edge", "Prairie")) +
- # scale_y_continuous(breaks = c(0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1))+
-  geom_errorbar(aes(ymin = LCI, ymax = UCI), size = 2, width = 0) +
-  labs(x = 'Quadrat distance', y = "emmeans") +
-  facet_wrap(vars(cover), ncol = 3, nrow = 1, scales = 'free')
+  ) +
+  theme(
+    axis.text.x = element_text(angle = 0, vjust = 0.8, size =12, color = 'black'),#rotate x-axis text
+    axis.text.y = element_text(size = 12, color = 'black'),
+    axis.title = element_text(size =16),
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    panel.background = element_blank(),
+    panel.border = element_rect(colour = "black", fill=NA, linewidth=1),
+    axis.ticks.x = element_blank()) +
+  geom_errorbar(aes(ymin = LCI, ymax = UCI), size = 1.5, width = 0.4) +
+  labs(x = 'Quadrat distance', y = "") + 
+  annotate("text", x = 2, y = 0.43, label = "A", size = unit(10, "pt")) +
+  geom_segment(aes(x = 0.75, y = 0.42, xend = 3.25, yend = 0.42)) +
+  ggtitle("Bare")
+
+forb_emmeans_plot <- fits_plot %>% filter(., cover == 'forb') %>% 
+  ggplot(., aes(x = quadrat_distance, y = fit)) +
+  geom_point(size = 6, shape = 20
+             # colour= c("olivedrab3", "forestgreen", "goldenrod2")
+  ) +
+  theme(
+    axis.text.x = element_text(angle = 0, vjust = 0.8, size =12, color = 'black'),#rotate x-axis text
+    axis.text.y = element_text(size = 12, color = 'black'),
+    axis.title = element_text(size =16),
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    panel.background = element_blank(),
+    panel.border = element_rect(colour = "black", fill=NA, linewidth=1),
+    axis.ticks.x = element_blank()) +
+  geom_errorbar(aes(ymin = LCI, ymax = UCI), size = 1.5, width = 0.4) +
+  labs(x = '', y = "") + 
+  annotate("text", x = 2, y = 2.5, label = "A", size = unit(10, "pt")) +
+  geom_segment(aes(x = 0.75, y = 2.45, xend = 3.25, yend = 2.45))+
+  ggtitle("Forb")
+
+
+grass_emmeans_plot <- fits_plot %>% filter(., cover == 'grass') %>% 
+  ggplot(., aes(x = quadrat_distance, y = fit)) +
+  geom_point(size = 6, shape = 20
+             # colour= c("olivedrab3", "forestgreen", "goldenrod2")
+  ) +
+  theme(
+    axis.text.x = element_text(angle = 0, vjust = 0.8, size =12, color = 'black'),#rotate x-axis text
+    axis.text.y = element_text(size = 12, color = 'black'),
+    axis.title = element_text(size =16),
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    panel.background = element_blank(),
+    panel.border = element_rect(colour = "black", fill=NA, linewidth=1),
+    axis.ticks.x = element_blank()) +
+  geom_errorbar(aes(ymin = LCI, ymax = UCI), size = 1.5, width = .4) +
+  labs(x = '', y = "emmeans") + 
+  annotate("text", x = 1.5, y = .875, label = "A", size = unit(10, "pt")) +
+  geom_segment(aes(x = 0.75, y = .86, xend = 2.25, yend = .86)) +
+  annotate("text", x = 3, y = .875, label = "B", size = unit(10, "pt")) +
+  geom_segment(aes(x = 3.25, y = .86, xend = 2.75, yend = .86)) +
+  ggtitle("Grass")
+grass_emmeans_plot
+
+grid.arrange(grass_emmeans_plot, bare_emmeans_plot, forb_emmeans_plot, ncol = 3)
+
+
+
+
+
+
+
+# Penetrometer soil compaction model
+
+## soil compaction vs quadrat distances 
+shapiro.test(all_habitat_nonest$psi_avg)
+shapiro.test(log(all_habitat_nonest$psi_avg))
+hist(all_habitat_nonest$psi_avg)
+hist(log(all_habitat_nonest$psi_avg))
+# Data is not normal, but it is fairly close. I'm wondering if a guassian distribution is fine to run.I also tried running a gamma.
+
+penetrometer_model1 <- glmmTMB(psi_avg ~ quadrat_distance + (1+ survey_plot|site),
+                       data = all_habitat_nonest, 
+                       family = gaussian(link = "identity")) 
+
+summary(penetrometer_model1) # AIC = 1683.4, significant at 1m
+summary(aov(penetrometer_model1)) # site is affecting the outcome of this model.
+
+penetrometer_model2 <- glmmTMB(psi_avg ~ quadrat_distance + (1+ survey_plot|site),
+                               data = all_habitat_nonest, 
+                               family = Gamma(link = 'log')) 
+
+summary(penetrometer_model2) # AIC = 1683.4, significant at 1m
+summary(aov(penetrometer_model2)) # site is affecting the outcome of this model.
