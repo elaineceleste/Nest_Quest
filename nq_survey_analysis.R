@@ -598,6 +598,11 @@ lrf1 <- logistf(nest_found ~ bombus_obs,
         data = survey_nest,
         firth = TRUE)
 summary(lrf1) # ran this test, appears that results are non-significant
+nobs(lrf1)
+drop1(lrf1)
+plot(profile(lrf1,variable= 'bombus_obs10 to 19'))
+extractAIC(lrf1)
+
 
 ggplot(data = subset(survey_nest, !is.na(bombus_obs)), aes(x = factor(bombus_obs, 
                                                                       levels = c('0',

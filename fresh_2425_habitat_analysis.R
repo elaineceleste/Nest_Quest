@@ -17,6 +17,8 @@ habitat25 <- read.csv("habitat_data/25_nest_habitat.csv")
 habitat24 <- read.csv("habitat_data/24_nest_habitat.csv")
 habitat_site_transect24 <- read.csv("habitat_data/24_habitat_site_transect.csv")
 
+
+##### Data Cleaning #####
 #change values to lowercase for consistency
 penetrometer <- penetrometer %>% mutate(., site = tolower(site), nest_ID = tolower(nest_ID))
 habitat25 <- habitat25 %>% mutate(., site = tolower(site), nest_ID = tolower(nest_ID))
@@ -124,13 +126,14 @@ all_habitat <- all_habitat %>%
          per_forb_midpoint = recode(per_forb, '0' = 0, '1_to_5' = 3, '25_to_50' = 37.5, '5_to_25' = 15, '50_to_75' = 62.5, '75_to_100' = 87.5),
          per_grass_midpoint = recode(per_grass, '0' = 0, '1_to_5' = 3, '25_to_50' = 37.5, '5_to_25' = 15, '50_to_75' = 62.5, '75_to_100' = 87.5))
 
+##### Intital look at data and exploration #####
 
 # scatter plot looking at each nest's habitat plots
 ggplot(all_habitat, aes(x = nest_ID, y = per_grass, color = quadrat_distance)) +
   geom_point(position = position_jitterdodge(jitter.height = 0.2, jitter.width = 0)) +
   facet_grid(vars(year))
 
-# Look at cover class values across different quadrat distances
+# Visualizing cover class values across different quadrat distances
 grass_boxplot <- all_habitat %>% filter(., nest_ID != 'no_nest') %>% 
 ggplot(., aes(x = factor(quadrat_distance, levels = c('1m', '10m', '50m')), y = per_grass_midpoint)) +
   geom_boxplot(outliers = FALSE, fill ='lightblue') +
@@ -163,7 +166,7 @@ forb_boxplot <- all_habitat %>% filter(., nest_ID != 'no_nest') %>%
 grid.arrange(grass_boxplot, bare_boxplot, forb_boxplot, ncol = 3)
 
 
-# penetrometer data 
+# Viszualizing penetrometer data 
 
 ggplot(all_habitat, aes(x = nest_ID, y = psi_avg)) +
   geom_point(position = position_jitterdodge(jitter.height = 0.2, jitter.width = 0)) +
@@ -191,8 +194,8 @@ summary(penetrometer$psi_avg)
 grid.arrange(grass_boxplot, bare_boxplot, forb_boxplot, penetrometer_boxplot, ncol = 2)
 
 
-
-# data frame for average cover for nest ID and year. 
+##### Looking at habitat by nest #####
+# Creating data frame for average cover for nest ID and year. 
 nest_habitat_summarized <- all_habitat %>% 
   filter(., nest_ID != 'no_nest') %>%  # removing no_nest counts for now
   group_by(nest_ID, year, quadrat_distance, site, survey_plot) %>% 
@@ -205,8 +208,6 @@ nest_habitat_summarized <- all_habitat %>%
          site = as.factor(site),
          year = as.factor(year),
          survey_plot = as.factor(survey_plot))
-
-
 
 ggplot(nest_habitat_summarized, aes(x=avg_grass, y=avg_forb, color = quadrat_distance)) +
   geom_point(size = 3) 
@@ -264,7 +265,7 @@ ggplot(nest_habitat_summarized, aes(x = nest_ID,
                     labels = c("1M", "10M", '50M'),
                     guide = guide_legend(title = NULL)) 
 
-##### are habitat measures different in the different quadrat distances? Which habitat measures are different? 
+##### Are habitat measures different in the different quadrat distances? Which habitat measures are different? #####
 
 all_habitat_nonest <- all_habitat %>% 
   filter(., nest_ID != 'no_nest') %>% # removing no_nest row from dataset for modeling
@@ -284,12 +285,15 @@ all_habitat_nonest$quadrat_distance <- relevel(all_habitat_nonest$quadrat_distan
 nest_habitat_summarized2025$quadrat_distance <- relevel(nest_habitat_summarized2025$quadrat_distance, ref = '1m') #relevel so reference value is 1 meter quadrats
 
 
-
+##### Creating models for each habitat cover measure #####
+## Grass Model
+## Testing normality
 ## grass  vs quadrat distances - Data NOT normal. Using only 2025 data, as 2024 data is lacking
 shapiro.test(nest_habitat_summarized$avg_grass)
 shapiro.test(log(nest_habitat_summarized$avg_grass))
 hist(nest_habitat_summarized$avg_grass)
 
+#Creating models
 grass_model2 <- glmmTMB(avg_grass_prop ~ quadrat_distance + (1|site), 
                       data = nest_habitat_summarized2025, 
                       family = beta_family) # using means of each quadrat at each nest
@@ -302,7 +306,8 @@ grass_model3 <- glmmTMB(avg_grass_prop ~ quadrat_distance + (1 + survey_plot|sit
 summary(grass_model3) #
 summary(aov(grass_model3)) #
 
-
+## Forb Model
+#Testing normality
 ## forb vs quadrat distances - data is normal when log transformed
 shapiro.test(nest_habitat_summarized$avg_forb)
 shapiro.test(log1p(nest_habitat_summarized$avg_forb))
@@ -342,6 +347,9 @@ summary(forb_model1_2025) # AIC = 52.4
 ggpredict(forb_model1_2025, terms = c("quadrat_distance")) |> plot()
 summary(aov(forb_model1_2025)) #site is affecting the outcome of this model.
 
+
+## Bare Model 
+# Testing normality
 # bare vs quadrat distances - data NOT normal
 shapiro.test(nest_habitat_summarized$avg_bare)
 hist(nest_habitat_summarized$avg_bare)
@@ -379,7 +387,7 @@ summary(bare_model1_2025) # AIC = 13.0
 summary(aov(bare_model1_2025)) # site is affecting the outcome of this model. 
 ggpredict(bare_model1_2025, terms = c("quadrat_distance")) |> plot()
 
-# calculating Emmeans and obtaining predicted values for plotting
+##### calculating Emmeans, conduction pairwise comparison tests across distances, obtaining predicted values for plotting #####
 
 library(emmeans)
 ## grass model
