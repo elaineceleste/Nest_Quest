@@ -1,0 +1,16 @@
+site,year,month,day,quadrat_no,per_bare,per_forb,leaf_lit_cm_1,leaf_lit_cm_2,leaf_lit_cm_3,lit_mat_1,lit_mat_2,lit_mat_3,soil_temp_C,coor_N,coor_W,per_grass,date_grass_collected
+LE_gc,2024,8,27,0M,5_to_25,1_to_5,5,5,2,grass,bunch_grass,other_moss,19.6,44.984,92.90276,,
+LE_gc,2024,8,27,25M,5_to_25,1_to_5,5,3,6,grass,bunch_grass,,20.4,44.98379,92.90276,,
+LE_gc,2024,8,27,50M,5_to_25,1_to_5,0,0,0,grass,bunch_grass,rocks,20.4,44.98357,92.90277,,
+LE_gc,2024,8,27,75M,75_to_100,1_to_5,0,0,0,other,bare_soil,,19.8,44.98336,92.90281,,
+LE_gc,2024,8,27,100M,50_to_75,1_to_5,4,10,3,grass,bunch_grass,other_moss,20.4,44.98315,92.90302,,
+le_iw,2024,8,27,0M,5_to_25,0,28,74,38,grass,bunch_grass,,20.2,44.98549,92.93187,75_to_100,10/03/2025
+le_iw,2024,8,27,25M,5_to_25,0,35,12,24,grass,bunch_grass,,20,44.98571,92.93188,75_to_100,10/03/2025
+le_iw,2024,8,27,50M,5_to_25,1_to_5,5,5,9,grass,bunch_grass,other_moss,19.9,44.98594,92.93194,75_to_100,10/03/2025
+le_iw,2024,8,27,75M,5_to_25,0,5,2,1,grass,bunch_grass,other_moss,21.3,44.98616,92.932,75_to_100,10/03/2025
+le_iw,2024,8,27,100M,25_to_50,0,2,0,2,grass,bunch_grass,other_moss,21.2,44.98315,92.9032,75_to_100,10/03/2025
+24LH_eq1,2025,10,6,0M,,,,,,,,,,,,25_to_50,
+24LH_eq1,2025,10,6,25M,,,,,,,,,,,,75_to_100,
+24LH_eq1,2025,10,6,50M,,,,,,,,,,,,75_to_100,
+24LH_eq1,2025,10,6,75M,,,,,,,,,,,,25_to_50,
+24LH_eq1,2025,10,6,100M,,,,,,,,,,,,1_to_5,
