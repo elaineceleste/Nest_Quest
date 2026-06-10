@@ -1,0 +1,585 @@
+site,date,day,month,year,volunteer_or_staff,name,total_time,task,notes,volunteer_search_program,staff_search_program,radio_tracking_program
+NA,2024,NA,2024,2024,staff,Elaine Evans,10,Volunteer communications,promotional video,yes,no,no
+NA,3/14/2024,14,3,2024,staff,Elise Bernstein,4,Website building,,yes,no,no
+NA,5/29/2024,29,5,2024,staff,Elise Bernstein,0.25,Volunteer communications,,yes,no,no
+NA,6/10/2024,10,6,2024,staff,Elise Bernstein,0.5,Volunteer communications,,yes,no,no
+NA,6/17/2024,17,6,2024,staff,Elise Bernstein,2,Training,,yes,no,no
+NA,6/17/2024,17,6,2024,staff,Elaine Evans,2,Training,,yes,no,no
+NA,6/17/2024,17,6,2024,staff,Sami Dolan,2,Training,,yes,no,no
+NA,6/25/2024,25,6,2024,staff,Elise Bernstein,1,Drive time,Nest searching to find a nest for training,no,no,no
+NA,6/25/2024,25,6,2024,staff,Elaine Evans,1,Drive time,Nest searching to find a nest for training,no,no,no
+NA,6/25/2024,25,6,2024,staff,Renee Rademacher,1,Drive time,Nest searching to find a nest for training,no,no,no
+NA,6/25/2024,25,6,2024,staff,Sarah Henderson,1,Drive time,Nest searching to find a nest for training,no,no,no
+NA,6/30/2024,30,6,2024,staff,Elise Bernstein,2,Training,,yes,no,no
+NA,6/30/2024,30,6,2024,staff,Elaine Evans,2,Training,,yes,no,no
+NA,6/30/2024,30,6,2024,staff,Sami Dolan,2,Training,,yes,no,no
+NA,6/30/2024,30,6,2024,staff,Clara Costello,2,Training,,yes,no,no
+NA,7/1/2024,1,7,2024,staff,Elise Bernstein,0.5,Scheduling/planning,,no,yes,no
+hp_sled,7/3/2024,3,7,2024,staff,Elise Bernstein,1,staff nest searching,NA,no,yes,no
+hp_sled,7/3/2024,3,7,2024,staff,Jessica Schatz,1.066666667,staff nest searching,NA,no,yes,no
+hp_sled,7/3/2024,3,7,2024,staff,Rose Zappa,1.125,staff nest searching,NA,no,yes,no
+24lh_eq1,7/3/2024,3,7,2024,staff,Renee Rademacher,1.017777778,staff nest searching,NA,no,yes,no
+hp1,7/3/2024,3,7,2024,staff,Elise Bernstein,1.218888889,staff nest searching,NA,no,yes,no
+hp1,7/3/2024,3,7,2024,staff,Jessica Schatz,1.066666667,staff nest searching,NA,no,yes,no
+hp1,7/3/2024,3,7,2024,staff,Rose Zappa,1.033333333,staff nest searching,NA,no,yes,no
+lh_eq2,7/3/2024,3,7,2024,staff,Sarah Henderson,1,staff nest searching,NA,no,yes,no
+crow1,7/3/2024,3,7,2024,staff,Elise Bernstein,1.154166667,staff nest searching,NA,no,yes,no
+crow1,7/3/2024,3,7,2024,staff,Jessica Schatz,1.133333333,staff nest searching,NA,no,yes,no
+le_gc,7/3/2024,3,7,2024,staff,Renee Rademacher,1,staff nest searching,NA,no,yes,no
+crow2,7/3/2024,3,7,2024,staff,Elise Bernstein,1.106944444,staff nest searching,NA,no,yes,no
+crow2,7/3/2024,3,7,2024,staff,Jessica Schatz,1.083333333,staff nest searching,NA,no,yes,no
+LH & LE,7/3/2024,3,7,2024,staff,Clara Costello,1.5,Drive time,,no,yes,no
+LH & LE,7/3/2024,3,7,2024,staff,Renee Rademacher,1.5,Drive time,,no,yes,no
+LH & LE,7/3/2024,3,7,2024,staff,Sarah Henderson,1.5,Drive time,,no,yes,no
+HP & CH,7/3/2024,3,7,2024,staff,Elise Bernstein,1.83,Drive time,,no,yes,no
+HP & CH,7/3/2024,3,7,2024,staff,Rose Zappa,1.83,Drive time,,no,yes,no
+HP & CH,7/3/2024,3,7,2024,staff,Jessica Schatz,1.83,Drive time,,no,yes,no
+NA,7/8/2024,8,7,2024,staff,Elise Bernstein,0.5,Volunteer communications,,yes,no,no
+le_iw,7/9/2024,9,7,2024,staff,Clara Costello,1,staff nest searching,NA,no,yes,no
+le_iw,7/9/2024,9,7,2024,staff,Clara Costello,1,Drive time,,no,no,no
+le_iw,7/9/2024,9,7,2024,staff,Renee Rademacher,1,Drive time,,no,no,no
+crow1,7/11/2024,11,7,2024,volunteer,Dana Mangels,1,volunteer nest searching,NA,yes,no,no
+NA,7/11/2024,11,7,2024,staff,Elise Bernstein,0.25,Volunteer communications,,yes,no,no
+NA,7/12/2024,12,7,2024,staff,Elise Bernstein,1,Scheduling/planning,,no,yes,no
+NA,7/15/2024,15,7,2024,staff,Elise Bernstein,0.25,Volunteer communications,,yes,no,no
+hp_sled,7/16/2024,16,7,2024,staff,Elise Bernstein,1.075555556,staff nest searching,NA,no,yes,no
+hp_sled,7/16/2024,16,7,2024,staff,Renee Rademacher,1,staff nest searching,NA,no,yes,no
+hp1,7/16/2024,16,7,2024,staff,Elise Bernstein,1.516111111,staff nest searching,NA,no,yes,no
+hp1,7/16/2024,16,7,2024,staff,Renee Rademacher,1.516111111,staff nest searching,NA,no,yes,no
+24lh_eq1,7/16/2024,16,7,2024,volunteer,Michelle Gaydeski,1,volunteer nest searching,NA,yes,no,no
+HP,7/16/2024,16,7,2024,staff,Elise Bernstein,1,Drive time,,no,yes,no
+HP,7/16/2024,16,7,2024,staff,Renee Rademacher,1,Drive time,,no,yes,no
+crow1,7/17/2024,17,7,2024,staff,Elise Bernstein,1.029444444,staff nest searching,NA,no,yes,no
+crow2,7/17/2024,17,7,2024,staff,Elise Bernstein,1.020555556,staff nest searching,NA,no,yes,no
+CH,7/17/2024,17,7,2024,staff,Elise Bernstein,1.3,Drive time,,no,no,no
+crow1,7/18/2024,18,7,2024,volunteer,Dawn Peterson,1.059444444,volunteer nest searching,NA,yes,no,no
+HP,7/18/2024,18,7,2024,staff,Elaine Evans,1,Drive time,Habitat assessment,no,no,no
+HP,7/18/2024,18,7,2024,staff,Jayden Peterson,1,Drive time,Habitat assessment,no,no,no
+crow1,7/19/2024,19,7,2024,volunteer,Maggie Pennings,1.016666667,volunteer nest searching,NA,yes,no,no
+24lh_eq1,7/19/2024,19,7,2024,staff,Jayden Peterson,1,staff nest searching,NA,no,yes,no
+24lh_eq1,7/19/2024,19,7,2024,staff,Clara Costello,1,staff nest searching,NA,no,yes,no
+lh_eq2,7/19/2024,19,7,2024,staff,Jayden Peterson,1,staff nest searching,NA,no,yes,no
+lh_eq2,7/19/2024,19,7,2024,staff,Clara Costello,1,staff nest searching,NA,no,yes,no
+le_gc,7/19/2024,19,7,2024,volunteer,Rebecca Johnson,1.033333333,volunteer nest searching,NA,yes,no,no
+LH,7/19/2024,19,7,2024,staff,Clara Costello,1.5,Drive time,,no,yes,no
+LH,7/19/2024,19,7,2024,staff,Jayden Peterson,1.5,Drive time,,no,yes,no
+NA,7/19/2024,19,7,2024,staff,Elise Bernstein,0.5,Scheduling/planning,,no,yes,no
+crow2,7/22/2024,22,7,2024,staff,Elise Bernstein,1,staff nest searching,NA,no,yes,no
+crow1,7/22/2024,22,7,2024,staff,Elise Bernstein,1.051388889,staff nest searching,NA,no,yes,no
+le_gc,7/22/2024,22,7,2024,volunteer,Dawn Peterson,1.683333333,volunteer nest searching,NA,yes,no,no
+NA,7/23/2024,23,7,2024,staff,Elise Bernstein,0.25,Volunteer communications,,yes,no,no
+24lh_eq1,7/24/2024,24,7,2024,volunteer,Michelle Gaydeski,0.966666667,volunteer nest searching,NA,yes,no,no
+crow1,7/24/2024,24,7,2024,volunteer,Kevin McKinney,1.116666667,volunteer nest searching,NA,yes,no,no
+HP,7/24/2024,24,7,2024,staff,Elise Bernstein,1,Drive time,Green Team,no,no,no
+HP,7/24/2024,24,7,2024,staff,Jayden Peterson,1,Drive time,Green Team,no,no,no
+HP,7/24/2024,24,7,2024,staff,Sami Dolan,1,Drive time,Green Team,no,no,no
+HP,7/24/2024,24,7,2024,staff,Elise Bernstein,1,Training,Green Team,yes,no,no
+HP,7/24/2024,24,7,2024,staff,Jayden Peterson,1,Training,Green Team,yes,no,no
+HP,7/24/2024,24,7,2024,staff,Sami Dolan,1,Training,Green Team,yes,no,no
+lh_eq2,7/25/2024,25,7,2024,staff,Clara Costello,1.333333333,staff nest searching,NA,no,yes,no
+24lh_eq1,7/25/2024,25,7,2024,staff,Clara Costello,1.416666667,staff nest searching,NA,no,yes,no
+crow1,7/25/2024,25,7,2024,volunteer,Dana Mangels,1.266666667,volunteer nest searching,NA,yes,no,no
+HP,7/25/2024,25,7,2024,staff,Elise Bernstein,1,Drive time,Green Team,no,no,no
+HP,7/25/2024,25,7,2024,staff,Jayden Peterson,1,Drive time,Green Team,no,no,no
+LH,7/25/2024,25,7,2024,staff,Clara Costello,1,Drive time,,no,no,no
+HP,7/25/2024,25,7,2024,staff,Elise Bernstein,1,Training,Green Team,yes,no,no
+HP,7/25/2024,25,7,2024,staff,Jayden Peterson,1,Training,Green Team,yes,no,no
+crow1,7/26/2024,26,7,2024,volunteer,Maggie Pennings,1,volunteer nest searching,NA,yes,no,no
+le_iw,7/26/2024,26,7,2024,staff,Elise Bernstein,1.018888889,staff nest searching,NA,no,yes,no
+le_iw,7/26/2024,26,7,2024,staff,Jayden Peterson,1,staff nest searching,NA,no,yes,no
+hp_sled,7/26/2024,26,7,2024,volunteer,Karen Kaehler,1,volunteer nest searching,NA,yes,no,no
+le_gc,7/26/2024,26,7,2024,staff,Elise Bernstein,1.025833333,staff nest searching,NA,no,yes,no
+le_gc,7/26/2024,26,7,2024,staff,Jayden Peterson,1,staff nest searching,NA,no,yes,no
+lh_eq2,7/26/2024,26,7,2024,volunteer,Karen Kaehler,1.033333333,volunteer nest searching,NA,yes,no,no
+LE,7/26/2024,26,7,2024,staff,Elise Bernstein,1.25,Drive time,,no,yes,no
+LE,7/26/2024,26,7,2024,staff,Jayden Peterson,1.25,Drive time,,no,yes,no
+NA,7/26/2024,26,7,2024,staff,Elise Bernstein,0.5,Scheduling/planning,,no,yes,no
+le_gc,7/27/2024,27,7,2024,staff,Jayden Peterson,1,staff nest searching,NA,no,yes,no
+crow2,7/28/2024,28,7,2024,volunteer,Kevin McKinney,1,volunteer nest searching,NA,yes,no,no
+hp_sled,7/29/2024,29,7,2024,volunteer,Dawn Peterson,1.033333333,volunteer nest searching,NA,yes,no,no
+NA,7/29/2024,29,7,2024,staff,Elise Bernstein,0.5,Volunteer communications,,yes,no,no
+le_iw,7/30/2024,30,7,2024,staff,Elise Bernstein,1.1775,staff nest searching,NA,no,yes,no
+le_iw,7/30/2024,30,7,2024,staff,Jayden Peterson,1,staff nest searching,NA,no,yes,no
+24lh_eq1,7/30/2024,30,7,2024,staff,Elise Bernstein,1.060277778,staff nest searching,NA,no,yes,no
+24lh_eq1,7/30/2024,30,7,2024,staff,Jayden Peterson,1.016666667,staff nest searching,NA,no,yes,no
+lh_eq2,7/30/2024,30,7,2024,staff,Jayden Peterson,1.039166667,staff nest searching,NA,no,yes,no
+lh_eq2,7/30/2024,30,7,2024,staff,Jayden Peterson,1,staff nest searching,NA,no,yes,no
+LE & LH,7/30/2024,30,7,2024,staff,Elise Bernstein,1.5,Drive time,,no,yes,no
+LE & LH,7/30/2024,30,7,2024,staff,Jayden Peterson,1.5,Drive time,,no,yes,no
+le_gc,7/31/2024,31,7,2024,volunteer,Rebecca Johnson,1,volunteer nest searching,NA,yes,no,no
+LH,8/1/2024,1,8,2024,staff,Elise Bernstein,1,Drive time,Habitat assessment,no,no,no
+LH,8/1/2024,1,8,2024,staff,Elaine Evans,1,Drive time,Habitat assessment,no,no,no
+LH,8/1/2024,1,8,2024,staff,Jayden Peterson,1,Drive time,Habitat assessment,no,no,no
+LH,8/1/2024,1,8,2024,staff,Clara Costello,1,Drive time,Habitat assessment,no,no,no
+NA,8/1/2024,1,8,2024,staff,Elise Bernstein,0.25,Volunteer communications,,yes,no,no
+crow2,8/2/2024,2,8,2024,volunteer,Maggie Pennings,1.1,volunteer nest searching,NA,yes,no,no
+NA,8/2/2024,2,8,2024,staff,Elise Bernstein,1,Drive time,Habitat assessment,no,no,no
+NA,8/2/2024,2,8,2024,staff,Jayden Peterson,1,Drive time,Habitat assessment,no,no,no
+NA,8/2/2024,2,8,2024,staff,Clara Costello,1,Drive time,Habitat assessment,no,no,no
+NA,8/2/2024,2,8,2024,staff,Elise Bernstein,0.5,Scheduling/planning,,no,yes,no
+24lh_eq1,8/3/2024,3,8,2024,volunteer,Alex Swartz,1.633333333,volunteer nest searching,NA,yes,no,no
+24lh_eq1,8/3/2024,3,8,2024,volunteer,Anne Swartz,1.633333333,volunteer nest searching,NA,yes,no,no
+le_iw,8/4/2024,4,8,2024,volunteer,Dan Kilbury,1.117222222,volunteer nest searching,NA,yes,no,no
+NA,8/5/2024,5,8,2024,staff,Elise Bernstein,0.25,Volunteer communications,,yes,no,no
+crow2,8/6/2024,6,8,2024,staff,Elise Bernstein,1.078888889,staff nest searching,NA,no,yes,no
+crow2,8/6/2024,6,8,2024,staff,Jayden Peterson,1.066666667,staff nest searching,NA,no,yes,no
+crow1,8/6/2024,6,8,2024,volunteer,Dana Mangels,1.316666667,volunteer nest searching,NA,yes,no,no
+hp1,8/6/2024,6,8,2024,staff,Elise Bernstein,1.4025,staff nest searching,NA,no,yes,no
+hp1,8/6/2024,6,8,2024,staff,Jayden Peterson,1.404444444,staff nest searching,NA,no,yes,no
+CH & HP,8/6/2024,6,8,2024,staff,Elise Bernstein,1.85,Drive time,,no,yes,no
+CH & HP,8/6/2024,6,8,2024,staff,Jayden Peterson,1.85,Drive time,,no,yes,no
+crow1,8/7/2024,7,8,2024,volunteer,Sharon Meister,0.750277778,volunteer nest searching,NA,yes,no,no
+le_gc,8/7/2024,7,8,2024,volunteer,Dawn Peterson,1.133333333,volunteer nest searching,NA,yes,no,no
+hp_sled,8/7/2024,7,8,2024,staff,Elaine Evans,1.032222222,staff nest searching,NA,no,yes,no
+HP,8/7/2024,7,8,2024,staff,Elaine Evans,1,Drive time,nest search,no,no,no
+HP,8/7/2024,7,8,2024,staff,Elise Bernstein,1,Drive time,Habitat assessment,no,no,no
+HP,8/7/2024,7,8,2024,staff,Jayden Peterson,1,Drive time,Habitat assessment,no,no,no
+NA,8/7/2024,7,8,2024,staff,Elaine Evans,1.5,Training,Drive time from 8/7 counts towards this too,yes,no,no
+NA,8/7/2024,7,8,2024,staff,Elise Bernstein,1.5,Training,Drive time from 8/7 counts towards this too,yes,no,no
+NA,8/7/2024,7,8,2024,staff,Jayden Peterson,1.5,Training,Drive time from 8/7 counts towards this too,yes,no,no
+lh_eq2,8/8/2024,8,8,2024,staff,Jayden Peterson,1.033333333,staff nest searching,NA,no,yes,no
+lh_eq2,8/8/2024,8,8,2024,staff,Clara Costello,1.033333333,staff nest searching,NA,no,yes,no
+le_iw,8/8/2024,8,8,2024,staff,Jayden Peterson,1.062777778,staff nest searching,NA,no,yes,no
+le_iw,8/8/2024,8,8,2024,staff,Clara Costello,1.062777778,staff nest searching,NA,no,yes,no
+LE,8/8/2024,8,8,2024,staff,Jayden Peterson,1.5,Drive time,,no,yes,no
+LE,8/8/2024,8,8,2024,staff,Clara Costello,1.5,Drive time,,no,yes,no
+crow1,8/9/2024,9,8,2024,volunteer,Maggie Pennings,1.1,volunteer nest searching,NA,yes,no,no
+24lh_eq1,8/9/2024,9,8,2024,volunteer,Michelle Gaydeski,1,volunteer nest searching,NA,yes,no,no
+NA,8/9/2024,9,8,2024,staff,Elise Bernstein,0.5,Scheduling/planning,,no,yes,no
+le_gc,8/13/2024,13,8,2024,staff,Elise Bernstein,1.020833333,staff nest searching,NA,no,yes,no
+le_gc,8/13/2024,13,8,2024,staff,Jayden Peterson,1.0025,staff nest searching,NA,no,yes,no
+le_iw,8/13/2024,13,8,2024,volunteer,Rebecca Johnson,1.016666667,volunteer nest searching,NA,yes,no,no
+LE,8/13/2024,13,8,2024,staff,Elise Bernstein,1,Drive time,,no,yes,no
+LE,8/13/2024,13,8,2024,staff,Jayden Peterson,1,Drive time,,no,yes,no
+hp_sled,8/14/2024,14,8,2024,staff,Elise Bernstein,1.033333333,staff nest searching,NA,no,yes,no
+hp_sled,8/14/2024,14,8,2024,staff,Jayden Peterson,1.0075,staff nest searching,NA,no,yes,no
+hp_sled,8/14/2024,14,8,2024,staff,Clara Costello,1.033333333,staff nest searching,NA,no,yes,no
+HP,8/14/2024,14,8,2024,staff,Elise Bernstein,1,Drive time,,no,yes,no
+HP,8/14/2024,14,8,2024,staff,Jayden Peterson,1,Drive time,,no,yes,no
+HP,8/14/2024,14,8,2024,staff,Clara Costello,1,Drive time,,no,yes,no
+NA,8/14/2024,14,8,2024,staff,Elise Bernstein,0.25,Volunteer communications,,yes,no,no
+crow1,8/15/2024,15,8,2024,volunteer,Dana Mangels,1.083333333,volunteer nest searching,NA,yes,no,no
+NA,8/16/2024,16,8,2024,staff,Elise Bernstein,0.5,Scheduling/planning,,no,yes,no
+24lh_eq1,8/17/2024,17,8,2024,volunteer,Alex Swartz,1.858611111,volunteer nest searching,NA,yes,no,no
+le_iw,8/18/2024,18,8,2024,volunteer,Dan Kilbury,1.15,volunteer nest searching,NA,yes,no,no
+hp_sled,8/19/2024,19,8,2024,volunteer,Dawn Peterson,0.916666667,volunteer nest searching,NA,yes,no,no
+NA,8/19/2024,19,8,2024,staff,Elise Bernstein,1.5,Drive time,Habitat assessment,no,no,no
+NA,8/19/2024,19,8,2024,staff,Jayden Peterson,1.5,Drive time,Habitat assessment,no,no,no
+NA,8/20/2024,20,8,2024,staff,Elise Bernstein,1.5,Drive time,Habitat assessment,no,no,no
+NA,8/20/2024,20,8,2024,staff,Jayden Peterson,1.5,Drive time,Habitat assessment,no,no,no
+le_gc,8/22/2024,22,8,2024,volunteer,Dawn Peterson,1.726388889,volunteer nest searching,NA,yes,no,no
+NA,8/22/2024,22,8,2024,staff,Elise Bernstein,1,Drive time,Habitat assessment,no,no,no
+NA,8/22/2024,22,8,2024,staff,Clara Costello,1,Drive time,Habitat assessment,no,no,no
+NA,8/23/2024,23,8,2024,staff,Elise Bernstein,0.5,Scheduling/planning,,no,yes,no
+crow2,8/24/2024,24,8,2024,volunteer,Dawn Peterson,1,volunteer nest searching,NA,yes,no,no
+crow1,8/25/2024,25,8,2024,volunteer,Maggie Pennings,1.216666667,volunteer nest searching,NA,yes,no,no
+crow2,8/25/2024,25,8,2024,volunteer,Kevin McKinney,1,volunteer nest searching,NA,yes,no,no
+NA,8/26/2024,26,8,2024,staff,Elise Bernstein,0.25,Volunteer communications,,yes,no,no
+NA,8/27/2024,27,8,2024,staff,Jayden Peterson,1,Drive time,Habitat assessment,no,no,no
+NA,8/27/2024,27,8,2024,staff,Elise Bernstein,1,Drive time,Habitat assessment,no,no,no
+NA,8/27/2024,27,8,2024,staff,Clara Costello,1,Drive time,Habitat assessment,no,no,no
+NA,8/28/2024,28,8,2024,staff,Elise Bernstein,0.25,Volunteer communications,,yes,no,no
+NA,8/30/2024,30,8,2024,staff,Elise Bernstein,0.5,Scheduling/planning,,no,yes,no
+24lh_eq1,8/31/2024,31,8,2024,volunteer,Alex Swartz,1.718055556,volunteer nest searching,NA,yes,no,no
+crow2,9/1/2024,1,9,2024,volunteer,Kevin McKinney,0.983333333,volunteer nest searching,NA,yes,no,no
+crow1,9/1/2024,1,9,2024,volunteer,Kevin McKinney,0.961111111,volunteer nest searching,NA,yes,no,no
+le_gc,9/3/2024,3,9,2024,volunteer,Rebecca Johnson,1.016666667,volunteer nest searching,NA,yes,no,no
+crow2,9/4/2024,4,9,2024,staff,Elise Bernstein,1.022222222,staff nest searching,NA,no,yes,no
+crow2,9/4/2024,4,9,2024,staff,Jayden Peterson,1.041111111,staff nest searching,NA,no,yes,no
+24lh_eq1,9/4/2024,4,9,2024,volunteer,Michelle Gaydeski,1,volunteer nest searching,NA,yes,no,no
+hp_sled,9/4/2024,4,9,2024,staff,Elise Bernstein,1.019444444,staff nest searching,NA,no,yes,no
+hp_sled,9/4/2024,4,9,2024,staff,Jayden Peterson,1,staff nest searching,NA,no,yes,no
+HP & CH,9/4/2024,4,9,2024,staff,Elise Bernstein,1,Drive time,,no,yes,no
+HP & CH,9/4/2024,4,9,2024,staff,Jayden Peterson,1,Drive time,,no,yes,no
+lh_eq2,9/5/2024,5,9,2024,staff,Jayden Peterson,1.05,staff nest searching,NA,no,yes,no
+24lh_eq1,9/5/2024,5,9,2024,staff,Jayden Peterson,1.016111111,staff nest searching,NA,no,yes,no
+24lh_eq1,9/5/2024,5,9,2024,staff,Clara Costello,1.016111111,staff nest searching,NA,no,yes,no
+le_iw,9/5/2024,5,9,2024,staff,Jayden Peterson,1.016666667,staff nest searching,NA,no,yes,no
+le_iw,9/5/2024,5,9,2024,staff,Clara Costello,1.016666667,staff nest searching,NA,no,yes,no
+LE & LH,9/5/2024,5,9,2024,staff,Jayden Peterson,1.5,Drive time,,no,yes,no
+LE & LH,9/5/2024,5,9,2024,staff,Clara Costello,1.5,Drive time,,no,yes,no
+NA,9/6/2024,6,9,2024,staff,Elise Bernstein,0.5,Scheduling/planning,,no,yes,no
+le_iw,9/10/2024,10,9,2024,staff,Jayden Peterson,1,staff nest searching,NA,no,yes,no
+le_iw,9/10/2024,10,9,2024,staff,Elise Bernstein,1.019722222,staff nest searching,NA,no,yes,no
+le_gc,9/10/2024,10,9,2024,volunteer,Dawn Peterson,1.116666667,volunteer nest searching,NA,yes,no,no
+LE,9/10/2024,10,9,2024,staff,Elise Bernstein,1,Drive time,,no,yes,no
+LE,9/10/2024,10,9,2024,staff,Jayden Peterson,1,Drive time,,no,yes,no
+NA,9/10/2024,10,9,2024,staff,Elise Bernstein,1,Drive time,Unsure why 2 drive times for 2 diff people this day,no,no,no
+NA,9/10/2024,10,9,2024,staff,Elaine Evans,1,Drive time,Unsure why 2 drive times for 2 diff people this day,no,no,no
+NA,9/11/2024,11,9,2024,staff,Elise Bernstein,0.5,Volunteer communications,,yes,no,no
+NA,9/12/2024,12,9,2024,staff,Jayden Peterson,1.5,Drive time,No nest searching or habitat assessment recorded this day,no,no,no
+NA,9/12/2024,12,9,2024,staff,Clara Costello,1.5,Drive time,No nest searching or habitat assessment recorded this day,no,no,no
+NA,9/17/2024,17,9,2024,staff,Elise Bernstein,0.25,Volunteer communications,,yes,no,no
+NA,9/19/2024,19,9,2024,staff,Elise Bernstein,0.25,Volunteer communications,,yes,no,no
+Bee Lab,9/26/2024,26,9,2024,staff,Elaine Evans,2,Radio tracking,,no,no,yes
+NA,9/27/2024,27,9,2024,staff,Elise Bernstein,1,Drive time,Assuming habitat assessment ? ,no,no,no
+NA,9/27/2024,27,9,2024,staff,Jayden Peterson,1,Drive time,Assuming habitat assessment ? ,no,no,no
+Bee Lab,9/27/2024,27,9,2024,staff,Elaine Evans,2,Radio tracking,,no,no,yes
+NA,9/30/2024,30,9,2024,staff,Elise Bernstein,1,Drive time,Assuming habitat assessment ? ,no,no,no
+NA,9/30/2024,30,9,2024,staff,Jayden Peterson,1,Drive time,Assuming habitat assessment ? ,no,no,no
+NA,10/11/2024,11,10,2024,staff,Elise Bernstein,1.5,Drive time,Assuming habitat assessment ? ,no,no,no
+NA,10/11/2024,11,10,2024,staff,Jayden Peterson,1.5,Drive time,Assuming habitat assessment ? ,no,no,no
+Bee Lab,3/6/2025,NA,3/6/2025,2025,staff,Elaine Evans,0.666666667,Radio tracking,equiptment testing,no,no,yes
+Bee Lab,3/6/2025,NA,3/6/2025,2025,staff,Elise Bernstein,0.666666667,Radio tracking,equiptment testing,no,no,yes
+Bee Lab,3/6/2025,NA,3/6/2025,2025,staff,Clara Costello,0.666666667,Radio tracking,equiptment testing,no,no,yes
+Bee Lab,3/24/2025,NA,3/24/2025,2025,staff,Elaine Evans,0.666666667,Radio tracking,equiptment testing,no,no,yes
+Bee Lab,3/24/2025,NA,3/24/2025,2025,staff,Elise Bernstein,0.666666667,Radio tracking,equiptment testing,no,no,yes
+Bee Lab,3/24/2025,NA,3/24/2025,2025,staff,Sami Dolan,0.666666667,Radio tracking,equiptment testing,no,no,yes
+NA,4/2/2025,2,4,2025,staff,Sami Dolan,15,Data entry,,no,yes,no
+Bee Lab,4/2/2025,2,4,2025,staff,Clara Costello,2,Radio tracking,equiptment testing,no,no,yes
+Bee Lab,4/2/2025,2,4,2025,staff,Elise Bernstein,2,Radio tracking,equiptment testing,no,no,yes
+Bee Lab,4/2/2025,2,4,2025,staff,Sami Dolan,2,Radio tracking,equiptment testing,no,no,yes
+Bee Lab,4/2/2025,2,4,2025,staff,Elaine Evans,5,Radio tracking,equiptment testing,no,no,yes
+Bee Lab,4/7/2025,NA,4/7/2025,2025,staff,Elaine Evans,1,Radio tracking,equiptment testing,no,no,yes
+Bee Lab,4/7/2025,NA,4/7/2025,2025,staff,Elise Bernstein,1,Radio tracking,equiptment testing,no,no,yes
+Bee Lab,5/6/2025,NA,5/6/2025,2025,staff,Elaine Evans,1,Radio tracking,equiptment testing,no,no,yes
+Bee Lab,5/6/2025,NA,5/6/2025,2025,staff,Elise Bernstein,1,Radio tracking,equiptment testing,no,no,yes
+NA,6/2/2025,2,6,2025,staff,Elise Bernstein,0.5,Training,,yes,no,no
+NA,6/2/2025,2,6,2025,staff,Elaine Evans,0.5,Training,,yes,no,no
+NA,6/3/2025,3,6,2025,staff,Elise Bernstein,2,Training,6/2/2025,yes,no,no
+NA,6/3/2025,3,6,2025,staff,Elaine Evans,2,Training,6/2/2025,yes,no,no
+25lh_eq1,6/10/2025,10,6,2025,staff,Elise Bernstein,1.051944444,staff nest searching,NA,no,yes,no
+hp2,6/12/2025,12,6,2025,staff,Elaine Evans,0.533333333,staff nest searching,NA,no,yes,no
+hp2,6/12/2025,12,6,2025,staff,Elise Bernstein,0.565555556,staff nest searching,NA,no,yes,no
+25lh_eq1,6/10/2025,10,6,2025,staff,Elise Bernstein,1.16667,Drive time,,no,yes,no
+hp2,6/12/2025,12,6,2025,staff,Elaine Evans,1.16667,Drive time,,no,yes,no
+hp2,6/12/2025,12,6,2025,staff,Elise Bernstein,1.16667,Drive time,,no,yes,no
+NA,6/16/2025,16,6,2025,staff,Sami Dolan,5,Training,6/3/2025,yes,no,no
+NA,6/17/2025,17,6,2025,staff,Elise Bernstein,1.5,Volunteer communications,7/28/2025,yes,no,no
+NA,6/22/2025,22,6,2025,staff,Elise Bernstein,1.5,Training,6/16/2025,yes,no,no
+NA,6/22/2025,22,6,2025,staff,Elaine Evans,1.5,Training,6/16/2025,yes,no,no
+NA,6/22/2025,22,6,2025,staff,Clara Costello,1.5,Training,6/16/2025,yes,no,no
+hp_sled,6/23/2025,23,6,2025,volunteer,Micah Sharer,1.066666667,volunteer nest searching,NA,yes,no,no
+hp1,6/23/2025,23,6,2025,volunteer,Tamara Smith,1.021944444,volunteer nest searching,NA,yes,no,no
+lh_schultz,6/24/2025,24,6,2025,volunteer,Elizabeth Davis,1,volunteer nest searching,NA,yes,no,no
+lh_schultz,6/24/2025,24,6,2025,volunteer,Janet Orange,1.133333333,volunteer nest searching,NA,yes,no,no
+NA,6/24/2025,24,6,2025,staff,Elise Bernstein,1.5,Volunteer communications,6/17/2025,yes,no,no
+lh_schultz,6/27/2025,27,6,2025,volunteer,Maria Cicenas,1,volunteer nest searching,NA,yes,no,no
+le_barn,6/27/2025,27,6,2025,volunteer,Catherine Grant,1,volunteer nest searching,NA,yes,no,no
+25lh_eq1,6/27/2025,27,6,2025,volunteer,Tom Patterson,1.016666667,volunteer nest searching,NA,yes,no,no
+lh_eq2,6/28/2025,28,6,2025,volunteer,Sara Williams,0.85,volunteer nest searching,NA,yes,no,no
+lh_schultz,6/29/2025,29,6,2025,volunteer,Lucia Webb,0.833333333,volunteer nest searching,NA,yes,no,no
+crow3,6/29/2025,29,6,2025,volunteer,Kevin McKinney,1.183333333,volunteer nest searching,NA,yes,no,no
+le_gc,6/30/2025,30,6,2025,volunteer,Catherine Grant,1.066666667,volunteer nest searching,NA,yes,no,no
+lh_schultz,6/30/2025,30,6,2025,volunteer,Janet Orange,1.066666667,volunteer nest searching,NA,yes,no,no
+le_ski,6/30/2025,30,6,2025,volunteer,Brian Etling,1.397222222,volunteer nest searching,NA,yes,no,no
+lh_schultz,6/30/2025,30,6,2025,volunteer,Ashley Suchomel,1.05,volunteer nest searching,NA,yes,no,no
+NA,6/30/2025,30,6,2025,staff,Elise Bernstein,0.5,Scheduling/planning,,no,yes,no
+lh_eq2,7/1/2025,1,7,2025,volunteer,Emily Hanych,1.106666667,volunteer nest searching,NA,yes,no,no
+lh_schultz,7/1/2025,1,7,2025,volunteer,Gretchen Domek,1.033888889,volunteer nest searching,NA,yes,no,no
+LE,7/2/2025 17:00,2,7,2025,staff,Clara Costello,3,Radio tracking,,no,no,yes
+LE,7/2/2025 17:00,2,7,2025,staff,Elaine Evans,3,Radio tracking,,no,no,yes
+LE,7/2/2025 17:00,2,7,2025,staff,Jayden Peterson,3,Radio tracking,,no,no,yes
+LE,7/2/2025 17:00,2,7,2025,staff,Clara Costello,1.1667,Drive time,,no,no,yes
+LE,7/2/2025 17:00,2,7,2025,staff,Elise Bernstein,1.1667,Drive time,,no,no,yes
+LE,7/2/2025 17:00,2,7,2025,staff,Jayden Peterson,1.1667,Drive time,,no,no,yes
+le_ski,7/3/2025,3,7,2025,volunteer,David Morrison,1.5375,volunteer nest searching,NA,yes,no,no
+lh_schultz,7/3/2025,3,7,2025,volunteer,Maria Cicenas,1,volunteer nest searching,NA,yes,no,no
+le_ski,7/3/2025,3,7,2025,staff,Jayden Peterson,1,staff nest searching,NA,no,yes,no
+le_ski,7/3/2025,3,7,2025,staff,Fern LaBry,1,staff nest searching,NA,no,yes,no
+le_gc,7/3/2025,3,7,2025,staff,Jayden Peterson,1,staff nest searching,NA,no,yes,no
+le_gc,7/3/2025,3,7,2025,staff,Fern LaBry,1,staff nest searching,NA,no,yes,no
+le_gc,7/3/2025,3,7,2025,staff,Elise Bernstein,0.861388889,staff nest searching,NA,no,yes,no
+LE,7/3/2025,3,7,2025,staff,Jayden Peterson,1.6667,Drive time,,no,yes,no
+LE,7/3/2025,3,7,2025,staff,Fern LaBry,1.6667,Drive time,,no,yes,no
+LE,7/3/2025,3,7,2025,staff,Elise Bernstein,1.6667,Drive time,,no,no,no
+LE,7/3/2025,3,7,2025,staff,Jayden Peterson,1.5,Radio tracking,,no,no,no
+LE,7/3/2025,3,7,2025,staff,Fern LaBry,1.5,Radio tracking,,no,no,no
+LE,7/3/2025 17:00,3,7,2025,staff,Elise Bernstein,1.5,Radio tracking,,no,no,yes
+25lh_eq1,7/4/2025,4,7,2025,volunteer,Cathy Seurer,1,volunteer nest searching,NA,yes,no,no
+hp_sled,7/7/2025,7,7,2025,volunteer,Megan Plante,0.9325,volunteer nest searching,NA,yes,no,no
+lh_schultz,7/7/2025,7,7,2025,volunteer,Janet Orange,1.066666667,volunteer nest searching,NA,yes,no,no
+lh_eq2,7/7/2025,7,7,2025,volunteer,Tom Patterson,1.033333333,volunteer nest searching,NA,yes,no,no
+hp_sled,7/7/2025,7,7,2025,volunteer,Micah Sharer,1.116666667,volunteer nest searching,NA,yes,no,no
+hp1,7/7/2025,7,7,2025,volunteer,Tamara Smith,1.016666667,volunteer nest searching,NA,yes,no,no
+le_gc,7/7/2025,7,7,2025,volunteer,Rebecca Johnson,1.023055556,volunteer nest searching,NA,yes,no,no
+NA,7/7/2025,7,7,2025,staff,Elise Bernstein,0.5,Scheduling/planning,,no,yes,no
+NA,7/7/2025,7,7,2025,staff,Elise Bernstein,0.25,Volunteer communications,6/24/2025,yes,no,no
+NA,7/7/2025 17:00,7,7,2025,staff,Jayden Peterson,5,Data entry,,no,yes,no
+Arden Hills,7/7/2025 17:00,7,7,2025,staff,NA,3,Drive time,Radio,no,no,no
+Arden Hills,7/7/2025 17:00,7,7,2025,staff,NA,2,Radio tracking,,no,no,yes
+hp1,7/8/2025,8,7,2025,staff,Elaine Evans,0.983333333,staff nest searching,NA,no,yes,no
+NA,7/8/2025 17:00,8,7,2025,staff,Elise Bernstein,3,Volunteer communications,7/7/2025,yes,no,no
+crow1,7/9/2025,9,7,2025,staff,Jayden Peterson,1.016666667,staff nest searching,NA,no,yes,no
+crow1,7/9/2025,9,7,2025,staff,Elise Bernstein,1.006111111,staff nest searching,NA,no,yes,no
+crow2,7/9/2025,9,7,2025,staff,Elise Bernstein,1.064444444,staff nest searching,NA,no,yes,no
+crow2,7/9/2025,9,7,2025,staff,Jayden Peterson,1,staff nest searching,NA,no,yes,no
+crow3,7/9/2025,9,7,2025,staff,Elise Bernstein,1.056388889,staff nest searching,NA,no,yes,no
+crow3,7/9/2025,9,7,2025,staff,Jayden Peterson,1.003611111,staff nest searching,NA,no,no,no
+CH,7/9/2025,9,7,2025,staff,Elise Bernstein,1.333,Drive time,,no,no,no
+CH,7/9/2025,9,7,2025,staff,Jayden Peterson,1.333,Drive time,,no,no,no
+le_gc,7/9/2025,9,7,2025,volunteer,Kathy Sidles,0.183333333,volunteer nest searching,NA,yes,no,no
+NA,7/9/2025,9,7,2025,staff,Elise Bernstein,1.5,Volunteer communications,7/8/2025 17:00,yes,no,no
+NA,7/9/2025 17:00,9,7,2025,staff,Jayden Peterson,1,Data entry,,no,yes,no
+le_ski,7/10/2025,10,7,2025,volunteer,Rebecca Lautenschlager,1.116666667,volunteer nest searching,NA,yes,no,no
+lh_schultz,7/10/2025,10,7,2025,volunteer,Maria Cicenas,1,volunteer nest searching,NA,yes,no,no
+ah_lowerupper,7/10/2025,10,7,2025,staff,Elise Bernstein,1.1,staff nest searching,NA,no,yes,no
+ah_lowerupper,7/10/2025,10,7,2025,staff,Fern LaBry,1.15,staff nest searching,NA,no,yes,no
+ah_lowerupper,7/10/2025,10,7,2025,staff,Jayden Peterson,1,staff nest searching,NA,no,yes,no
+ah_north,7/10/2025,10,7,2025,staff,Elise Bernstein,0.364166667,staff nest searching,NA,no,yes,no
+ah_north,7/10/2025,10,7,2025,staff,Fern LaBry,0.35,staff nest searching,NA,no,yes,no
+ah_north,7/10/2025,10,7,2025,staff,Jayden Peterson,0.333333333,staff nest searching,NA,no,yes,no
+ah_lowerupper,7/11/2025,11,7,2025,staff,Jayden Peterson,1,staff nest searching,NA,no,yes,no
+Arden Hills,7/10/2025,10,7,2025,staff,Jayden Peterson,0.5,Drive time,,no,yes,no
+Arden Hills,7/10/2025,10,7,2025,staff,Elise Bernstein,0.5,Drive time,,no,yes,no
+Arden Hills,7/10/2025,10,7,2025,staff,Fern LaBry,0.5,Drive time,,no,yes,no
+le_gc,7/11/2025,11,7,2025,volunteer,David Morrison,1.2,volunteer nest searching,NA,yes,no,no
+crow1,7/11/2025,11,7,2025,volunteer,Maria DeLaundreau,1.047222222,volunteer nest searching,NA,yes,no,no
+crow2,7/11/2025,11,7,2025,volunteer,Micah Sharer,1.043611111,volunteer nest searching,NA,yes,no,no
+crow2,7/11/2025,11,7,2025,volunteer,Kevin McKinney,1.166666667,volunteer nest searching,NA,yes,no,no
+crow3,7/13/2025,13,7,2025,volunteer,Dawn Peterson,0.866666667,volunteer nest searching,NA,yes,no,no
+25lh_eq1,7/13/2025,13,7,2025,volunteer,Lucia Webb,1.069166667,volunteer nest searching,NA,yes,no,no
+lh_schultz,7/13/2025,13,7,2025,volunteer,Jesse Williams,1,volunteer nest searching,NA,yes,no,no
+lh_schultz,7/13/2025,13,7,2025,volunteer,Jesse Williams,0.983333333,volunteer nest searching,NA,yes,no,no
+25lh_eq1,7/14/2025,14,7,2025,volunteer,Ashley Suchomel,1,volunteer nest searching,NA,yes,no,no
+NA,7/14/2025,14,7,2025,staff,Jayden Peterson,8,Data entry,,no,yes,no
+NA,7/14/2025,14,7,2025,staff,Elise Bernstein,0.5,Scheduling/planning,,no,yes,no
+25lh_eq1,7/15/2025,15,7,2025,volunteer,Emily Hanych,1.216666667,volunteer nest searching,NA,yes,no,no
+NA,7/15/2025,15,7,2025,staff,Jayden Peterson,6,Data entry,,no,yes,no
+le_gc,7/16/2025,16,7,2025,volunteer,Paul Richtman,0.916666667,volunteer nest searching,NA,yes,no,no
+NA,7/16/2025,16,7,2025,staff,Jayden Peterson,4,Data entry,,no,yes,no
+le_gc,7/17/2025,17,7,2025,volunteer,Dawn Peterson,1.276111111,volunteer nest searching,NA,yes,no,no
+NA,7/17/2025,17,7,2025,staff,Jayden Peterson,1,Data entry,,no,yes,no
+Arden Hills,7/17/2025,17,7,2025,staff,Elise Bernstein,0.5,Drive time,Radio,no,no,yes
+Arden Hills,7/17/2025,17,7,2025,staff,Clara Costello,0.5,Drive time,Radio,no,no,yes
+Arden Hills,7/17/2025,17,7,2025,staff,Jayden Peterson,0.5,Drive time,Radio,no,no,yes
+Arden Hills,7/17/2025,17,7,2025,staff,Elise Bernstein,4,Radio tracking,,no,no,yes
+Arden Hills,7/17/2025,17,7,2025,staff,Clara Costello,4,Radio tracking,,no,no,yes
+Arden Hills,7/17/2025,17,7,2025,staff,Jayden Peterson,4,Radio tracking,,no,no,yes
+lh_eq2,7/18/2025,18,7,2025,volunteer,Maria Cicenas,1.583333333,volunteer nest searching,NA,yes,no,no
+le_ski,7/18/2025,18,7,2025,volunteer,David Morrison,1.25,volunteer nest searching,NA,yes,no,no
+Arden Hills,7/17/2025,17,7,2025,staff,Elise Bernstein,2,Radio tracking,,no,no,yes
+Arden Hills,7/17/2025,17,7,2025,staff,Jayden Peterson,2,Radio tracking,,no,no,yes
+Arden Hills,7/18/2025,18,7,2025,staff,Fern LaBry,2,Radio tracking,,no,no,yes
+Arden Hills,7/18/2025,18,7,2025,staff,Fern LaBry,1.5,Drive time,Radio ,no,no,yes
+Arden Hills,7/18/2025,18,7,2025,staff,Elise Bernstein,1.5,Drive time,Radio ,no,no,yes
+Arden Hills,7/18/2025,18,7,2025,staff,Jayden Peterson,1.5,Drive time,Radio ,no,no,yes
+lh_eq2,7/19/2025,19,7,2025,volunteer,Tom Patterson,1.166666667,volunteer nest searching,NA,yes,no,no
+crow2,7/19/2025,19,7,2025,volunteer,Dawn Peterson,1.101666667,volunteer nest searching,NA,yes,no,no
+le_ski,7/20/2025,20,7,2025,volunteer,Pamela Carlson,1,volunteer nest searching,NA,yes,no,no
+25lh_eq1,7/20/2025,20,7,2025,volunteer,Cathy Seurer,1.05,volunteer nest searching,NA,yes,no,no
+lh_schultz,7/20/2025,20,7,2025,volunteer,Jesse Williams,1.198055556,volunteer nest searching,NA,yes,no,no
+lh_schultz,7/20/2025,20,7,2025,volunteer,Jesse Williams,1.166666667,volunteer nest searching,NA,yes,no,no
+le_barn,7/21/2025,21,7,2025,volunteer,Paul Richtman,0.890555556,volunteer nest searching,NA,yes,no,no
+NA,7/21/2025,21,7,2025,staff,Elise Bernstein,0.5,Scheduling/planning,,no,yes,no
+NA,7/21/2025,21,7,2025,staff,Elise Bernstein,0.5,Volunteer communications,7/9/2025,yes,no,no
+NA,7/21/2025 17:00,21,7,2025,staff,Elise Bernstein,2,Volunteer communications,7/21/2025,yes,no,no
+25lh_eq1,7/22/2025,22,7,2025,volunteer,Maria Cicenas,1.633333333,volunteer nest searching,NA,yes,no,no
+NA,7/22/2025,22,7,2025,staff,Elise Bernstein,1.5,Volunteer communications,7/21/2025 17:00,yes,no,no
+le_gc,7/23/2025,23,7,2025,volunteer,Rebecca Johnson,0.699722222,volunteer nest searching,NA,yes,no,no
+NA,7/23/2025 17:00,23,7,2025,staff,Jayden Peterson,1.5,Data entry,,no,yes,no
+NA,7/24/2025 17:00,24,7,2025,staff,Jayden Peterson,2,Data entry,,no,yes,no
+le_ski,7/25/2025,25,7,2025,volunteer,Brian Etling,1.05,volunteer nest searching,NA,yes,no,no
+25lh_eq1,7/28/2025,28,7,2025,volunteer,Ashley Suchomel,1.05,volunteer nest searching,NA,yes,no,no
+25lh_eq1,7/28/2025,28,7,2025,volunteer,Kyle Wilson,1.0225,volunteer nest searching,NA,yes,no,no
+NA,7/28/2025,28,7,2025,staff,Elise Bernstein,0.5,Scheduling/planning,,no,yes,no
+NA,7/28/2025,28,7,2025,staff,Elise Bernstein,0.5,Training,6/22/2025,yes,no,no
+NA,7/28/2025,28,7,2025,staff,Elaine Evans,0.5,Training,6/22/2025,yes,no,no
+NA,7/28/2025 17:00,28,7,2025,staff,Jayden Peterson,3,Data entry,,no,yes,no
+ah_upper,7/29/2025,29,7,2025,staff,Elise Bernstein,1.075833333,staff nest searching,NA,no,yes,no
+ah_upper,7/29/2025,29,7,2025,staff,Fern LaBry,1.096666667,staff nest searching,NA,no,yes,no
+Arden Hills,7/29/2025,29,7,2025,staff,Elise Bernstein,0.5,Drive time,Radio & nest search,no,yes,yes
+Arden Hills,7/29/2025,29,7,2025,staff,Fern LaBry,0.5,Drive time,Radio & nest search,no,yes,yes
+Arden Hills,7/29/2025 17:00,29,7,2025,staff,NA,1,Radio tracking,Weirdness,no,no,yes
+Arden Hills,7/29/2025 17:00,29,7,2025,staff,NA,2,Radio tracking,Weirdness,no,no,yes
+Arden Hills,7/29/2025 17:00,29,7,2025,staff,NA,5,Radio tracking,Weirdness,no,no,yes
+le_barn,7/30/2025,30,7,2025,volunteer,Catherine Grant,1.483333333,volunteer nest searching,NA,yes,no,no
+lh_eq2,7/30/2025,30,7,2025,volunteer,Tom Patterson,0.985277778,volunteer nest searching,NA,yes,no,no
+Arden Hills,7/30/2025 17:00,30,7,2025,staff,Elise Bernstein,1.5,Drive time,Radio,no,no,yes
+Arden Hills,7/30/2025 17:00,30,7,2025,staff,Elaine Evans,1.5,Drive time,Radio,no,no,yes
+Arden Hills,7/30/2025 17:00,30,7,2025,staff,Elise Bernstein,4,Radio tracking,,no,no,yes
+Arden Hills,7/30/2025 17:00,30,7,2025,staff,Elaine Evans,4,Radio tracking,,no,no,yes
+Arden Hills,7/31/2025 17:00,31,7,2025,staff,NA,3.45,Radio tracking,Weirdness,no,no,yes
+Arden Hills,7/31/2025 17:00,31,7,2025,staff,Jayden Peterson,3,Radio tracking,,no,no,yes
+Arden Hills,7/31/2025 17:00,31,7,2025,staff,Fern LaBry,3,Radio tracking,,no,no,yes
+Arden Hills,7/31/2025 17:00,31,7,2025,staff,Clara Costello,3,Radio tracking,,no,no,yes
+crow2,8/3/2025,3,8,2025,volunteer,Kevin McKinney,1.216666667,volunteer nest searching,NA,yes,no,no
+crow3,8/3/2025,3,8,2025,volunteer,Kevin McKinney,0.856944444,volunteer nest searching,NA,yes,no,no
+lh_eq2,8/4/2025,4,8,2025,volunteer,Tom Patterson,0.583333333,volunteer nest searching,NA,yes,no,no
+hp_sled,8/5/2025,5,8,2025,staff,Elaine Evans,1.133333333,staff nest searching,NA,no,yes,no
+hp_sled,8/5/2025,5,8,2025,staff,Fern LaBry,1.1,staff nest searching,NA,no,yes,no
+hp_sled,8/5/2025,5,8,2025,staff,Jayden Peterson,1.012777778,staff nest searching,NA,no,yes,no
+hp1,8/5/2025,5,8,2025,staff,Fern LaBry,1.205833333,staff nest searching,NA,no,yes,no
+hp1,8/5/2025,5,8,2025,staff,Jayden Peterson,0.333333333,staff nest searching,NA,no,yes,no
+hp1,8/5/2025,5,8,2025,staff,Jayden Peterson,0.25,staff nest searching,NA,no,yes,no
+HP,8/5/2025,5,8,2025,staff,Jayden Peterson,1.5,Drive time,,no,yes,no
+HP,8/5/2025,5,8,2025,staff,Fern LaBry,1.5,Drive time,,no,yes,no
+HP,8/5/2025 17:00,5,8,2025,staff,Elaine Evans,1.5,Drive time,,no,yes,no
+le_barn,8/6/2025,6,8,2025,staff,Elise Bernstein,1.051388889,staff nest searching,NA,no,yes,no
+le_barn,8/6/2025,6,8,2025,staff,Jayden Peterson,1.006111111,staff nest searching,NA,no,yes,no
+NA,8/6/2025,6,8,2025,staff,Elise Bernstein,0.5,Volunteer communications,7/22/2025,yes,no,no
+LE,8/6/2025 17:00,6,8,2025,staff,Jayden Peterson,2,Drive time,,no,yes,no
+LE,8/6/2025 17:00,6,8,2025,staff,Elise Bernstein,2,Drive time,,no,yes,no
+lh_eq2,8/7/2025,7,8,2025,volunteer,Emily Hanych,1.002777778,volunteer nest searching,NA,yes,no,no
+lh_schultz,8/7/2025,7,8,2025,volunteer,Maria Cicenas,1,volunteer nest searching,NA,yes,no,no
+NA,8/7/2025,7,8,2025,staff,Elise Bernstein,1.5,Volunteer communications,8/7/2025,yes,no,no
+Arden Hills,8/7/2025 17:00,7,8,2025,staff,Elise Bernstein,1.5,Drive time,Radio,no,no,yes
+Arden Hills,8/7/2025 17:00,7,8,2025,staff,Elaine Evans,1.5,Drive time,Radio,no,no,yes
+Arden Hills,8/7/2025 17:00,7,8,2025,staff,Jayden Peterson,1.5,Drive time,Radio,no,no,yes
+Arden Hills,8/7/2025 17:00,7,8,2025,staff,Elise Bernstein,3.85,Radio tracking,,no,no,yes
+Arden Hills,8/7/2025 17:00,7,8,2025,staff,Elaine Evans,3.85,Radio tracking,,no,no,yes
+Arden Hills,8/7/2025 17:00,7,8,2025,staff,Jayden Peterson,3.85,Radio tracking,,no,no,yes
+ah_north,8/8/2025,8,8,2025,staff,Clara Costello,0.7,staff nest searching,NA,no,yes,no
+ah_north,8/8/2025,8,8,2025,staff,Fern LaBry,0.335277778,staff nest searching,NA,no,yes,no
+ah_north,8/8/2025,8,8,2025,staff,Jayden Peterson,0.170555556,staff nest searching,NA,no,yes,no
+le_gc,8/8/2025,8,8,2025,volunteer,Dawn Peterson,1.116666667,volunteer nest searching,NA,yes,no,no
+ah_lowerupper,8/8/2025,8,8,2025,staff,Fern LaBry,0.351944444,staff nest searching,NA,no,yes,no
+ah_lowerupper,8/8/2025,8,8,2025,staff,Jayden Peterson,0.336666667,staff nest searching,NA,no,yes,no
+ah_lowerupper,8/8/2025,8,8,2025,staff,Clara Costello,0.351944444,staff nest searching,NA,no,yes,no
+Arden Hills,8/8/2025,8,8,2025,staff,Fern LaBry,0.5,Drive time,,no,yes,yes
+Arden Hills,8/8/2025,8,8,2025,staff,Jayden Peterson,0.5,Drive time,,no,yes,yes
+Arden Hills,8/8/2025,8,8,2025,staff,Clara Costello,0.5,Drive time,Radio,no,no,yes
+Arden Hills,8/8/2025 17:00,8,8,2025,staff,Fern LaBry,0.5,Radio tracking,,no,no,yes
+Arden Hills,8/8/2025 17:00,8,8,2025,staff,Jayden Peterson,0.5,Radio tracking,,no,no,yes
+Arden Hills,8/8/2025 17:00,8,8,2025,staff,Fern LaBry,1,Radio tracking,,no,no,yes
+Arden Hills,8/8/2025 17:00,8,8,2025,staff,Jayden Peterson,1,Radio tracking,,no,no,yes
+Arden Hills,8/8/2025 17:00,8,8,2025,staff,Clara Costello,1,Radio tracking,,no,no,yes
+25lh_eq1,8/11/2025,11,8,2025,volunteer,Tom Patterson,1.05,volunteer nest searching,NA,yes,no,no
+hp_sled,8/11/2025,11,8,2025,staff,Elise Bernstein,0.5425,staff nest searching,NA,no,yes,no
+hp_sled,8/11/2025,11,8,2025,staff,Jayden Peterson,0.5,staff nest searching,NA,no,yes,no
+hp2,8/11/2025,11,8,2025,staff,Jayden Peterson,0.5,staff nest searching,NA,no,yes,no
+hp2,8/11/2025,11,8,2025,staff,Elise Bernstein,0.537222222,staff nest searching,NA,no,yes,no
+hp1,8/11/2025,11,8,2025,staff,Elise Bernstein,0.577222222,staff nest searching,NA,no,yes,no
+hp1,8/11/2025,11,8,2025,staff,Jayden Peterson,0.516666667,staff nest searching,NA,no,yes,no
+HP,8/11/2025,11,8,2025,staff,Elise Bernstein,1.16667,Drive time,,no,yes,no
+HP,8/11/2025,11,8,2025,staff,Jayden Peterson,1.16667,Drive time,,no,yes,no
+NA,8/11/2025,11,8,2025,staff,Elise Bernstein,0.5,Scheduling/planning,,no,yes,no
+NA,8/11/2025,11,8,2025,staff,Elise Bernstein,0.5,Volunteer communications,8/11/2025,yes,no,no
+NA,8/11/2025 17:00,11,8,2025,staff,NA,2.4,Drive time,Habitat assessment,no,no,no
+lh_eq2,8/12/2025,12,8,2025,volunteer,Maria Cicenas,1,volunteer nest searching,NA,yes,no,no
+le_gc,8/12/2025,12,8,2025,volunteer,David Morrison,1.329166667,volunteer nest searching,NA,yes,no,no
+Arden Hills,8/12/2025 17:00,12,8,2025,staff,Jayden Peterson,1,Drive time,,no,no,yes
+Arden Hills,8/12/2025 17:00,12,8,2025,staff,Elise Bernstein,1,Drive time,,no,no,yes
+Arden Hills,8/12/2025 17:00,12,8,2025,staff,Elaine Evans,1,Drive time,Radio,no,no,yes
+Arden Hills,8/12/2025 17:00,12,8,2025,staff,Jayden Peterson,3.5,Radio tracking,,no,no,yes
+Arden Hills,8/12/2025 17:00,12,8,2025,staff,Elise Bernstein,3.5,Radio tracking,,no,no,yes
+Arden Hills,8/12/2025 17:00,12,8,2025,staff,Elaine Evans,3.5,Radio tracking,,no,no,yes
+Arden Hills,8/13/2025 17:00,13,8,2025,staff,Elise Bernstein,0.5,Drive time,Radio,no,no,yes
+Arden Hills,8/13/2025 17:00,13,8,2025,staff,Jayden Peterson,0.5,Drive time,Radio,no,no,yes
+Arden Hills,8/13/2025 17:00,13,8,2025,staff,Fern LaBry,0.5,Drive time,Radio,no,no,no
+Arden Hills,8/13/2025 17:00,13,8,2025,staff,Elise Bernstein,5.5,Radio tracking,,no,no,yes
+Arden Hills,8/13/2025 17:00,13,8,2025,staff,Jayden Peterson,5.5,Radio tracking,,no,no,yes
+Arden Hills,8/13/2025 17:00,13,8,2025,staff,Fern LaBry,5.5,Radio tracking,,no,no,yes
+Arden Hills,8/14/2025 17:00,14,8,2025,staff,Elise Bernstein,0.5,Drive time,Radio,no,no,yes
+Arden Hills,8/14/2025 17:00,14,8,2025,staff,Jayden Peterson,0.5,Drive time,Radio,no,no,no
+Arden Hills,8/14/2025 17:00,14,8,2025,staff,Elise Bernstein,1.5,Radio tracking,,,,
+Arden Hills,8/14/2025 17:00,14,8,2025,staff,Jayden Peterson,1.5,Radio tracking,,no,no,yes
+NA,8/18/2025,18,8,2025,staff,Elise Bernstein,1,Scheduling/planning,,no,yes,no
+ah_north,8/19/2025,19,8,2025,staff,Elise Bernstein,0.540833333,staff nest searching,NA,no,yes,no
+ah_north,8/19/2025,19,8,2025,staff,Jayden Peterson,0.516666667,staff nest searching,NA,no,yes,no
+Arden Hills,8/19/2025,19,8,2025,staff,Elise Bernstein,0.5,Drive time,,no,yes,yes
+Arden Hills,8/19/2025,19,8,2025,staff,Jayden Peterson,0.5,Drive time,,no,yes,yes
+le_ski,8/19/2025,19,8,2025,volunteer,Dawn Peterson,1.147222222,volunteer nest searching,NA,yes,no,no
+25lh_eq1,8/19/2025,19,8,2025,volunteer,Maria Cicenas,1.233333333,volunteer nest searching,NA,yes,no,no
+NA,8/19/2025,19,8,2025,staff,Elise Bernstein,1.5,Volunteer communications,8/19/2025,yes,no,no
+Arden Hills,8/19/2025 17:00,19,8,2025,staff,Elise Bernstein,3,Radio tracking,,no,no,yes
+Arden Hills,8/19/2025 17:00,19,8,2025,staff,Jayden Peterson,3,Radio tracking,,no,no,yes
+ah_upper,8/20/2025,20,8,2025,staff,Elise Bernstein,0.578333333,staff nest searching,NA,no,yes,no
+ah_upper,8/20/2025,20,8,2025,staff,Jayden Peterson,0.483333333,staff nest searching,NA,no,yes,no
+ah_lowerupper,8/20/2025,20,8,2025,staff,Jayden Peterson,0.716666667,staff nest searching,NA,no,yes,no
+ah_lowerupper,8/20/2025,20,8,2025,staff,Elise Bernstein,0.663055556,staff nest searching,NA,no,yes,no
+lh_eq2,8/20/2025,20,8,2025,volunteer,Tom Patterson,0.973333333,volunteer nest searching,NA,yes,no,no
+Arden Hills,8/20/2025 17:00,20,8,2025,staff,Elise Bernstein,0.5,Drive time,Radio,no,no,yes
+Arden Hills,8/20/2025 17:00,20,8,2025,staff,Jayden Peterson,0.5,Drive time,Radio,no,no,yes
+Arden Hills,8/20/2025 17:00,20,8,2025,staff,Elise Bernstein,1,Radio tracking,,no,no,yes
+Arden Hills,8/20/2025 17:00,20,8,2025,staff,Jayden Peterson,1,Radio tracking,,no,no,yes
+lh_schultz,8/21/2025,21,8,2025,staff,Elise Bernstein,0.363888889,staff nest searching,NA,no,yes,no
+lh_schultz,8/21/2025,21,8,2025,staff,Jayden Peterson,0.2,staff nest searching,NA,no,yes,no
+lh_schultz,8/21/2025,21,8,2025,staff,Clara Costello,0.363888889,staff nest searching,NA,no,yes,no
+lh_schultz,8/21/2025,21,8,2025,staff,Elise Bernstein,0.1325,staff nest searching,NA,no,yes,no
+25lh_eq1,8/21/2025,21,8,2025,staff,Elise Bernstein,0.370555556,staff nest searching,NA,no,yes,no
+25lh_eq1,8/21/2025,21,8,2025,staff,Jayden Peterson,0.333333333,staff nest searching,NA,no,yes,no
+25lh_eq1,8/21/2025,21,8,2025,staff,Clara Costello,0.333333333,staff nest searching,NA,no,yes,no
+lh_eq2,8/21/2025,21,8,2025,staff,Elise Bernstein,0.358888889,staff nest searching,NA,no,yes,no
+lh_eq2,8/21/2025,21,8,2025,staff,Clara Costello,0.358888889,staff nest searching,NA,no,yes,no
+lh_eq2,8/21/2025,21,8,2025,staff,Jayden Peterson,0.333333333,staff nest searching,NA,no,yes,no
+LH,8/21/2025 17:00,21,8,2025,staff,Elise Bernstein,1,Drive time,,no,yes,no
+LH,8/21/2025 17:00,21,8,2025,staff,Clara Costello,1,Drive time,,no,yes,no
+LH,8/21/2025 17:00,21,8,2025,staff,Jayden Peterson,1,Drive time,,no,yes,no
+crow1,8/23/2025,23,8,2025,volunteer,Kevin McKinney,1.15,volunteer nest searching,NA,yes,no,no
+hp1,8/25/2025,25,8,2025,staff,Elise Bernstein,0.550277778,staff nest searching,NA,no,yes,no
+hp1,8/25/2025,25,8,2025,staff,Jayden Peterson,0.546666667,staff nest searching,NA,no,yes,no
+hp2,8/25/2025,25,8,2025,staff,Elise Bernstein,0.531666667,staff nest searching,NA,no,yes,no
+hp2,8/25/2025,25,8,2025,staff,Jayden Peterson,0.348888889,staff nest searching,NA,no,yes,no
+hp_sled,8/25/2025,25,8,2025,staff,Elise Bernstein,0.536666667,staff nest searching,NA,no,yes,no
+hp_sled,8/25/2025,25,8,2025,staff,Jayden Peterson,0.333333333,staff nest searching,NA,no,yes,no
+NA,8/25/2025,25,8,2025,staff,Elise Bernstein,1,Scheduling/planning,,no,yes,no
+HP,8/25/2025 17:00,25,8,2025,staff,Jayden Peterson,1.1,Drive time,,no,yes,no
+HP,8/25/2025 17:00,25,8,2025,staff,Elise Bernstein,1.1,Drive time,Radio,no,yes,no
+crow1,8/26/2025,26,8,2025,staff,Elise Bernstein,0.333333333,staff nest searching,NA,no,yes,no
+crow1,8/26/2025,26,8,2025,staff,Jayden Peterson,0.733333333,staff nest searching,NA,no,yes,no
+crow2,8/26/2025,26,8,2025,staff,Elise Bernstein,0.546388889,staff nest searching,NA,no,yes,no
+crow2,8/26/2025,26,8,2025,staff,Jayden Peterson,0.516666667,staff nest searching,NA,no,yes,no
+crow3,8/26/2025,26,8,2025,staff,Elise Bernstein,0.563888889,staff nest searching,NA,no,yes,no
+crow3,8/26/2025,26,8,2025,staff,Jayden Peterson,0.516666667,staff nest searching,NA,no,yes,no
+NA,8/26/2025 17:00,26,8,2025,staff,Jayden Peterson,1,Data entry,,no,yes,no
+CH,8/26/2025 17:00,26,8,2025,staff,Elise Bernstein,1.33,Drive time,,no,yes,no
+CH,8/26/2025 17:00,26,8,2025,staff,Jayden Peterson,1.33,Drive time,,no,yes,no
+ah_north,8/28/2025,28,8,2025,staff,Elise Bernstein,0.550555556,staff nest searching,NA,no,yes,no
+ah_north,8/28/2025,28,8,2025,staff,Jayden Peterson,0.539444444,staff nest searching,NA,no,yes,no
+ah_upper,8/28/2025,28,8,2025,staff,Elise Bernstein,0.546388889,staff nest searching,NA,no,yes,no
+ah_upper,8/28/2025,28,8,2025,staff,Jayden Peterson,0.333333333,staff nest searching,NA,no,yes,no
+ah_lowerupper,8/28/2025,28,8,2025,staff,Elise Bernstein,0.534444444,staff nest searching,NA,no,yes,no
+ah_lowerupper,8/28/2025,28,8,2025,staff,Jayden Peterson,0.333333333,staff nest searching,NA,no,yes,no
+Arden Hills,8/28/2025,28,8,2025,staff,Elise Bernstein,0.5,Drive time,,no,yes,no
+Arden Hills,8/28/2025,28,8,2025,staff,Jayden Peterson,0.5,Drive time,,no,yes,no
+NA,8/28/2025,28,8,2025,staff,Elise Bernstein,1,Volunteer communications,8/28/2025,yes,no,no
+le_gc,8/29/2025,29,8,2025,staff,Jayden Peterson,0.5,staff nest searching,NA,no,yes,no
+le_barn,8/29/2025,29,8,2025,staff,Jayden Peterson,0.583333333,staff nest searching,NA,no,yes,no
+le_ski,8/29/2025,29,8,2025,staff,Jayden Peterson,0.333333333,staff nest searching,NA,no,yes,no
+LE,8/29/2025,29,8,2025,staff,Jayden Peterson,1.1,Drive time,,no,yes,no
+25lh_eq1,9/1/2025,1,9,2025,volunteer,Cathy Seurer,1,volunteer nest searching,NA,yes,no,no
+NA,9/4/2025 17:00,4,9,2025,staff,NA,2.4,Drive time,Radio,no,no,no
+ah_upper,9/8/2025,8,9,2025,staff,Sami Dolan,1.007222222,staff nest searching,NA,no,yes,no
+ah_lowerupper,9/8/2025,8,9,2025,staff,Sami Dolan,1.036111111,staff nest searching,NA,no,yes,no
+ah_north,9/8/2025,8,9,2025,staff,Jayden Peterson,0.166666667,staff nest searching,NA,no,yes,no
+Arden Hills,9/8/2025 17:00,8,9,2025,staff,Sami Dolan,0.5,Drive time,,no,yes,yes
+Arden Hills,9/8/2025 17:00,8,9,2025,staff,Jayden Peterson,0.5,Drive time,,no,yes,yes
+Arden Hills,9/8/2025 17:00,8,9,2025,staff,Emma Ambrosi,0.5,Drive time,,no,no,no
+Arden Hills,9/8/2025 17:00,8,9,2025,staff,Jayden Peterson,0.33,Radio tracking,,no,no,yes
+Arden Hills,9/8/2025 17:00,8,9,2025,staff,Emma Ambrosi,0.33,Radio tracking,,no,no,yes
+hp2,9/9/2025,9,9,2025,staff,Jayden Peterson,0.183333333,staff nest searching,NA,no,yes,no
+hp2,9/9/2025,9,9,2025,staff,Emma Ambrosi,0.333333333,staff nest searching,NA,no,yes,no
+hp2,9/9/2025,9,9,2025,staff,Jayden Peterson,0.316666667,staff nest searching,NA,no,yes,no
+HP,9/9/2025 17:00,9,9,2025,staff,Emma Ambrosi,1.33,Drive time,,no,yes,no
+HP,9/9/2025 17:00,9,9,2025,staff,Jayden Peterson,1.33,Drive time,Radio,no,yes,no
+NA,9/10/2025 17:00,10,9,2025,staff,NA,2,Drive time,Habitat assessment,no,no,no
+le_barn,9/11/2025,11,9,2025,staff,Jayden Peterson,0.4,staff nest searching,NA,no,yes,no
+le_barn,9/11/2025,11,9,2025,staff,Emma Ambrosi,0.659166667,staff nest searching,NA,no,yes,no
+NA,9/11/2025 17:00,11,9,2025,staff,Jayden Peterson,1,Data entry,,no,yes,no
+LE,9/11/2025 17:00,11,9,2025,staff,Jayden Peterson,1,Drive time,,no,yes,no
+LE,9/11/2025 17:00,11,9,2025,staff,Emma Ambrosi,1,Drive time,,no,yes,no
+NA,9/12/2025 17:00,12,9,2025,staff,NA,2.6,Drive time,Radio,no,no,no
+lh_eq2,9/15/2025,15,9,2025,volunteer,Tom Patterson,1,volunteer nest searching,NA,yes,no,no
+crow1,9/15/2025,15,9,2025,staff,Sami Dolan,1,staff nest searching,NA,no,yes,no
+crow3,9/15/2025,15,9,2025,staff,Sami Dolan,1,staff nest searching,NA,no,yes,no
+CH,9/15/2025 17:00,15,9,2025,staff,Sami Dolan,1.3,Drive time,"Others did habitat assessments this day, so just counting Sami's drive time",no,yes,no
+NA,9/17/2025,17,9,2025,staff,Jayden Peterson,2,Drive time,Habitat assessment,no,no,no
+NA,9/17/2025,17,9,2025,staff,Emma Ambrosi,2,Drive time,Habitat assessment,no,no,no
+NA,9/22/2025,22,9,2025,staff,Jayden Peterson,0.75,Drive time,Habitat assessment,no,no,no
+NA,9/22/2025,22,9,2025,staff,Emma Ambrosi,0.75,Drive time,Habitat assessment,no,no,no
+NA,9/23/2025,23,9,2025,staff,Jayden Peterson,2,Drive time,Habitat assessment,no,no,no
+NA,9/23/2025,23,9,2025,staff,Emma Ambrosi,2,Drive time,Habitat assessment,no,no,no
+NA,9/25/2025,25,9,2025,staff,Jayden Peterson,8,Data entry,,no,yes,no
+NA,9/25/2025,25,9,2025,staff,Elise Bernstein,1,Volunteer communications,9/25/2025,yes,no,no
+NA,9/29/2025,29,9,2025,staff,Jayden Peterson,8,Data entry,,no,yes,no
+NA,9/30/2025,30,9,2025,staff,Jayden Peterson,6,Data entry,,no,yes,no
+NA,10/1/2025,1,10,2025,staff,Jayden Peterson,7,Data entry,,no,yes,no
+NA,10/3/2025,3,10,2025,staff,Jayden Peterson,1,Data entry,,no,yes,no
+NA,10/3/2025,3,10,2025,staff,Jayden Peterson,1.25,Drive time,Habitat assessment,no,no,no
+NA,10/3/2025,3,10,2025,staff,Emma Ambrosi,1.25,Drive time,Habitat assessment,no,no,no
+NA,10/6/2025,6,10,2025,staff,Jayden Peterson,1.5,Drive time,Habitat assessment,no,no,no
+NA,10/6/2025,6,10,2025,staff,Emma Ambrosi,1.5,Drive time,Habitat assessment,no,no,no
+NA,10/7/2025,7,10,2025,staff,Jayden Peterson,1.25,Drive time,Habitat assessment,no,no,no
+NA,10/7/2025,7,10,2025,staff,Clara Costello,1.25,Drive time,Habitat assessment,no,no,no
+NA,10/8/2025,8,10,2025,staff,Jayden Peterson,0.75,Drive time,Habitat assessment,no,no,no
+NA,10/8/2025,8,10,2025,staff,Emma Ambrosi,0.75,Drive time,Habitat assessment,no,no,no
+NA,10/13/2025,13,10,2025,staff,Jayden Peterson,8,Data entry,,no,yes,no
+NA,10/14/2025,14,10,2025,staff,Jayden Peterson,6,Data entry,,no,yes,no
+NA,10/15/2025,15,10,2025,staff,Jayden Peterson,2,Data entry,,no,yes,no
+NA,10/16/2025,16,10,2025,staff,Jayden Peterson,2,Data entry,,no,yes,no
+NA,10/17/2025,17,10,2025,staff,Jayden Peterson,3,Data entry,,no,yes,no
+NA,?,NA,?,2024,staff,Elaine Evans,4,Site selection,,yes,no,no
+NA,?,NA,?,2024,staff,Elise Bernstein,4,Site selection,,yes,no,no
+NA,,NA,,NA,staff,NA,NA,,,no,no,no
+NA,,NA,,NA,staff,NA,NA,,,no,no,no
