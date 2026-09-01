@@ -182,7 +182,7 @@ ggplot(all_habitat, aes(x = site, y = psi_avg, fill = nest_ID)) +
   theme(axis.text.x = element_text(angle =90))
 
 penetrometer_boxplot <- all_habitat %>% filter(., nest_ID != 'no_nest') %>% 
-  ggplot(., aes(x = factor(quadrat_distance, levels = c('1m', '10m', '50m')), y = nest_ID)) +
+  ggplot(., aes(x = nest_ID, y = psi_avg)) +
   geom_boxplot(outliers = FALSE, fill ='lightblue')  +
   geom_point(position = position_jitterdodge(jitter.height = 0.3, jitter.width = 0.8), size = 2) +
   #theme(axis.title.y = NULL) +
@@ -277,6 +277,8 @@ nest_habitat_summarized <- nest_habitat_summarized %>%
             avg_bare_prop = avg_bare / 100, 
             avg_forb_prop = avg_forb/ 100) # creating proportion columns (0-1) to meet assumptions for beta tests
 
+
+
 nest_habitat_summarized2025 <- nest_habitat_summarized %>% 
   filter(., year == 2025) 
 
@@ -285,7 +287,13 @@ all_habitat_nonest$quadrat_distance <- relevel(all_habitat_nonest$quadrat_distan
 nest_habitat_summarized2025$quadrat_distance <- relevel(nest_habitat_summarized2025$quadrat_distance, ref = '1m') #relevel so reference value is 1 meter quadrats
 
 
+
+
+
+
+
 ##### Creating models for each habitat cover measure #####
+#continous variable
 ## Grass Model
 ## Testing normality
 ## grass  vs quadrat distances - Data NOT normal. Using only 2025 data, as 2024 data is lacking
@@ -305,6 +313,14 @@ grass_model3 <- glmmTMB(avg_grass_prop ~ quadrat_distance + (1 + survey_plot|sit
                         family = beta_family) # using means of each quadrat at each nest
 summary(grass_model3) #
 summary(aov(grass_model3)) #
+
+
+
+
+
+
+
+
 
 ## Forb Model
 #Testing normality
@@ -348,6 +364,7 @@ ggpredict(forb_model1_2025, terms = c("quadrat_distance")) |> plot()
 summary(aov(forb_model1_2025)) #site is affecting the outcome of this model.
 
 
+
 ## Bare Model 
 # Testing normality
 # bare vs quadrat distances - data NOT normal
@@ -386,6 +403,12 @@ bare_model1_2025 <- glmmTMB(avg_bare_prop ~ quadrat_distance + (1|site),
 summary(bare_model1_2025) # AIC = 13.0
 summary(aov(bare_model1_2025)) # site is affecting the outcome of this model. 
 ggpredict(bare_model1_2025, terms = c("quadrat_distance")) |> plot()
+
+
+
+
+
+
 
 ##### calculating Emmeans, conduction pairwise comparison tests across distances, obtaining predicted values for plotting #####
 
@@ -454,6 +477,8 @@ distance_predictions <- distance_predictions %>% # calculate confidence interval
          bare_UCI = bare_fit + bare_se)
 
 #distance_predictions <- probs %>% group_by(habitat) %>% summarize_if(is.numeric, mean, na.rm = TRUE, .groups = "drop")
+
+
 
 # Shape data for plotting
 fit <- distance_predictions %>% 
@@ -576,6 +601,12 @@ grid.arrange(grass_emmeans_plot, bare_emmeans_plot, forb_emmeans_plot, ncol = 3)
 
 
 
+
+
+
+
+
+
 # Penetrometer soil compaction model
 
 ## soil compaction vs quadrat distances 
@@ -602,6 +633,12 @@ summary(aov(penetrometer_model2)) # site is affecting the outcome of this model.
 
 
 
+
+
+### running habitat analysis with proximity (near and far from nest)
+
+
+
 nest_habitat_near_far <- all_habitat %>% 
   filter(., nest_ID != 'no_nest') %>%  # removing no_nest counts for now
   group_by(nest_ID, year, proximity, site, survey_plot) %>% 
@@ -621,7 +658,9 @@ nest_habitat_near_far <- nest_habitat_near_far %>%
          avg_bare_prop = avg_bare / 100, 
          avg_forb_prop = avg_forb/ 100) #
 
-## grass  vs quadrat distances - Data NOT normal. Using only 2025 data, as 2024 data is lacking
+nest_habitat_near_far$proximity <- relevel(nest_habitat_near_far$proximity , ref = 'near') 
+
+## grass  vs quadrat distances - Data NOT normal.
 shapiro.test(nest_habitat_near_far$avg_grass)
 shapiro.test(log(nest_habitat_near_far$avg_grass))
 hist(nest_habitat_near_far$avg_grass)
@@ -630,7 +669,7 @@ hist(nest_habitat_near_far$avg_grass)
 grass_model_proxi <- glmmTMB(avg_grass_prop ~ proximity + (1|site), 
                         data = nest_habitat_near_far, 
                         family = beta_family) # using means of each quadrat at each nest
-summary(grass_model_proxi) # AIC = -82.3
+summary(grass_model_proxi) # AIC = -69.5
 summary(aov(grass_model_proxi)) # quadrat distance has a strong effect on the amount of grass, and there is a minor effect from site.
 
 grass_model_proxi2 <- glmmTMB(avg_grass_prop ~ proximity + (1 + survey_plot|site), 
@@ -641,6 +680,12 @@ summary(aov(grass_model_proxi2)) #
 
 ggpredict(grass_model_proxi, terms = c("proximity")) |> plot()
 ggpredict(grass_model_proxi2, terms = c("proximity")) |> plot()
+
+grass_model_proxi3 <- glmmTMB(avg_grass_prop ~ proximity + (1 + survey_plot|site) + year, 
+                              data = nest_habitat_near_far, 
+                              family = beta_family) # using means of each quadrat at each nest
+summary(grass_model_proxi3) #
+summary(aov(grass_model_proxi3)) #
 
 
 ## Forb Model
@@ -655,7 +700,7 @@ forb_model_proxi <- glmmTMB(log1p(avg_forb) ~ proximity + (1|site) + year, #log 
                        data = nest_habitat_near_far, 
                        family = gaussian(link = 'identity'))
 # start = list(theta = 0)) # using means of each quadrat at each nest
-summary(forb_model_proxi) # AIC = 114.2
+summary(forb_model_proxi) # AIC = 81.9
 
 ggpredict(forb_model_proxi, terms = c("proximity")) |> plot()
 summary(aov(forb_model_proxi)) #site is affecting the outcome of this model.
@@ -691,26 +736,14 @@ bare_model_proxi3 <- glmmTMB(avg_bare_prop ~ proximity + (1 + survey_plot|site),
                        data = nest_habitat_near_far, 
                        family = ordbeta(link = 'logit'))
 
-summary(bare_model_proxi1) # AIC = 13.0
-summary(bare_model_proxi2) # AIC = 54.6
+summary(bare_model_proxi1) # AIC = -8.1
+summary(bare_model_proxi2) # AIC = -57.1
 summary(aov(bare_model_proxi1)) # site is affecting the outcome of this model. 
 summary(aov(bare_model_proxi2))# large effect of year and site, small effect with quadrat distance
 summary(bare_model_proxi3)
 summary(aov(bare_model_proxi3))
 ggpredict(bare_model_proxi1, terms = c("proximity")) |> plot()
 #ggpredict(bare_model2, terms = c("year")) |> plot()
-
-## 2025 data only
-shapiro.test(nest_habitat_near_far2025$avg_bare)
-hist(nest_habitat_near_far2025$avg_bare)
-
-bare_model1_2025 <- glmmTMB(avg_bare_prop ~ proximity + (1|site), 
-                            data = nest_habitat_near_far2025, 
-                            family = ordbeta(link = 'logit'))
-
-summary(bare_model1_2025) # AIC = 13.0
-summary(aov(bare_model1_2025)) # site is affecting the outcome of this model. 
-ggpredict(bare_model1_2025, terms = c("proximity")) |> plot()
 
 
 
@@ -755,8 +788,9 @@ print(preds_bare_proxi)
 nest_habitat_preds_proxi <- nest_habitat_near_far
 nest_habitat_preds_proxi <- nest_habitat_preds_proxi[-c(17), ]
 
-nest_habitat_preds_proxi$grass_fit <- preds_grass_proxi$fit 
-nest_habitat_preds_proxi$grass_se <- preds_grass_proxi$se.fit
+nest_habitat_preds_proxi_grass <- nest_habitat_preds_proxi %>% drop_na(avg_grass)
+nest_habitat_preds_proxi_grass$grass_fit <- preds_grass_proxi$fit 
+nest_habitat_preds_proxi_grass$grass_se <- preds_grass_proxi$se.fit
 
 nest_habitat_preds_proxi$forb_fit <- preds_forb_proxi$fit 
 nest_habitat_preds_proxi$forb_se <- preds_forb_proxi$se.fit
@@ -764,11 +798,11 @@ nest_habitat_preds_proxi$forb_se <- preds_forb_proxi$se.fit
 nest_habitat_preds_proxi$bare_fit <- preds_bare_proxi$fit 
 nest_habitat_preds_proxi$bare_se <- preds_bare_proxi$se.fit
 
-nest_habitat_preds_proxi <- left_join(nest_habitat_preds, nest_habitat_preds2025)
+nest_habitat_preds_proxi <- left_join(nest_habitat_preds_proxi, nest_habitat_preds_proxi_grass)
 
-distance_predictions <- nest_habitat_preds %>% select(.,-c(nest_ID, site, year)) # create dataframe to be grouped by habitat only
+distance_predictions <- nest_habitat_preds_proxi %>% select(.,-c(nest_ID, site, year)) # create dataframe to be grouped by habitat only
 distance_predictions <- distance_predictions %>%
-  group_by(quadrat_distance) %>% 
+  group_by(proximity) %>% 
   summarize_if(is.numeric, mean, na.rm = TRUE, .groups = "drop") # condense data and find mean value of predictions
 distance_predictions <- distance_predictions %>% # calculate confidence intervals
   mutate(grass_LCI = grass_fit - grass_se,
@@ -783,7 +817,7 @@ distance_predictions <- distance_predictions %>% # calculate confidence interval
 # Shape data for plotting
 fit <- distance_predictions %>% 
   select(., 
-         quadrat_distance,
+         proximity,
          grass_fit,
          forb_fit,
          bare_fit) %>% 
@@ -797,7 +831,7 @@ fit <- distance_predictions %>%
 
 LCI <- distance_predictions %>% 
   select(., 
-         quadrat_distance,
+         proximity,
          grass_LCI,
          forb_LCI,
          bare_LCI) %>% 
@@ -811,7 +845,7 @@ LCI <- distance_predictions %>%
 
 UCI<- distance_predictions %>% 
   select(., 
-         quadrat_distance,
+         proximity,
          grass_UCI,
          forb_UCI,
          bare_UCI) %>% 
@@ -830,7 +864,7 @@ fits_plot # data frame for plotting
 
 # plotting predicted values
 bare_emmeans_plot <- fits_plot %>% filter(., cover == 'bare') %>% 
-  ggplot(., aes(x = quadrat_distance, y = fit)) +
+  ggplot(., aes(x = proximity, y = fit)) +
   geom_point(size = 6, shape = 20
              # colour= c("olivedrab3", "forestgreen", "goldenrod2")
   ) +
@@ -845,12 +879,12 @@ bare_emmeans_plot <- fits_plot %>% filter(., cover == 'bare') %>%
     axis.ticks.x = element_blank()) +
   geom_errorbar(aes(ymin = LCI, ymax = UCI), size = 1.5, width = 0.4) +
   labs(x = 'Quadrat distance', y = "") + 
-  annotate("text", x = 2, y = 0.43, label = "A", size = unit(10, "pt")) +
-  geom_segment(aes(x = 0.75, y = 0.42, xend = 3.25, yend = 0.42)) +
+ # annotate("text", x = 2, y = 0.43, label = "A", size = unit(10, "pt")) +
+  #geom_segment(aes(x = 0.75, y = 0.42, xend = 3.25, yend = 0.42)) +
   ggtitle("Bare")
 
 forb_emmeans_plot <- fits_plot %>% filter(., cover == 'forb') %>% 
-  ggplot(., aes(x = quadrat_distance, y = fit)) +
+  ggplot(., aes(x = proximity, y = fit)) +
   geom_point(size = 6, shape = 20
              # colour= c("olivedrab3", "forestgreen", "goldenrod2")
   ) +
@@ -865,13 +899,13 @@ forb_emmeans_plot <- fits_plot %>% filter(., cover == 'forb') %>%
     axis.ticks.x = element_blank()) +
   geom_errorbar(aes(ymin = LCI, ymax = UCI), size = 1.5, width = 0.4) +
   labs(x = '', y = "") + 
-  annotate("text", x = 2, y = 2.5, label = "A", size = unit(10, "pt")) +
-  geom_segment(aes(x = 0.75, y = 2.45, xend = 3.25, yend = 2.45))+
+ # annotate("text", x = 2, y = 2.5, label = "A", size = unit(10, "pt")) +
+  #geom_segment(aes(x = 0.75, y = 2.45, xend = 3.25, yend = 2.45))+
   ggtitle("Forb")
 
 
 grass_emmeans_plot <- fits_plot %>% filter(., cover == 'grass') %>% 
-  ggplot(., aes(x = quadrat_distance, y = fit)) +
+  ggplot(., aes(x = proximity, y = fit)) +
   geom_point(size = 6, shape = 20
              # colour= c("olivedrab3", "forestgreen", "goldenrod2")
   ) +
@@ -886,13 +920,41 @@ grass_emmeans_plot <- fits_plot %>% filter(., cover == 'grass') %>%
     axis.ticks.x = element_blank()) +
   geom_errorbar(aes(ymin = LCI, ymax = UCI), size = 1.5, width = .4) +
   labs(x = '', y = "emmeans") + 
-  annotate("text", x = 1.5, y = .875, label = "A", size = unit(10, "pt")) +
-  geom_segment(aes(x = 0.75, y = .86, xend = 2.25, yend = .86)) +
-  annotate("text", x = 3, y = .875, label = "B", size = unit(10, "pt")) +
-  geom_segment(aes(x = 3.25, y = .86, xend = 2.75, yend = .86)) +
+ # annotate("text", x = 1.5, y = .875, label = "A", size = unit(10, "pt")) +
+  #geom_segment(aes(x = 0.75, y = .86, xend = 2.25, yend = .86)) +
+  #annotate("text", x = 3, y = .875, label = "B", size = unit(10, "pt")) +
+  #geom_segment(aes(x = 3.25, y = .86, xend = 2.75, yend = .86)) +
   ggtitle("Grass")
 grass_emmeans_plot
 
 grid.arrange(grass_emmeans_plot, bare_emmeans_plot, forb_emmeans_plot, ncol = 3)
+
+
+
+
+
+
+## soil compaction vs quadrat distances 
+shapiro.test(nest_habitat_near_far$psi_avg)
+shapiro.test(log(all_habitat_nonest$psi_avg))
+hist(all_habitat_nonest$psi_avg)
+hist(log(all_habitat_nonest$psi_avg))
+# Data is not normal, but it is fairly close. I'm wondering if a guassian distribution is fine to run.I also tried running a gamma.
+
+penetrometer_model1 <- glmmTMB(psi_avg ~ quadrat_distance + (1+ survey_plot|site),
+                               data = all_habitat_nonest, 
+                               family = gaussian(link = "identity")) 
+
+summary(penetrometer_model1) # AIC = 1683.4, significant at 1m
+summary(aov(penetrometer_model1)) # site is affecting the outcome of this model.
+
+penetrometer_model2 <- glmmTMB(psi_avg ~ quadrat_distance + (1+ survey_plot|site),
+                               data = all_habitat_nonest, 
+                               family = Gamma(link = 'log')) 
+
+summary(penetrometer_model2) # AIC = 1683.4, significant at 1m
+summary(aov(penetrometer_model2)) # site is affecting the outcome of this model.
+
+
 
 

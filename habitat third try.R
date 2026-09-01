@@ -161,8 +161,7 @@ all_habitat_nests$quadrat_distance <- relevel(all_habitat_nests$quadrat_distance
 # Values on not averaged, and survey plot will be nested within site 
 
 # Grass data 
-shapiro.test(all_habitat_nests$grass_prop)
-hist(all_habitat_nests$grass_prop)
+
 
 grass_model <- glmmTMB(grass_prop ~ quadrat_distance, 
                         data = all_habitat_nests, 
@@ -217,11 +216,12 @@ grass_mod_names <- c('grass_model',
 aictab(cand.set = grass_models, modnames = grass_mod_names)
 
 
+grass_res <- resid(grass_model_site_plot_nested)
+plot(fitted(grass_model_site_plot_nested), grass_res) 
+abline(0,0)
 
 
 # bare ground data 
-shapiro.test(all_habitat_nests$bare_prop)
-hist(all_habitat_nests$bare_prop)
 
 bare_model <- glmmTMB(bare_prop ~ quadrat_distance, 
                        data = all_habitat_nests, 
@@ -277,8 +277,6 @@ aictab(cand.set = bare_models, modnames = bare_mod_names)
 
 
 # forb data 
-shapiro.test(all_habitat_nests$forb_prop)
-hist(all_habitat_nests$forb_prop)
 
 forb_model <- glmmTMB(forb_prop ~ quadrat_distance, 
                        data = all_habitat_nests, 
@@ -383,6 +381,130 @@ emmeans(bare_model_site_plot_nested, pairwise ~ quadrat_distance)
 emmeans(forb_model_site_plot_nested, pairwise ~ quadrat_distance)
 
 
+### Soil compaction modeling quadrat distance###
+shapiro.test(all_habitat_nests$psi_avg)
+hist(all_habitat_nests$psi_avg)
+# Data is not normal
+
+kruskal.test(psi_avg ~ quadrat_distance, data = all_habitat_nests) 
+# soil compaction is not affected by quadrat distance from the nest
+
+
+
+
+
+##### Running models with only 2025 data #####
+
+all_habitat_nests2025 <- subset(all_habitat_nests, year == 2025)
+
+
+
+# Grass 2025 only
+grass_model_site_plot_nested2025 <- glmmTMB(grass_prop ~ quadrat_distance + (1 | site:survey_plot), 
+                                        data = all_habitat_nests2025, 
+                                        family = ordbeta(link = 'logit')) # using means of each quadrat at each nest
+summary(grass_model_site_plot_nested2025) #
+
+grass_res2025 <- resid(grass_model_site_plot_nested2025)
+plot(fitted(grass_model_site_plot_nested2025), grass_res2025) 
+abline(0,0)
+
+
+# Bare 2025 only
+bare_model_site_plot_nested2025 <- glmmTMB(bare_prop ~ quadrat_distance + (1 | site:survey_plot), 
+                                       data = all_habitat_nests2025, 
+                                       family = ordbeta(link = 'logit')) # using means of each quadrat at each nest
+summary(bare_model_site_plot_nested2025) #
+
+
+
+# Forb  2025 only
+forb_model_site_plot_nested2025 <- glmmTMB(forb_prop ~ quadrat_distance + (1 | site:survey_plot), 
+                                       data = all_habitat_nests2025, 
+                                       family = ordbeta(link = 'logit')) # using means of each quadrat at each nest
+summary(forb_model_site_plot_nested2025) #
+
+
+# predicted values for 2025 models 
+# Grass
+predict(grass_model_site_plot_nested2025, type = "response", se.fit = TRUE)
+ggpredict(grass_model_site_plot_nested2025, terms = c("quadrat_distance")) |> plot()
+
+grass_pred_means2025 <- ggpredict(grass_model_site_plot_nested2025, terms = c("quadrat_distance")) |> as.data.frame()
+head(grass_pred_means2025)
+grass_pred_means2025 <- grass_pred_means2025 %>% mutate(cover = 'grass')
+
+#Bare ground
+predict(bare_model_site_plot_nested2025, type = "response", se.fit = TRUE)
+ggpredict(bare_model_site_plot_nested2025, terms = c("quadrat_distance")) |> plot()
+
+bare_pred_means2025 <- ggpredict(bare_model_site_plot_nested2025, terms = c("quadrat_distance")) |> as.data.frame()
+head(bare_pred_means2025)
+bare_pred_means2025 <- bare_pred_means2025 %>% mutate(cover = 'bare')
+
+#Forb model
+predict(forb_model_site_plot_nested2025, type = "response", se.fit = TRUE)
+ggpredict(forb_model_site_plot_nested2025, terms = c("quadrat_distance")) |> plot()
+
+forb_pred_means2025 <- ggpredict(forb_model_site_plot_nested2025, terms = c("quadrat_distance")) |> as.data.frame()
+head(forb_pred_means2025)
+forb_pred_means2025 <- forb_pred_means2025 %>% mutate(cover = 'forb')
+
+all_cover_preds2025 <- full_join(grass_pred_means2025, bare_pred_means2025) 
+all_cover_preds2025 <- full_join(all_cover_preds2025, forb_pred_means2025)
+all_cover_preds2025 <- all_cover_preds2025 %>% rename(., quadrat_distance = x)
+
+
+
+ggplot(all_cover_preds2025, aes(x = cover, y = predicted, fill= quadrat_distance)) +
+  geom_bar(stat = 'identity',  position=position_dodge(), color = 'black') +
+  geom_errorbar(aes(ymin= conf.low, ymax= conf.high), 
+                width = .3,
+                position=position_dodge(.9),
+                size = 1) +
+  #geom_point(position=position_dodge(.9), size = 2) +
+  labs(x = "Habitat cover", y = "Predicted proportion") +
+  theme(axis.text.x = element_text(vjust = 0.7, angle = 0, size = 12, color = 'black'),#rotate x-axis text
+        axis.text.y = element_text(size = 12, color = 'black'),
+        axis.title = element_text(size = 14),
+        axis.ticks.x = element_blank(),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank()) +
+  scale_fill_manual(values = c("#838B8B", "#C1CDCD", "#F0FFFF"), 
+                    labels = c("1m", "10m", "50m"),
+                    guide = guide_legend(title = NULL)) 
+
+
+
+emmeans(grass_model_site_plot_nested2025, pairwise ~ quadrat_distance)
+emmeans(bare_model_site_plot_nested2025, pairwise ~ quadrat_distance)
+emmeans(forb_model_site_plot_nested2025, pairwise ~ quadrat_distance)
+
+
+filter(all_cover_preds2025, cover == 'grass') %>% 
+ggplot(., aes(x = cover, y = predicted, fill= quadrat_distance)) +
+  geom_bar(stat = 'identity',  position=position_dodge(), color = 'black') +
+  geom_errorbar(aes(ymin= conf.low, ymax= conf.high), 
+                width = .3,
+                position=position_dodge(.9),
+                size = 1) +
+  #geom_point(position=position_dodge(.9), size = 2) +
+  labs(x = "Habitat cover", y = "Predicted proportion") +
+  theme(axis.text.x = element_text(vjust = 0.7, angle = 0, size = 12, color = 'black'),#rotate x-axis text
+        axis.text.y = element_text(size = 12, color = 'black'),
+        axis.title = element_text(size = 14),
+        axis.ticks.x = element_blank(),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank()) +
+  scale_fill_manual(values = c("#838B8B", "#C1CDCD", "#F0FFFF"), 
+                    labels = c("1m", "10m", "50m"),
+                    guide = guide_legend(title = NULL)) 
+
+
+
+
 
 
 # Catergorical tests for differences between quadrat distances. 
@@ -410,4 +532,53 @@ fisher_grass # p-value = 0.0004998
 fisher_forb <- fisher.test(forb_cont_table, simulate.p.value = TRUE)
 fisher_forb # p-value = 0.3958
 
+
+####UNUSED CODE
+compaction_model <- glmmTMB(psi_avg ~ quadrat_distance, 
+                            data = all_habitat_nests, 
+                            family = gaussian(link = "identity")) # using means of each quadrat at each nest
+summary(compaction_model) #
+
+compaction_model_site <- glmmTMB(psi_avg ~ quadrat_distance + (1 | site) , 
+                                 data = all_habitat_nests, 
+                                 family = gaussian(link = "identity")) # using means of each quadrat at each nest
+summary(compaction_model_site) #
+summary(aov(compaction_model_site)) #
+
+
+compaction_model_site_plot <- glmmTMB(psi_avg ~ quadrat_distance + (1 |site)  + (1 | survey_plot) , 
+                                      data = all_habitat_nests, 
+                                      family = gaussian(link = "identity")) # using means of each quadrat at each nest
+summary(compaction_model_site_plot) #
+summary(aov(compaction_model_site_plot)) #
+
+
+compaction_model_plot <- glmmTMB(psi_avg ~ quadrat_distance + (1 | survey_plot) , 
+                                 data = all_habitat_nests, 
+                                 family = gaussian(link = "identity")) # using means of each quadrat at each nest
+summary(compaction_model_plot) #
+summary(aov(compaction_model_plot)) #
+
+
+compaction_model_site_plot_nested <- glmmTMB(psi_avg ~ quadrat_distance + (1 | site:survey_plot), 
+                                             data = all_habitat_nests, 
+                                             family = gaussian(link = "identity")) # using means of each quadrat at each nest
+summary(compaction_model_site_plot_nested) #
+summary(aov(compaction_model_site_plot_nested)) #
+
+compaction_models <- list(compaction_model, 
+                          compaction_model_site,
+                          compaction_model_site_plot,
+                          compaction_model_plot,
+                          compaction_model_site_plot_nested)
+
+#specify model names
+compaction_mod_names <- c('compaction_model', 
+                          'compaction_model_site', 
+                          'compaction_model_site_plot',
+                          'compaction_model_plot',
+                          'compaction_model_site_plot_nested')
+
+#calculate AIC of each model
+aictab(cand.set = compaction_models, modnames = compaction_mod_names)
 

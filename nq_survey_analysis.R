@@ -51,7 +51,7 @@ surveys_no_flower <- surveys_no_flower %>%
                                startsWith(observer1, 'Fern') ~ "Fern LaBry",
                                startsWith(observer1, 'Alex') ~ "Alex Swartz",
                                startsWith(observer1, 'Dawn') ~ "Dawn Peterson",
-                               startsWith(observer1, 'Hanych') ~ "Emily Hanych",
+                               startsWith(observer1, 'Emi') ~ "Emily Hanych",
                                startsWith(observer1, 'Janet') ~ "Janet Orange",
                                startsWith(observer1, 'Paul') ~ "Paul Richtman", #two pauls, one without a last name. assuming it's the same person.
                                startsWith(observer1, 'Renee') ~ "Renee Rademacher",
@@ -62,6 +62,7 @@ surveys_no_flower <- surveys_no_flower %>%
                                .default = as.character(observer1)))
 
 table(surveys_no_flower$observer1) #check. looks good to me
+n_distinct(surveys_no_flower$observer1)
 
 # cleaning survey_count data. 
 table(surveys_no_flower$survey_count) # there are inconsistent values for repeating 0.3.
