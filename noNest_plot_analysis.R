@@ -9,6 +9,8 @@ library(glmmTMB) #beta distribution model
 library(ggeffects) # getting predicted values from model
 library(emmeans)
 library(RColorBrewer) #to use colorblind friendly color palette for figures
+library(broom) #For checking that models meet assumptions of linearity 
+library(aod)
 
 #load data
 sites <- read.csv("nest_survey_site_data.csv")
@@ -185,7 +187,7 @@ penetrometer_boxplot <- all_habitat %>% filter(., nest_ID == 'no_nest') %>%
   #theme(axis.title.y = NULL) +
   xlab('quadrat distance') +
   ylab('average psi')  +
-  ggtitle('Soil Compaction (penetrometer)') 
+  ggtitle('Soil compaction') 
 penetrometer_boxplot
 summary(penetrometer$psi_avg)
 grid.arrange(grass_boxplot, bare_boxplot, forb_boxplot, penetrometer_boxplot, ncol = 2)
@@ -245,6 +247,25 @@ ggplot(no_nest_summarized, aes(x = survey_plot,
                     guide = guide_legend(title = NULL))  +
   facet_grid('year')
 
+#plotting forb cover at plots with no nest
+ggplot(no_nest_summarized, aes(x = survey_plot, 
+                               y = avg_forb, 
+                               fill = factor(quadrat_distance, levels = c('0m', '25m', '50m', '75m', '100m')))) +
+  geom_bar(stat = 'identity', position = 'dodge', color = 'black') +
+  theme(#axis.text.x = element_blank(),
+    axis.text.x = element_text(angle = 90, hjust = 0  , vjust = 0, size = 8.5, color = 'black'),#rotate x-axis text
+    axis.text.y = element_text(size = 8, color = 'black'),
+    axis.title = element_text(size = 8),
+    # panel.grid.major = element_blank(),
+    #panel.grid.minor = element_blank(),
+    # panel.background = element_blank(),
+    axis.ticks.x = element_blank()) +
+  labs(x = "plot", y = "mean forb midpoint") + #labels
+  scale_fill_manual(values = c('#FFA500', '#56B4E9', '#ff6db6', '#999999', '#66c2a5'),
+                    labels = c('0m', '25m', '50m', '75m', '100m'),
+                    guide = guide_legend(title = NULL))  +
+  facet_grid('year')
+
 #plotting soil compaction at plots with no nest
 ggplot(no_nest_summarized, aes(x = survey_plot, 
                                y = compaction, 
@@ -269,9 +290,10 @@ all_habitat <- all_habitat %>%
   
 all_habitat$nest_present_num <- ifelse(all_habitat$nest_present == "yes", 1, 0)
 
+
 #Does habitat cover differ between plots where a nest is present and plots without a detected nest? 
 
-plot_habitat_summarized <- all_habitat %>% 
+plot_habitat_summarized <- all_habitat %>% #creating data frame with one row per survey plot. values are averaged 
   group_by(survey_plot, site, year, nest_present, nest_present_num) %>% 
   summarize(
     avg_bare  = mean(mean_litter_depth, na.rm = TRUE),
@@ -283,8 +305,7 @@ plot_habitat_summarized <- all_habitat %>%
   mutate(
     site = as.factor(site),
     survey_plot = as.factor(survey_plot),
-    year = as.factor(year)
-  )
+    year = as.factor(year))
 
 #exclude crow_gc (no survey plot) and le_barn (no nest because nest found later on)
 plot_habitat_summarized <- plot_habitat_summarized %>%
@@ -296,99 +317,8 @@ plot_habitat_summarized <- plot_habitat_summarized %>%
 plot_habitat25 <- plot_habitat_summarized %>%
   filter (!year == 2024)
 
-
-## Modelling 
-#Fitting a logistic regression for percent cover data (grass, forbs, bare ground)
-
-###GRASS 
-
-##Grass model including year as an effect
-
-grass_model <- glmmTMB(
-  nest_present_num ~ avg_grass + year + (1 | site:survey_plot),
-  data = plot_habitat_summarized,
-  family = binomial()
-)
-
-summary(grass_model)
-drop1(grass_model, test = "Chisq")# Asking what happens if predictor variables are removed from the model #No clear effect of grass cover on nest presence probability, no evidence that nest probability differs from 2024 to 2025
-summary(aov(grass_model))
-plot(grass_model)
-library(s)
-plot_model(grass_model, type = "pred", terms = c("nest_present_num"))
-
-#Grass predicted values
-
-preds_grass <- expand.grid(
-  avg_grass = seq(min(plot_habitat_summarized$avg_grass),
-                  max(plot_habitat_summarized$avg_grass),
-                  length.out = 50),
-  year = levels(plot_habitat_summarized$year))
-
-preds_grass$prob <- predict(
-  grass_model,
-  preds_grass,
-  type = "response",
-  re.form = NA)
-
-#plotting it
-
-ggplot(preds_grass, aes(x = avg_grass, y = prob, color = year)) +
-  geom_jitter(data = plot_habitat_summarized,
-              aes(x = avg_grass, y = nest_present_num),
-              alpha = 0.4, height = 0.1) +
-  geom_line(data = preds_grass,
-            aes(x = avg_grass, y = prob),
-            linewidth = 1.2) +
-  ylim(0, 1) +
-  labs(
-    x = "Grass cover (%)",
-    y = "Probability of nest presence"
-  ) +
-  theme_minimal()
- 
-#Visualizing the data to try and find a better way of plotting it
-ggplot(plot_habitat_summarized, aes(x = nest_present, y = avg_grass, fill = nest_present)) +
-  geom_boxplot(alpha = 0.7) +
-  facet_wrap(~year) +  
-  labs(x = "Nest Present", y = "Average Grass (%)", fill = "Nest Present") +
-  theme_minimal()
-
-#Grass model without year as an effect
-grass_model2 <- glmmTMB(
-  nest_present_num ~ avg_grass + (1 | site:survey_plot),
-  data = plot_habitat_summarized,
-  family = binomial()
-)
-
-summary(grass_model2)
-drop1(grass_model2, test = "Chisq") #After removing year, grass becomes significant. 
-
-preds_grass2 <- data.frame(
-  avg_grass = seq(
-    min(plot_habitat_summarized$avg_grass, na.rm = TRUE),
-    max(plot_habitat_summarized$avg_grass, na.rm = TRUE),
-    length.out = 100
-  )
-)
-
-preds_grass2$prob <- predict(grass_model2, preds_grass2, type = "response", re.form = NA)
-
-ggplot() +
-  geom_jitter(data = plot_habitat_summarized,
-              aes(x = avg_grass, y = nest_present_num),
-              alpha = 0.4, height = 0.1) +
-  geom_line(data = preds_grass2,
-            aes(x = avg_grass, y = prob),
-            linewidth = 1.2) +
-  ylim(0, 1) +
-  labs(
-    x = "Grass cover (%)",
-    y = "Probability of nest presence"
-  ) +
-  theme_minimal()
-
-#Violin plot for visualizing distribution of data
+#Visualizing habitat cover in plots with or without a nest. 
+#Violin plot for visualizing distribution of grass cover data
 ggplot(plot_habitat_summarized, aes(x = nest_present, y = avg_grass, fill = nest_present)) +
   geom_violin(alpha = 0.6, trim = FALSE) +
   #geom_boxplot(width = 0.1, fill = "white", outlier.shape = NA) +
@@ -400,172 +330,105 @@ ggplot(plot_habitat_summarized, aes(x = nest_present, y = avg_grass, fill = nest
   facet_wrap(~year) +
   theme_minimal()
 
-#Forb model
-
-forb_model <- glmmTMB(
-  nest_present_num ~ avg_forb + year + (1 | site:survey_plot),
-  data = plot_habitat_summarized,
-  family = binomial()
-)
-
-summary(forb_model)
-drop1(forb_model, test = "Chisq")
-
-#Forb predicted values
-
-preds_forb <- expand.grid(
-  avg_forb = seq(min(plot_habitat_summarized$avg_forb),
-                  max(plot_habitat_summarized$avg_forb),
-                  length.out = 50),
-  year = levels(plot_habitat_summarized$year))
-
-preds_forb$prob <- predict(
-  forb_model,
-  preds_forb,
-  type = "response",
-  re.form = NA)
-
-#plotting it
-
-ggplot(preds_forb, aes(x = avg_forb, y = prob, color = year)) +
-  geom_jitter(data = plot_habitat_summarized,
-              aes(x = avg_forb, y = nest_present_num),
-              alpha = 0.4, height = 0.1) +
-  geom_line(data = preds_forb,
-            aes(x = avg_forb, y = prob),
-            linewidth = 1.2) +
-  ylim(0, 1) +
-  labs(
-    x = "Forb cover (%)",
-    y = "Probability of nest presence"
-  ) +
-  theme_minimal()
-
-#Bare ground model
-
-bare_model <- glmmTMB(
-  nest_present_num ~ avg_bare + year + (1 | site:survey_plot),
-  data = plot_habitat_summarized,
-  family = binomial()
-)
-
-summary(bare_model)
-drop1(bare_model, test = "Chisq")
-
-#Bare predicted values
-
-preds_bare <- expand.grid(
-  avg_bare = seq(min(plot_habitat_summarized$avg_bare),
-                 max(plot_habitat_summarized$avg_bare),
-                 length.out = 50),
-  year = levels(plot_habitat_summarized$year))
-
-preds_bare$prob <- predict(
-  bare_model,
-  preds_bare,
-  type = "response",
-  re.form = NA)
-
-#plotting it
-
-ggplot(preds_bare, aes(x = avg_bare, y = prob, color = year)) +
-  geom_jitter(data = plot_habitat_summarized,
-              aes(x = avg_bare, y = nest_present_num),
-              alpha = 0.4, height = 0.1) +
-  geom_line(data = preds_bare,
-            aes(x = avg_bare, y = prob),
-            linewidth = 1.2) +
-  ylim(0, 1) +
-  labs(
-    x = "Bare ground cover (%)",
-    y = "Probability of nest presence"
-  ) +
-  theme_minimal()
-
-#Bare ground model without year as an effect
-
-bare_model2 <- glmmTMB(
-  nest_present_num ~ avg_bare + (1 | site:survey_plot),
-  data = plot_habitat_summarized,
-  family = binomial()
-)
-
-summary(bare_model2)
-drop1(bare_model2, test = "Chisq") #After removing year, grass becomes significant. 
-
-preds_bare2 <- data.frame(
-  avg_bare = seq(
-    min(plot_habitat_summarized$avg_bare, na.rm = TRUE),
-    max(plot_habitat_summarized$avg_bare, na.rm = TRUE),
-    length.out = 100
-  )
-)
-
-preds_bare2$prob <- predict(bare_model2, preds_bare2, type = "response", re.form = NA)
-
-ggplot(plot_habitat_summarized, aes(x = nest_present, y = avg_bare, fill = nest_present)) +
+#Visualizing grass cover of just 2025 grass cover data 
+grass_violin <- ggplot(plot_habitat25, aes(x = nest_present, y = avg_grass, fill = nest_present)) +
   geom_violin(alpha = 0.6, trim = FALSE) +
   #geom_boxplot(width = 0.1, fill = "white", outlier.shape = NA) +
   geom_jitter(width = 0.1, size = 2, alpha = 0.8) +
   labs(
-    x = "Nest Presence",
-    y = "Average Bare Ground (%)"
+    x = "Nest detected",
+    y = "Average grass cover (%)", 
+    title = "Grass cover"
   ) +
-  facet_wrap(~year) +
-  theme_minimal()
+  scale_fill_manual(values = c('#56B4E9','#FFA500'),
+                    labels = c('no', 'yes')) + 
+  theme(legend.position = "none")
+grass_violin
 
-#Soil compaction model
-
-compaction_model <- glmmTMB(
-  nest_present_num ~ compaction + (1 | site:survey_plot), #had to remove year as an effect or got all NaN values
-  data = plot_habitat_summarized,
-  family = binomial()
-)
-
-summary(compaction_model)
-drop1(compaction_model, test = "Chisq")
-
-#Grass predicted values
-
-preds_compaction <- data.frame(
-  compaction = seq(
-    min(plot_habitat_summarized$compaction, na.rm = TRUE),
-    max(plot_habitat_summarized$compaction, na.rm = TRUE),
-    length.out = 100
-  )
-)
-
-preds_compaction$prob <- predict(compaction_model, preds_compaction, type = "response", re.form = NA)
-
-#plotting it
-
-ggplot() +
-  geom_jitter(data = plot_habitat_summarized,
-              aes(x = compaction, y = nest_present_num),
-              alpha = 0.4) +
-  geom_line(data = preds_compaction,
-            aes(x = compaction, y = prob),
-            linewidth = 1.2) +
-  ylim(0, 1) +
+#Visualizing forb cover for 2025 data
+forb_violin <- ggplot(plot_habitat25, aes(x = nest_present, y = avg_forb, fill = nest_present)) +
+  geom_violin(alpha = 0.6, trim = FALSE) +
+  #geom_boxplot(width = 0.1, fill = "white", outlier.shape = NA) +
+  geom_jitter(width = 0.1, size = 2, alpha = 0.8) +
   labs(
-    x = "Soil compaction (psi)",
-    y = "Probability of nest presence"
+    x = "Nest detected",
+    y = "Average forb cover (%)",
+    title = "Forb cover"
   ) +
-  theme_minimal() 
+  scale_fill_manual(values = c('#56B4E9','#FFA500'),
+                    labels = c('no', 'yes')) + 
+  theme(legend.position = "none")
+forb_violin
+
+#Visualizing bare ground cover for 2025 data
+bare_violin <- ggplot(plot_habitat25, aes(x = nest_present, y = avg_bare, fill = nest_present)) +
+  geom_violin(alpha = 0.6, trim = FALSE) +
+  #geom_boxplot(width = 0.1, fill = "white", outlier.shape = NA) +
+  geom_jitter(width = 0.1, size = 2, alpha = 0.8) +
+  labs(
+    x = "Nest detected",
+    y = "Average bare ground (%)",
+    title = "Bare ground cover"
+  ) +
+  scale_fill_manual(values = c('#56B4E9','#FFA500'),
+                    labels = c('no', 'yes')) + 
+  theme(legend.position = "none")
+bare_violin
+
+#Visualizing soil compaction for 2025 data
+soil_violin <- ggplot(plot_habitat25, aes(x = nest_present, y = compaction, fill = nest_present)) +
+  geom_violin(alpha = 0.6, trim = FALSE) +
+  #geom_boxplot(width = 0.1, fill = "white", outlier.shape = NA) +
+  geom_jitter(width = 0.1, size = 2, alpha = 0.8) +
+  labs(
+    x = "Nest detected",
+    y = "Average soil compaction (psi)",
+    title = "Soil compaction"
+  ) +
+  scale_fill_manual(values = c('#56B4E9','#FFA500'),
+                    labels = c('no', 'yes')) + 
+  theme(legend.position = "none")
+soil_violin
+
+grid.arrange(grass_violin, forb_violin, bare_violin, soil_violin, ncol = 2)
+
+
+## Modelling 
+#Fitting a logistic regression for percent cover data (grass, forbs, bare ground)
 
 #Models using ONLY 2025 DATA 
 
-#Grass model 
+###Grass model 
 
 grass_model25 <- glmmTMB(
-  nest_present_num ~ avg_grass + (1 | site:survey_plot),
-  data = plot_habitat_summarized,
+  nest_present_num ~ avg_grass + (1 | site:survey_plot), #Estimates how average grass affects nest presence while allowing each site–plot combination to have its own baseline probability of containing a nest
+  data = plot_habitat25,
   family = binomial()
 )
 
 summary(grass_model25)
+confint(grass_model25)
 
+#Grass model without plot nested 
+grass_model25.2 <- glmmTMB(
+  nest_present_num ~ avg_grass + (1 | site),
+  data = plot_habitat25,
+  family = binomial()
+)
 
+#Grass model with no random effect
+summary(grass_model25.2)
+
+grass_model25_simple <- glm(
+  nest_present_num ~ avg_grass,
+  data = plot_habitat25,
+  family = binomial()
+)
+
+summary(grass_model25_simple)
+#AIC values and p values are basically the same for each model.  
+
+#Creating predicted values
 preds_grass25 <- data.frame(
   avg_grass = seq(
     min(plot_habitat25$avg_grass, na.rm = TRUE),
@@ -576,11 +439,12 @@ preds_grass25 <- data.frame(
 
 preds_grass25$prob <- predict(grass_model25, preds_grass25, type = "response", re.form = NA)
 
+#Plotting it
 ggplot() + 
   geom_point(data = plot_habitat25,
-              aes(x = avg_grass, y = nest_present_num),
-              #alpha = 0.4, height = 0.1, #Is this height thing right? 
-              size = 3) + 
+             aes(x = avg_grass, y = nest_present_num),
+             #alpha = 0.4, height = 0.1, #Is this height thing right? 
+             size = 3) + 
   geom_line(data = preds_grass25,
             aes(x = avg_grass, y = prob),
             linewidth = 1.2) +
@@ -591,47 +455,74 @@ ggplot() +
   ) +
   theme_minimal()
 
-
-ggplot(plot_habitat_summarized, aes(x = nest_present, y = avg_grass, fill = nest_present)) +
-  geom_violin(alpha = 0.6, trim = FALSE) +
-  #geom_boxplot(width = 0.1, fill = "white", outlier.shape = NA) +
-  geom_jitter(width = 0.1, size = 2, alpha = 0.8) +
-  labs(
-    x = "Nest Presence",
-    y = "Average Grass (%)"
-  ) +
-  scale_fill_manual(values = c('#56B4E9','#FFA500'),
-                    labels = c('no', 'yes')) + 
-  theme_minimal()
-
-#Grass model diagnostics (not sure if this is right)
-
-preds_grass25$logit <- log(
-  preds_grass25$prob /
-    (1 - preds_grass25$prob)
+#Plotting model results with uncertainty (margin of error?) 
+pred <- predict(
+  grass_model25,
+  newdata = preds_grass25,
+  type = "link",
+  se.fit = TRUE,
+  re.form = NA
 )
 
-ggplot(preds_grass25, aes(x = avg_grass, y = logit)) +
-  geom_jitter(size = 3, alpha = 0.8) +
-  geom_smooth(method = "loess", se = FALSE, color = "blue") +
+preds_grass25$fit <- plogis(pred$fit)
+preds_grass25$lwr <- plogis(pred$fit - 1.96 * pred$se.fit)
+preds_grass25$upr <- plogis(pred$fit + 1.96 * pred$se.fit)
+
+uncertainty_grass <- ggplot(preds_grass25, aes(x = avg_grass, y = fit)) +
+  geom_ribbon(
+    aes(ymin = lwr, ymax = upr),
+    alpha = 0.25,
+    fill = "darkgreen") +
+  geom_line(
+    linewidth = 1.2,
+    color = "darkgreen") +
   labs(
-    x = "Average Grass (%)",
-    y = "Logit (log-odds of nest presence)"
-  ) +
-  theme_minimal()
+    x = "Grass cover (%)",
+    y = "Predicted probability of nest presence") +
+  theme_classic()
+uncertainty_grass
 
+#plotting uncertainty using raw data
+ggplot() +
+  geom_jitter(
+    data = plot_habitat25,
+    aes(x = avg_grass, y = nest_present_num),
+    height = 0.03,
+    width = 0,
+    alpha = 0.6) +
+  geom_ribbon(
+    data = preds_grass25,
+    aes(x = avg_grass, ymin = lwr, ymax = upr),
+    alpha = 0.25,
+    fill = "darkgreen") +
+  geom_line(
+    data = preds_grass25,
+    aes(x = avg_grass, y = fit),
+    linewidth = 1.2,
+    color = "darkgreen") +
+  scale_y_continuous(
+    limits = c(0, 1),
+    name = "Probability of nest presence") +
+  xlab("Grass cover (%)") +
+  theme_classic()
 
-#Forb model
+ggplot(preds_grass25, aes(x=avg_grass, y=prob))+ geom_point(size=2, alpha=0.4)+
+  stat_smooth(method="loess", colour="blue", size=1.5)+
+  xlab("Grass cover (%)")+
+  ylab("Probability of nest presence")+
+  theme_bw()
+
+###Forb model
 
 forb_model25 <- glmmTMB(
   nest_present_num ~ avg_forb + (1 | site:survey_plot),
-  data = plot_habitat_summarized,
+  data = plot_habitat25,
   family = binomial()
 )
 
 summary(forb_model25)
 
-
+#Creating predicted values 
 preds_forb25 <- data.frame(
   avg_forb = seq(
     min(plot_habitat25$avg_forb, na.rm = TRUE),
@@ -642,6 +533,7 @@ preds_forb25 <- data.frame(
 
 preds_forb25$prob <- predict(forb_model25, preds_forb25, type = "response", re.form = NA)
 
+#Plotting it
 ggplot() +
   geom_point(data = plot_habitat25,
              aes(x = avg_forb, y = nest_present_num),
@@ -657,12 +549,69 @@ ggplot() +
   ) +
   theme_minimal()
 
+#Plotting model results with uncertainty (margin of error?) 
+pred <- predict(
+  forb_model25,
+  newdata = preds_forb25,
+  type = "link",
+  se.fit = TRUE,
+  re.form = NA
+)
 
-#Bare ground model 
+preds_forb25$fit <- plogis(pred$fit)
+preds_forb25$lwr <- plogis(pred$fit - 1.96 * pred$se.fit)
+preds_forb25$upr <- plogis(pred$fit + 1.96 * pred$se.fit)
+
+uncertainty_forb <- ggplot(preds_forb25, aes(x = avg_forb, y = fit)) +
+  geom_ribbon(
+    aes(ymin = lwr, ymax = upr),
+    alpha = 0.25,
+    fill = "darkgreen") +
+  geom_line(
+    linewidth = 1.2,
+    color = "darkgreen") +
+  labs(
+    x = "Forb cover (%)",
+    y = "Predicted probability of nest presence") +
+  theme_classic()
+uncertainty_forb
+
+#plotting uncertainty using raw data
+ggplot() +
+  geom_jitter(
+    data = plot_habitat25,
+    aes(x = avg_forb, y = nest_present_num),
+    height = 0.03,
+    width = 0,
+    alpha = 0.6) +
+  geom_ribbon(
+    data = preds_forb25,
+    aes(x = avg_forb, ymin = lwr, ymax = upr),
+    alpha = 0.25,
+    fill = "darkgreen") +
+  geom_line(
+    data = preds_forb25,
+    aes(x = avg_forb, y = fit),
+    linewidth = 1.2,
+    color = "darkgreen") +
+  scale_y_continuous(
+    limits = c(0, 1),
+    name = "Probability of nest presence") +
+  xlab("Forb cover (%)") +
+  theme_classic()
+
+ggplot(preds_forb25, aes(x=avg_forb, y=prob))+ geom_point(size=2, alpha=0.4)+
+  stat_smooth(method="loess", colour="blue", size=1.5)+
+  xlab("Forb cover (%)")+
+  ylab("Probability of nest presence")+
+  theme_bw() #I'm not exactly sure what this does? 
+
+
+###Bare ground model 
 
 bare_model25 <- glmmTMB(
   nest_present_num ~ avg_bare + (1 | site:survey_plot),
-  data = plot_habitat_summarized,
+  data = plot_habitat25,
   family = binomial()
 )
 
@@ -694,3 +643,153 @@ ggplot() +
   ) +
   theme_minimal()
 
+#Plotting model results with uncertainty (margin of error?) 
+pred <- predict(
+  bare_model25,
+  newdata = preds_bare25,
+  type = "link",
+  se.fit = TRUE,
+  re.form = NA
+)
+
+preds_bare25$fit <- plogis(pred$fit)
+preds_bare25$lwr <- plogis(pred$fit - 1.96 * pred$se.fit)
+preds_bare25$upr <- plogis(pred$fit + 1.96 * pred$se.fit)
+
+uncertainty_bare <- ggplot(preds_bare25, aes(x = avg_bare, y = fit)) +
+  geom_ribbon(
+    aes(ymin = lwr, ymax = upr),
+    alpha = 0.25,
+    fill = "darkgreen") +
+  geom_line(
+    linewidth = 1.2,
+    color = "darkgreen") +
+  labs(
+    x = "Bare ground cover (%)",
+    y = "Predicted probability of nest presence") +
+  theme_classic()
+uncertainty_bare
+
+#plotting uncertainty using raw data
+ggplot() +
+  geom_jitter(
+    data = plot_habitat25,
+    aes(x = avg_bare, y = nest_present_num),
+    height = 0.03,
+    width = 0,
+    alpha = 0.6) +
+  geom_ribbon(
+    data = preds_bare25,
+    aes(x = avg_bare, ymin = lwr, ymax = upr),
+    alpha = 0.25,
+    fill = "darkgreen") +
+  geom_line(
+    data = preds_bare25,
+    aes(x = avg_bare, y = fit),
+    linewidth = 1.2,
+    color = "darkgreen") +
+  scale_y_continuous(
+    limits = c(0, 1),
+    name = "Probability of nest presence") +
+  xlab("Bare ground cover (%)") +
+  theme_classic()
+
+ggplot(preds_bare25, aes(x=avg_bare, y=prob))+ geom_point(size=2, alpha=0.4)+
+  stat_smooth(method="loess", colour="blue", size=1.5)+
+  xlab("Bare ground cover (%)")+
+  ylab("Probability of nest presence")+
+  theme_bw() #I'm not exactly sure what this does? 
+
+###Soil compaction model
+compaction_model25 <- glmmTMB(
+  nest_present_num ~ compaction + (1 | site:survey_plot),
+  data = plot_habitat25,
+  family = binomial()
+)
+
+summary(compaction_model25)
+
+preds_compaction25 <- data.frame(
+  compaction = seq(
+    min(plot_habitat25$compaction, na.rm = TRUE),
+    max(plot_habitat25$compaction, na.rm = TRUE),
+    length.out = 100
+  )
+)
+
+preds_compaction25$prob <- predict(compaction_model25, preds_compaction25, type = "response", re.form = NA)
+
+ggplot() +
+  geom_point(data = plot_habitat25,
+             aes(x = compaction, y = nest_present_num),
+             #alpha = 0.4, height = 0.1, #Is this height thing right? 
+             size = 3) +
+  geom_line(data = preds_compaction25,
+            aes(x = compaction, y = prob),
+            linewidth = 1.2) +
+  ylim(0, 1) +
+  labs(
+    x = "Soil compaction (psi)",
+    y = "Probability of nest presence"
+  ) +
+  theme_minimal()
+
+#Plotting model results with uncertainty (margin of error?) 
+pred <- predict(
+  compaction_model25,
+  newdata = preds_compaction25,
+  type = "link",
+  se.fit = TRUE,
+  re.form = NA
+)
+
+preds_compaction25$fit <- plogis(pred$fit)
+preds_compaction25$lwr <- plogis(pred$fit - 1.96 * pred$se.fit)
+preds_compaction25$upr <- plogis(pred$fit + 1.96 * pred$se.fit)
+
+uncertainty_compaction <- ggplot(preds_compaction25, aes(x = compaction, y = fit)) +
+  geom_ribbon(
+    aes(ymin = lwr, ymax = upr),
+    alpha = 0.25,
+    fill = "darkgreen") +
+  geom_line(
+    linewidth = 1.2,
+    color = "darkgreen") +
+  labs(
+    x = "Soil compaction (psi)",
+    y = "Predicted probability of nest presence") +
+  theme_classic()
+uncertainty_compaction
+
+#plotting uncertainty using raw data
+ggplot() +
+  geom_jitter(
+    data = plot_habitat25,
+    aes(x = compaction, y = nest_present_num),
+    height = 0.03,
+    width = 0,
+    alpha = 0.6) +
+  geom_ribbon(
+    data = preds_compaction25,
+    aes(x = compaction, ymin = lwr, ymax = upr),
+    alpha = 0.25,
+    fill = "darkgreen") +
+  geom_line(
+    data = preds_compaction25,
+    aes(x = compaction, y = fit),
+    linewidth = 1.2,
+    color = "darkgreen") +
+  scale_y_continuous(
+    limits = c(0, 1),
+    name = "Probability of nest presence") +
+  xlab("Soil compaction (psi)") +
+  theme_classic()
+
+ggplot(preds_compaction25, aes(x=compaction, y=prob))+ geom_point(size=2, alpha=0.4)+
+  stat_smooth(method="loess", colour="blue", size=1.5)+
+  xlab("Soil compaction (psi)")+
+  ylab("Probability of nest presence")+
+  theme_bw() #I'm not exactly sure what this does? 
+
+#Putting predicted values all together into one figure 
+grid.arrange(uncertainty_grass, uncertainty_forb, uncertainty_bare, uncertainty_compaction, ncol = 2)
