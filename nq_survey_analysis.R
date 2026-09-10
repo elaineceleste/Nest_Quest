@@ -51,7 +51,7 @@ surveys_no_flower <- surveys_no_flower %>%
                                startsWith(observer1, 'Fern') ~ "Fern LaBry",
                                startsWith(observer1, 'Alex') ~ "Alex Swartz",
                                startsWith(observer1, 'Dawn') ~ "Dawn Peterson",
-                               startsWith(observer1, 'Hanych') ~ "Emily Hanych",
+                               startsWith(observer1, 'Emi') ~ "Emily Hanych",
                                startsWith(observer1, 'Janet') ~ "Janet Orange",
                                startsWith(observer1, 'Paul') ~ "Paul Richtman", #two pauls, one without a last name. assuming it's the same person.
                                startsWith(observer1, 'Renee') ~ "Renee Rademacher",
@@ -62,6 +62,7 @@ surveys_no_flower <- surveys_no_flower %>%
                                .default = as.character(observer1)))
 
 table(surveys_no_flower$observer1) #check. looks good to me
+n_distinct(surveys_no_flower$observer1)
 
 # cleaning survey_count data. 
 table(surveys_no_flower$survey_count) # there are inconsistent values for repeating 0.3.
@@ -199,7 +200,7 @@ site_summary2 %>%
   #geom_text(aes(label = total_nests))
 #dev.off() #uncomment this to create a png
 
-surveys_2024 <- site_summary2 %>% filter(., year == '2024')%>% 
+surveys_2024 <- site_summary2 %>% filter(., year == '2024') %>% 
   ggplot(aes(y = -desc(total_survey_sum), x = site, fill = Volunteer_or_staff, label = total_nests)) + # defining x and y values. 'fill' is how to get the groupings based on a column. 
   geom_bar(stat = "identity", colour = 'black') +
   theme(#axis.text.x = element_blank(),
@@ -454,20 +455,21 @@ survey_nest <- left_join(survey_nest, survey123_tracks) %>% # join track length 
 survey_nest$length_meters <- round(survey_nest$length_meters, digits = 2) # make values a bit more readable. 
 
 survey_nest <- survey_nest %>% 
-  mutate(., pace_meters_per_hour = length_meters / time_spent_hours, # create meters/hour pace
-        pace_meters_per_hour = replace(pace_meters_per_hour, which(pace_meters_per_hour > 3500), NA)) # Removing a single outlier of Elise data where it seems unrealistic. 
+  mutate(., pace_meters_per_hour = length_meters / time_spent_hours) # create meters/hour pace
+pace_data <- subset(survey_nest, pace_meters_per_hour < 2000)
+        #pace_meters_per_hour = replace(pace_meters_per_hour, which(pace_meters_per_hour > 2000), NA)) # Removing a single outlier of Elise data where it seems unrealistic. 
 # some other outliers are contained here^^^
 
-pace_data <- survey_nest %>% drop_na(length_meters)
+pace_data <- pace_data %>% drop_na(length_meters)
 
-pace_summary <- survey_nest %>% 
+pace_summary <- pace_data %>% 
   group_by(., year, Volunteer_or_staff) %>% 
   summarize(mean_pace = mean(pace_meters_per_hour, na.rm = TRUE,),
             mean_length = mean(length_meters, na.rm = TRUE)) 
 
 
 
-ggplot(survey_nest, aes(x = Volunteer_or_staff, y = pace_meters_per_hour)) + 
+ggplot(pace_data, aes(x = Volunteer_or_staff, y = pace_meters_per_hour)) + 
   geom_boxplot(fill= "slateblue", alpha= 0.7) +
   xlab('') +
   ylab('Pace (meters/hour)') +
@@ -565,6 +567,24 @@ ggplot(data = subset(survey_nest, !is.na(bombus_obs)), aes(x = factor(bombus_obs
         strip.text = element_text(size = 14)) +
   scale_y_discrete(labels = c("No", "Yes"))
 
+ggplot(data = subset(survey_nest, !is.na(bombus_obs)), aes(y = factor(bombus_obs, 
+                                                                      levels = c('0',
+                                                                                 'less than 5',
+                                                                                 '5 to 10', 
+                                                                                 '10 to 19',
+                                                                                 '20 to 39', 
+                                                                                 'more than 40')), 
+                                                           x = as.Date(date, "%m/%d/%y" ),
+                                                           color = location)) + 
+  geom_point() +
+  ylab('Nest found?') +
+  ylab('Number of BB observed') +
+  theme(axis.text.x = element_text(vjust = 0.7, angle = 0, size = 12, color = 'black'),#rotate x-axis text
+        axis.text.y = element_text(size = 12, color = 'black'),
+        axis.title = element_text(size = 14),
+        axis.ticks.x = element_blank(),
+        strip.text = element_text(size = 14)) 
+  #scale_y_discrete(labels = c("No", "Yes"))
                                               
 # attempting a generalized linear mixed effect model
   
@@ -579,6 +599,11 @@ lrf1 <- logistf(nest_found ~ bombus_obs,
         data = survey_nest,
         firth = TRUE)
 summary(lrf1) # ran this test, appears that results are non-significant
+nobs(lrf1)
+drop1(lrf1)
+plot(profile(lrf1,variable= 'bombus_obs10 to 19'))
+extractAIC(lrf1)
+
 
 ggplot(data = subset(survey_nest, !is.na(bombus_obs)), aes(x = factor(bombus_obs, 
                                                                       levels = c('0',

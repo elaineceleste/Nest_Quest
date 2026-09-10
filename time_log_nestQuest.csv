@@ -1,0 +1,528 @@
+Entry,name,volunteer_or_staff,site,park,day,month,year,volunteer_search_program,staff_search_program,radio_tracking_program,task,total_time,nest_found
+1,Elise Bernstein,staff,hp_sled,Hyland Lake Park Reserve,25,6,2024,yes,yes,no,Drive_Time,1,NA
+2,Elaine Evans,staff,hp_sled,Hyland Lake Park Reserve,25,6,2024,yes,yes,no,Drive_Time,1,NA
+3,Renee Rademacher,staff,hp_sled,Hyland Lake Park Reserve,25,6,2024,yes,yes,no,Drive_Time,1,NA
+4,Sarah Henderson,staff,hp_sled,Hyland Lake Park Reserve,25,6,2024,yes,yes,no,Drive_Time,1,NA
+5,Elise Bernstein,staff,HP & CH,Hyland Lake Park Reserve & Crow-Hassan Park Reserve,3,7,2024,no,yes,no,Drive_Time,1.83,NA
+6,Rose Zappa,staff,HP & CH,Hyland Lake Park Reserve & Crow-Hassan Park Reserve,3,7,2024,no,yes,no,Drive_Time,1.83,NA
+7,Jessica Schatz,staff,HP & CH,Hyland Lake Park Reserve & Crow-Hassan Park Reserve,3,7,2024,no,yes,no,Drive_Time,1.83,NA
+8,Clara Costello,staff,LH & LE,Lebanon Hills Regional Park & Lake Elmo Park Reserve,3,7,2024,no,yes,no,Drive_Time,1.5,NA
+9,Renee Rademacher,staff,LH & LE,Lebanon Hills Regional Park & Lake Elmo Park Reserve,3,7,2024,no,yes,no,Drive_Time,1.5,NA
+10,Sarah Henderson,staff,LH & LE,Lebanon Hills Regional Park & Lake Elmo Park Reserve,3,7,2024,no,yes,no,Drive_Time,1.5,NA
+11,Clara Costello,staff,le_iw,Lake Elmo Park Reserve,9,7,2024,no,yes,no,Drive_Time,1,NA
+12,Renee Rademacher,staff,le_iw,Lake Elmo Park Reserve,9,7,2024,no,yes,no,Drive_Time,1,NA
+13,Elise Bernstein,staff,HP,Hyland Lake Park Reserve,16,7,2024,no,yes,no,Drive_Time,1,NA
+14,Renee Rademacher,staff,HP,Hyland Lake Park Reserve,16,7,2024,no,yes,no,Drive_Time,1,NA
+15,Elise Bernstein,staff,CH,Crow-Hassan Park Reserve,17,7,2024,no,yes,no,Drive_Time,1.3,NA
+16,Clara Costello,staff,LH,Lebanon Hills Regional Park,19,7,2024,no,yes,no,Drive_Time,1.5,NA
+17,Jayden Peterson,staff,LH,Lebanon Hills Regional Park,19,7,2024,no,yes,no,Drive_Time,1.5,NA
+18,Elise Bernstein,staff,crow1,Crow-Hassan Park Reserve,22,7,2024,no,yes,no,Drive_Time,1.333,NA
+19,Elise Bernstein,staff,HP,Hyland Lake Park Reserve,24,7,2024,yes,no,no,Drive_Time,1,NA
+20,Jayden Peterson,staff,HP,Hyland Lake Park Reserve,24,7,2024,yes,no,no,Drive_Time,1,NA
+21,Sami Dolan,staff,HP,Hyland Lake Park Reserve,24,7,2024,yes,no,no,Drive_Time,1,NA
+22,Elise Bernstein,staff,HP,Hyland Lake Park Reserve,25,7,2024,yes,no,no,Drive_Time,1,NA
+23,Jayden Peterson,staff,HP,Hyland Lake Park Reserve,25,7,2024,yes,no,no,Drive_Time,1,NA
+24,Clara Costello,staff,LH,Lebanon Hills Regional Park,25,7,2024,no,yes,no,Drive_Time,1,NA
+25,Elise Bernstein,staff,LE,Lake Elmo Park Reserve,26,7,2024,no,yes,no,Drive_Time,1.25,NA
+26,Jayden Peterson,staff,LE,Lake Elmo Park Reserve,26,7,2024,no,yes,no,Drive_Time,1.25,NA
+27,Elise Bernstein,staff,LE & LH,Lebanon Hills Regional Park & Lake Elmo Park Reserve,30,7,2024,no,yes,no,Drive_Time,1.5,NA
+28,Jayden Peterson,staff,LE & LH,Lebanon Hills Regional Park & Lake Elmo Park Reserve,30,7,2024,no,yes,no,Drive_Time,1.5,NA
+29,Elise Bernstein,staff,CH & HP,Hyland Lake Park Reserve & Crow-Hassan Park Reserve,6,8,2024,no,yes,no,Drive_Time,1.85,NA
+30,Jayden Peterson,staff,CH & HP,Hyland Lake Park Reserve & Crow-Hassan Park Reserve,6,8,2024,no,yes,no,Drive_Time,1.85,NA
+31,Elise Bernstein,staff,HP,Hyland Lake Park Reserve,7,8,2024,no,yes,no,Drive_Time,1,NA
+32,Jayden Peterson,staff,HP,Hyland Lake Park Reserve,7,8,2024,no,yes,no,Drive_Time,1,NA
+33,Elaine Evans,staff,HP,Hyland Lake Park Reserve,7,8,2024,no,yes,no,Drive_Time,1,NA
+34,Jayden Peterson,staff,LE,Lake Elmo Park Reserve,8,8,2024,no,yes,no,Drive_Time,1.5,NA
+35,Clara Costello,staff,LE,Lake Elmo Park Reserve,8,8,2024,no,yes,no,Drive_Time,1.5,NA
+36,Elise Bernstein,staff,LE,Lake Elmo Park Reserve,13,8,2024,no,yes,no,Drive_Time,1,NA
+37,Jayden Peterson,staff,LE,Lake Elmo Park Reserve,13,8,2024,no,yes,no,Drive_Time,1,NA
+38,Elise Bernstein,staff,HP,Hyland Lake Park Reserve,14,8,2024,no,yes,no,Drive_Time,1,NA
+39,Jayden Peterson,staff,HP,Hyland Lake Park Reserve,14,8,2024,no,yes,no,Drive_Time,1,NA
+40,Clara Costello,staff,HP,Hyland Lake Park Reserve,14,8,2024,no,yes,no,Drive_Time,1,NA
+41,Elise Bernstein,staff,HP & CH,Hyland Lake Park Reserve & Crow-Hassan Park Reserve,4,9,2024,no,yes,no,Drive_Time,2,NA
+42,Jayden Peterson,staff,HP & CH,Hyland Lake Park Reserve & Crow-Hassan Park Reserve,4,9,2024,no,yes,no,Drive_Time,2,NA
+43,Jayden Peterson,staff,LE & LH,Lebanon Hills Regional Park & Lake Elmo Park Reserve,5,9,2024,no,yes,no,Drive_Time,1.5,NA
+44,Clara Costello,staff,LE & LH,Lebanon Hills Regional Park & Lake Elmo Park Reserve,5,9,2024,no,yes,no,Drive_Time,1.5,NA
+45,Elise Bernstein,staff,NA,NA,10,9,2024,no,yes,no,Drive_Time,1,NA
+46,Elaine Evans,staff,NA,NA,10,9,2024,no,yes,no,Drive_Time,1,NA
+47,Elise Bernstein,staff,LE,Lake Elmo Park Reserve,10,9,2024,no,yes,no,Drive_Time,1,NA
+48,Jayden Peterson,staff,LE,Lake Elmo Park Reserve,10,9,2024,no,yes,no,Drive_Time,1,NA
+49,Elise Bernstein,staff,25lh_eq1,Lebanon Hills Regional park,10,6,2025,no,no,yes,Drive_Time,1.16667,NA
+50,Elaine Evans,staff,hp2,Hyland Lake Park Reserve,12,6,2025,yes,no,no,Drive_Time,1.16667,NA
+51,Elise Bernstein,staff,hp2,Hyland Lake Park Reserve,12,6,2025,yes,no,no,Drive_Time,1.16667,NA
+52,Clara Costello,staff,LE,Lake Elmo Park Reserve,2,7,2025,no,no,yes,Drive_Time,1.1667,NA
+53,Elise Bernstein,staff,LE,Lake Elmo Park Reserve,2,7,2025,no,no,yes,Drive_Time,1.1667,NA
+54,Jayden Peterson,staff,LE,Lake Elmo Park Reserve,2,7,2025,no,no,yes,Drive_Time,1.1667,NA
+55,Jayden Peterson,staff,LE,Lake Elmo Park Reserve,3,7,2025,no,yes,no,Drive_Time,1.6667,NA
+56,Fern LaBry,staff,LE,Lake Elmo Park Reserve,3,7,2025,no,yes,no,Drive_Time,1.6667,NA
+57,Elise Bernstein,staff,LE,Lake Elmo Park Reserve,3,7,2025,no,yes,no,Drive_Time,1.6667,NA
+58,Fern LaBry,staff,Arden Hills,Arden Hills Army Training Site,7,7,2025,no,no,yes,Drive_Time,0.5,NA
+59,Elaine Evans,staff,Arden Hills,Arden Hills Army Training Site,7,7,2025,no,no,yes,Drive_Time,0.5,NA
+60,Elise Bernstein,staff,CH,Crow-Hassan Park Reserve,9,7,2025,no,yes,no,Drive_Time,1.333,NA
+61,Jayden Peterson,staff,CH,Crow-Hassan Park Reserve,9,7,2025,no,yes,no,Drive_Time,1.333,NA
+62,Jayden Peterson,staff,Arden Hills,Arden Hills Army Training Site,10,7,2025,no,yes,no,Drive_Time,0.5,NA
+63,Elise Bernstein,staff,Arden Hills,Arden Hills Army Training Site,10,7,2025,no,yes,no,Drive_Time,0.5,NA
+64,Fern LaBry,staff,Arden Hills,Arden Hills Army Training Site,10,7,2025,no,yes,no,Drive_Time,0.5,NA
+65,Elise Bernstein,staff,Arden Hills,Arden Hills Army Training Site,17,7,2025,no,no,yes,Drive_Time,0.5,NA
+66,Clara Costello,staff,Arden Hills,Arden Hills Army Training Site,17,7,2025,no,no,yes,Drive_Time,0.5,NA
+67,Jayden Peterson,staff,Arden Hills,Arden Hills Army Training Site,17,7,2025,no,no,yes,Drive_Time,0.5,NA
+68,Fern LaBry,staff,Arden Hills,Arden Hills Army Training Site,18,7,2025,no,no,yes,Drive_Time,0.5,NA
+69,Elise Bernstein,staff,Arden Hills,Arden Hills Army Training Site,18,7,2025,no,no,yes,Drive_Time,0.5,NA
+70,Jayden Peterson,staff,Arden Hills,Arden Hills Army Training Site,18,7,2025,no,no,yes,Drive_Time,0.5,NA
+71,Elise Bernstein,staff,Arden Hills,Arden Hills Army Training Site,29,7,2025,no,yes,yes,Drive_Time,0.5,NA
+72,Fern LaBry,staff,Arden Hills,Arden Hills Army Training Site,29,7,2025,no,yes,yes,Drive_Time,0.5,NA
+73,Elise Bernstein,staff,Arden Hills,Arden Hills Army Training Site,30,7,2025,no,no,yes,Drive_Time,0.5,NA
+74,Elaine Evans,staff,Arden Hills,Arden Hills Army Training Site,30,7,2025,no,no,yes,Drive_Time,0.5,NA
+75,Jayden Peterson,staff,Arden Hills,Arden Hills Army Training Site,31,7,2025,no,no,yes,Drive_Time,1,NA
+76,Fern LaBry,staff,Arden Hills,Arden Hills Army Training Site,31,7,2025,no,no,yes,Drive_Time,1,NA
+77,Clara Costello,staff,Arden Hills,Arden Hills Army Training Site,31,7,2025,no,no,yes,Drive_Time,1,NA
+78,Jayden Peterson,staff,HP,Hyland Lake Park Reserve,5,8,2025,no,yes,no,Drive_Time,1.5,NA
+79,Fern LaBry,staff,HP,Hyland Lake Park Reserve,5,8,2025,no,yes,no,Drive_Time,1.5,NA
+80,Elaine Evans,staff,HP,Hyland Lake Park Reserve,5,8,2025,no,yes,no,Drive_Time,1.5,NA
+81,Jayden Peterson,staff,LE,Lake Elmo Park Reserve,6,8,2025,no,yes,no,Drive_Time,2,NA
+82,Elise Bernstein,staff,LE,Lake Elmo Park Reserve,6,8,2025,no,yes,no,Drive_Time,2,NA
+83,Elise Bernstein,staff,Arden Hills,Arden Hills Army Training Site,7,8,2025,no,no,yes,Drive_Time,0.5,NA
+84,Elaine Evans,staff,Arden Hills,Arden Hills Army Training Site,7,8,2025,no,no,yes,Drive_Time,0.5,NA
+85,Jayden Peterson,staff,Arden Hills,Arden Hills Army Training Site,7,8,2025,no,no,yes,Drive_Time,0.5,NA
+86,Clara Costello,staff,Arden Hills,Arden Hills Army Training Site,8,8,2025,no,yes,yes,Drive_Time,0.5,NA
+87,Fern LaBry,staff,Arden Hills,Arden Hills Army Training Site,8,8,2025,no,yes,yes,Drive_Time,0.5,NA
+88,Jayden Peterson,staff,Arden Hills,Arden Hills Army Training Site,8,8,2025,no,yes,yes,Drive_Time,0.5,NA
+89,Elise Bernstein,staff,HP,Hyland Lake Park Reserve,11,8,2025,no,yes,no,Drive_Time,1.16667,NA
+90,Jayden Peterson,staff,HP,Hyland Lake Park Reserve,11,8,2025,no,yes,no,Drive_Time,1.16667,NA
+91,Elise Bernstein,staff,HP,Hyland Lake Park Reserve,11,8,2025,no,yes,no,Drive_Time,1.2,NA
+92,Jayden Peterson,staff,HP,Hyland Lake Park Reserve,11,8,2025,no,yes,no,Drive_Time,1.2,NA
+93,Elaine Evans,staff,Arden Hills,Arden Hills Army Training Site,12,8,2025,no,no,yes,Drive_Time,0.5,NA
+94,Jayden Peterson,staff,Arden Hills,Arden Hills Army Training Site,12,8,2025,no,no,yes,Drive_Time,0.5,NA
+95,Elise Bernstein,staff,Arden Hills,Arden Hills Army Training Site,12,8,2025,no,no,yes,Drive_Time,0.5,NA
+96,Elise Bernstein,staff,Arden Hills,Arden Hills Army Training Site,13,8,2025,no,no,yes,Drive_Time,0.5,NA
+97,Jayden Peterson,staff,Arden Hills,Arden Hills Army Training Site,13,8,2025,no,no,yes,Drive_Time,0.5,NA
+98,Fern LaBry,staff,Arden Hills,Arden Hills Army Training Site,13,8,2025,no,no,yes,Drive_Time,0.5,NA
+99,Elise Bernstein,staff,Arden Hills,Arden Hills Army Training Site,14,8,2025,no,no,yes,Drive_Time,0.5,NA
+100,Jayden Peterson,staff,Arden Hills,Arden Hills Army Training Site,14,8,2025,no,no,yes,Drive_Time,0.5,NA
+101,Elise Bernstein,staff,Arden Hills,Arden Hills Army Training Site,19,8,2025,no,yes,yes,Drive_Time,0.5,NA
+102,Jayden Peterson,staff,Arden Hills,Arden Hills Army Training Site,19,8,2025,no,yes,yes,Drive_Time,0.5,NA
+103,Elise Bernstein,staff,Arden Hills,Arden Hills Army Training Site,20,8,2025,no,no,yes,Drive_Time,0.5,NA
+104,Jayden Peterson,staff,Arden Hills,Arden Hills Army Training Site,20,8,2025,no,no,yes,Drive_Time,0.5,NA
+105,Elise Bernstein,staff,LH,Lebanon Hills Regional Park,21,8,2025,no,yes,no,Drive_Time,1,NA
+106,Clara Costello,staff,LH,Lebanon Hills Regional Park,21,8,2025,no,yes,no,Drive_Time,1,NA
+107,Jayden Peterson,staff,LH,Lebanon Hills Regional Park,21,8,2025,no,yes,no,Drive_Time,1,NA
+108,Jayden Peterson,staff,HP,Hyland Lake Park Reserve,25,8,2025,no,yes,no,Drive_Time,1.1,NA
+109,Elise Bernstein,staff,HP,Hyland Lake Park Reserve,25,8,2025,no,yes,no,Drive_Time,1.1,NA
+110,Elise Bernstein,staff,CH,Crow-Hassan Park Reserve,26,8,2025,no,yes,no,Drive_Time,1.33,NA
+111,Jayden Peterson,staff,CH,Crow-Hassan Park Reserve,26,8,2025,no,yes,no,Drive_Time,1.33,NA
+112,Elise Bernstein,staff,Arden Hills,Arden Hills Army Training Site,28,8,2025,no,yes,no,Drive_Time,0.5,NA
+113,Jayden Peterson,staff,Arden Hills,Arden Hills Army Training Site,28,8,2025,no,yes,no,Drive_Time,0.5,NA
+114,Jayden Peterson,staff,LE,Lake Elmo Park Reserve,29,8,2025,no,yes,no,Drive_Time,1.1,NA
+115,NA,staff,NA,NA,4,9,2025,no,no,yes,Drive_Time,2.4,NA
+116,Emma Ambrosi,staff,Arden Hills,Arden Hills Army Training Site,8,9,2025,no,yes,yes,Drive_Time,0.5,NA
+117,Sami Dolan,staff,Arden Hills,Arden Hills Army Training Site,8,9,2025,no,yes,yes,Drive_Time,0.5,NA
+118,Jayden Peterson,staff,Arden Hills,Arden Hills Army Training Site,8,9,2025,no,yes,yes,Drive_Time,0.5,NA
+119,Emma Ambrosi,staff,HP,Hyland Lake Park Reserve,9,9,2025,no,yes,yes,Drive_Time,1.33,NA
+120,Jayden Peterson,staff,HP,Hyland Lake Park Reserve,9,9,2025,no,yes,yes,Drive_Time,1.33,NA
+121,Emma Ambrosi,staff,LE,Lake Elmo Park Reserve,11,9,2025,no,yes,no,Drive_Time,1,NA
+122,Elise Bernstein,staff,hp_sled,Hyland Lake Park Reserve,25,6,2024,yes,yes,no,Nest_Search,1,No
+123,Elaine Evans,staff,hp_sled,Hyland Lake Park Reserve,25,6,2024,yes,yes,no,Nest_Search,1,No
+124,Renee Rademacher,staff,hp_sled,Hyland Lake Park Reserve,25,6,2024,yes,yes,no,Nest_Search,1,No
+125,Sarah Henderson,staff,hp_sled,Hyland Lake Park Reserve,25,6,2024,yes,yes,no,Nest_Search,1,No
+126,Elise Bernstein,staff,crow1,Crow-Hassan Park Reserve,3,7,2024,no,yes,no,Nest_Search,1.154166667,No
+127,Jessica Schatz,staff,crow1,Crow-Hassan Park Reserve,3,7,2024,no,yes,no,Nest_Search,1.133333333,No
+128,Elise Bernstein,staff,crow2,Crow-Hassan Park Reserve,3,7,2024,no,yes,no,Nest_Search,1.106944444,No
+129,Jessica Schatz,staff,crow2,Crow-Hassan Park Reserve,3,7,2024,no,yes,no,Nest_Search,1.083333333,No
+130,Elise Bernstein,staff,hp_sled,Hyland Lake Park Reserve,3,7,2024,no,yes,no,Nest_Search,1,No
+131,Jessica Schatz,staff,hp_sled,Hyland Lake Park Reserve,3,7,2024,no,yes,no,Nest_Search,1.066666667,No
+132,Rose Zappa,staff,hp_sled,Hyland Lake Park Reserve,3,7,2024,no,yes,no,Nest_Search,1.125,No
+133,Elise Bernstein,staff,hp1,Hyland Lake Park Reserve,3,7,2024,no,yes,no,Nest_Search,1.218888889,No
+134,Jessica Schatz,staff,hp1,Hyland Lake Park Reserve,3,7,2024,no,yes,no,Nest_Search,1.066666667,No
+135,Rose Zappa,staff,hp1,Hyland Lake Park Reserve,3,7,2024,no,yes,no,Nest_Search,1.033333333,No
+136,Renee Rademacher,staff,le_gc,Lake Elmo Park Reserve,3,7,2024,no,yes,no,Nest_Search,1,No
+137,Renee Rademacher,staff,24lh_eq1,Lebanon Hills Regional Park,3,7,2024,no,yes,no,Nest_Search,1.017777778,No
+138,Sarah Henderson,staff,lh_eq2,Lebanon Hills Regional Park,3,7,2024,no,yes,no,Nest_Search,1,No
+139,Clara Costello,staff,le_iw,Lake Elmo Park Reserve,9,7,2024,no,yes,no,Nest_Search,1,No
+140,Renee Rademacher,staff,le_iw,Lake Elmo Park Reserve,9,7,2024,no,yes,no,Nest_Search,1,No
+141,Dana Mangels,volunteer,crow1,Crow-Hassan Park Reserve,11,7,2024,yes,no,no,Nest_Search,1,No
+142,Elise Bernstein,staff,hp_sled,Hyland Lake Park Reserve,16,7,2024,no,yes,no,Nest_Search,1.075555556,No
+143,Renee Rademacher,staff,hp_sled,Hyland Lake Park Reserve,16,7,2024,no,yes,no,Nest_Search,1,No
+144,Elise Bernstein,staff,hp1,Hyland Lake Park Reserve,16,7,2024,no,yes,no,Nest_Search,1.516111111,Yes
+145,Renee Rademacher,staff,hp1,Hyland Lake Park Reserve,16,7,2024,no,yes,no,Nest_Search,1.516111111,Yes
+146,Michelle Gaydeski,volunteer,24lh_eq1,Lebanon Hills Regional Park,16,7,2024,yes,no,no,Nest_Search,1,No
+147,Elise Bernstein,staff,crow1,Crow-Hassan Park Reserve,17,7,2024,no,yes,no,Nest_Search,1.029444444,No
+148,Elise Bernstein,staff,crow2,Crow-Hassan Park Reserve,17,7,2024,no,yes,no,Nest_Search,1.020555556,No
+149,Dawn Peterson,volunteer,crow1,Crow-Hassan Park Reserve,18,7,2024,yes,no,no,Nest_Search,1.059444444,No
+150,Jayden Peterson,staff,24lh_eq1,Lebanon Hills Regional Park,19,7,2024,no,yes,no,Nest_Search,1,No
+151,Clara Costello,staff,24lh_eq1,Lebanon Hills Regional Park,19,7,2024,no,yes,no,Nest_Search,1,No
+152,Jayden Peterson,staff,lh_eq2,Lebanon Hills Regional Park,19,7,2024,no,yes,no,Nest_Search,1,No
+153,Clara Costello,staff,lh_eq2,Lebanon Hills Regional Park,19,7,2024,no,yes,no,Nest_Search,1,No
+154,Maggie Pennings,volunteer,crow1,Crow-Hassan Park Reserve,19,7,2024,yes,no,no,Nest_Search,1.016666667,No
+155,Rebecca Johnson,volunteer,le_gc,Lake Elmo Park Reserve,19,7,2024,yes,no,no,Nest_Search,1.033333333,No
+156,Elise Bernstein,staff,crow1,Crow-Hassan Park Reserve,22,7,2024,no,yes,no,Nest_Search,1.051388889,No
+157,Elise Bernstein,staff,crow2,Crow-Hassan Park Reserve,22,7,2024,no,yes,no,Nest_Search,1,No
+158,Dawn Peterson,volunteer,le_gc,Lake Elmo Park Reserve,22,7,2024,yes,no,no,Nest_Search,1.683333333,No
+159,Kevin McKinney,volunteer,crow1,Crow-Hassan Park Reserve,24,7,2024,yes,no,no,Nest_Search,1.116666667,No
+160,Michelle Gaydeski,volunteer,24lh_eq1,Lebanon Hills Regional Park,24,7,2024,yes,no,no,Nest_Search,0.966666667,No
+161,Clara Costello,staff,24lh_eq1,Lebanon Hills Regional park,25,7,2024,no,yes,no,Nest_Search,1.416666667,No
+162,Clara Costello,staff,lh_eq2,Lebanon Hills Regional park,25,7,2024,no,yes,no,Nest_Search,1.333333333,Yes
+163,Dana Mangels,volunteer,crow1,Crow-Hassan Park Reserve,25,7,2024,yes,no,no,Nest_Search,1.266666667,No
+164,Elise Bernstein,staff,le_gc,Lake Elmo Park Reserve,26,7,2024,no,yes,no,Nest_Search,1.025833333,No
+165,Jayden Peterson,staff,le_gc,Lake Elmo Park Reserve,26,7,2024,no,yes,no,Nest_Search,1,No
+166,Elise Bernstein,staff,le_iw,Lake Elmo Park Reserve,26,7,2024,no,yes,no,Nest_Search,1.018888889,No
+167,Jayden Peterson,staff,le_iw,Lake Elmo Park Reserve,26,7,2024,no,yes,no,Nest_Search,1,No
+168,Maggie Pennings,volunteer,crow1,Crow-Hassan Park Reserve,26,7,2024,yes,no,no,Nest_Search,1,No
+169,Karen Kaehler,volunteer,hp_sled,Hyland Lake Park Reserve,26,7,2024,yes,no,no,Nest_Search,1,No
+170,Karen Kaehler,volunteer,lh_eq2,Lebanon Hills Regional park,26,7,2024,yes,no,no,Nest_Search,1.033333333,No
+171,Kevin McKinney,volunteer,crow2,Crow-Hassan Park Reserve,28,7,2024,yes,no,no,Nest_Search,1,No
+172,Dawn Peterson,volunteer,hp_sled,Hyland Lake Park Reserve,29,7,2024,yes,no,no,Nest_Search,1.033333333,No
+173,Elise Bernstein,staff,le_iw,Lake Elmo Park Reserve,30,7,2024,no,yes,no,Nest_Search,1.1775,No
+174,Jayden Peterson,staff,le_iw,Lake Elmo Park Reserve,30,7,2024,no,yes,no,Nest_Search,1,No
+175,Elise Bernstein,staff,24lh_eq1,Lebanon Hills Regional Park,30,7,2024,no,yes,no,Nest_Search,1.060277778,No
+176,Jayden Peterson,staff,24lh_eq1,Lebanon Hills Regional Park,30,7,2024,no,yes,no,Nest_Search,1.016666667,No
+177,Jayden Peterson,staff,lh_eq2,Lebanon Hills Regional Park,30,7,2024,no,yes,no,Nest_Search,1.039166667,No
+178,Jayden Peterson,staff,lh_eq2,Lebanon Hills Regional Park,30,7,2024,no,yes,no,Nest_Search,1,No
+179,Rebecca Johnson,volunteer,le_gc,Lake Elmo Park Reserve,31,7,2024,yes,no,no,Nest_Search,1,No
+180,Maggie Pennings,volunteer,crow2,Crow-Hassan Park Reserve,2,8,2024,yes,no,no,Nest_Search,1.1,No
+181,Alex Swartz,volunteer,24lh_eq1,Lebanon Hills Regional Park,3,8,2024,yes,no,no,Nest_Search,1.633333333,No
+182,Anne Swartz,volunteer,24lh_eq1,Lebanon Hills Regional Park,3,8,2024,yes,no,no,Nest_Search,1.633333333,No
+183,Dan Kilbury,volunteer,le_iw,Lake Elmo Park Reserve,4,8,2024,yes,no,no,Nest_Search,1.117222222,No
+184,Elise Bernstein,staff,crow2,Crow-Hassan Park Reserve,6,8,2024,no,yes,no,Nest_Search,1.078888889,No
+185,Jayden Peterson,staff,crow2,Crow-Hassan Park Reserve,6,8,2024,no,yes,no,Nest_Search,1.066666667,No
+186,Elise Bernstein,staff,hp1,Hyland Lake Park Reserve,6,8,2024,no,yes,no,Nest_Search,1.4025,No
+187,Jayden Peterson,staff,hp1,Hyland Lake Park Reserve,6,8,2024,no,yes,no,Nest_Search,1.404444444,Yes
+188,Dana Mangels,volunteer,crow1,Crow-Hassan Park Reserve,6,8,2024,yes,no,no,Nest_Search,1.316666667,No
+189,Elaine Evans,staff,hp_sled,Hyland Lake Park Reserve,7,8,2024,no,yes,no,Nest_Search,1.032222222,No
+190,Sharon Meister,volunteer,crow1,Crow-Hassan Park Reserve,7,8,2024,yes,no,no,Nest_Search,0.750277778,No
+191,Dawn Peterson,volunteer,le_gc,Lake Elmo Park Reserve,7,8,2024,yes,no,no,Nest_Search,1.133333333,No
+192,Jayden Peterson,staff,le_iw,Lake Elmo Park Reserve,8,8,2024,no,yes,no,Nest_Search,1.062777778,No
+193,Clara Costello,staff,le_iw,Lake Elmo Park Reserve,8,8,2024,no,yes,no,Nest_Search,1.062777778,No
+194,Jayden Peterson,staff,lh_eq2,Lebanon Hills Regional Park,8,8,2024,no,yes,no,Nest_Search,1.033333333,No
+195,Clara Costello,staff,lh_eq2,Lebanon Hills Regional Park,8,8,2024,no,yes,no,Nest_Search,1.033333333,No
+196,Maggie Pennings,volunteer,crow1,Crow-Hassan Park Reserve,9,8,2024,yes,no,no,Nest_Search,1.1,No
+197,Michelle Gaydeski,volunteer,24lh_eq1,Lebanon Hills Regional Park,9,8,2024,yes,no,no,Nest_Search,1,No
+198,Elise Bernstein,staff,le_gc,Lake Elmo Park Reserve,13,8,2024,no,yes,no,Nest_Search,1.020833333,No
+199,Jayden Peterson,staff,le_gc,Lake Elmo Park Reserve,13,8,2024,no,yes,no,Nest_Search,1.0025,No
+200,Rebecca Johnson,volunteer,le_iw,Lake Elmo Park Reserve,13,8,2024,yes,no,no,Nest_Search,1.016666667,No
+201,Elise Bernstein,staff,hp_sled,Hyland Lake Park Reserve,14,8,2024,no,yes,no,Nest_Search,1.033333333,No
+202,Jayden Peterson,staff,hp_sled,Hyland Lake Park Reserve,14,8,2024,no,yes,no,Nest_Search,1.0075,No
+203,Clara Costello,staff,hp_sled,Hyland Lake Park Reserve,14,8,2024,no,yes,no,Nest_Search,1.033333333,No
+204,Dana Mangels,volunteer,crow1,Crow-Hassan Park Reserve,15,8,2024,yes,no,no,Nest_Search,1.083333333,No
+205,Alex Swartz,volunteer,24lh_eq1,Lebanon Hills Regional Park,17,8,2024,yes,no,no,Nest_Search,1.858611111,No
+206,Dan Kilbury,volunteer,le_iw,Lake Elmo Park Reserve,18,8,2024,yes,no,no,Nest_Search,1.15,No
+207,Dawn Peterson,volunteer,hp_sled,Hyland Lake Park Reserve,19,8,2024,yes,no,no,Nest_Search,0.916666667,No
+208,Dawn Peterson,volunteer,le_gc,Lake Elmo Park Reserve,22,8,2024,yes,no,no,Nest_Search,1.726388889,No
+209,Dawn Peterson,volunteer,crow2,Crow-Hassan Park Reserve,24,8,2024,yes,no,no,Nest_Search,1,No
+210,Maggie Pennings,volunteer,crow1,Crow-Hassan Park Reserve,25,8,2024,yes,no,no,Nest_Search,1.216666667,No
+211,Kevin McKinney,volunteer,crow2,Crow-Hassan Park Reserve,25,8,2024,yes,no,no,Nest_Search,1,No
+212,Alex Swartz,volunteer,24lh_eq1,Lebanon Hills Regional Park,31,8,2024,yes,no,no,Nest_Search,1.718055556,No
+213,Kevin McKinney,volunteer,crow1,Crow-Hassan Park Reserve,1,9,2024,yes,no,no,Nest_Search,0.961111111,No
+214,Kevin McKinney,volunteer,crow2,Crow-Hassan Park Reserve,1,9,2024,yes,no,no,Nest_Search,0.983333333,No
+215,Rebecca Johnson,volunteer,le_gc,Lake Elmo Park Reserve,3,9,2024,yes,no,no,Nest_Search,1.016666667,No
+216,Elise Bernstein,staff,crow2,Crow-Hassan Park Reserve,4,9,2024,no,yes,no,Nest_Search,1.022222222,No
+217,Jayden Peterson,staff,crow2,Crow-Hassan Park Reserve,4,9,2024,no,yes,no,Nest_Search,1.041111111,No
+218,Elise Bernstein,staff,hp_sled,Hyland Lake Park Reserve,4,9,2024,no,yes,no,Nest_Search,1.019444444,No
+219,Jayden Peterson,staff,hp_sled,Hyland Lake Park Reserve,4,9,2024,no,yes,no,Nest_Search,1,No
+220,Michelle Gaydeski,volunteer,24lh_eq1,Lebanon Hills Regional Park,4,9,2024,yes,no,no,Nest_Search,1,No
+221,Jayden Peterson,staff,le_iw,Lake Elmo Park Reserve,5,9,2024,no,yes,no,Nest_Search,1.016666667,No
+222,Clara Costello,staff,le_iw,Lake Elmo Park Reserve,5,9,2024,no,yes,no,Nest_Search,1.016666667,No
+223,Jayden Peterson,staff,24lh_eq1,Lebanon Hills Regional Park,5,9,2024,no,yes,no,Nest_Search,1.016111111,No
+224,Clara Costello,staff,24lh_eq1,Lebanon Hills Regional Park,5,9,2024,no,yes,no,Nest_Search,1.016111111,No
+225,Jayden Peterson,staff,lh_eq2,Lebanon Hills Regional Park,5,9,2024,no,yes,no,Nest_Search,1.05,No
+226,Jayden Peterson,staff,le_iw,Lake Elmo Park Reserve,10,9,2024,no,yes,no,Nest_Search,1,No
+227,Elise Bernstein,staff,le_iw,Lake Elmo Park Reserve,10,9,2024,no,yes,no,Nest_Search,1.019722222,No
+228,Dawn Peterson,volunteer,le_gc,Lake Elmo Park Reserve,10,9,2024,yes,no,no,Nest_Search,1.116666667,No
+229,Elise Bernstein,staff,25lh_eq1,Lebanon Hills Regional Park,10,6,2025,no,yes,no,Nest_Search,1.051944444,No
+230,Elaine Evans,staff,hp2,Hyland Lake Park Reserve,12,6,2025,no,yes,no,Nest_Search,0.533333333,No
+231,Elise Bernstein,staff,hp2,Hyland Lake Park Reserve,12,6,2025,no,yes,no,Nest_Search,0.565555556,No
+232,Micah Sharer,volunteer,hp_sled,Hyland Lake Park Reserve,23,6,2025,yes,no,no,Nest_Search,1.066666667,No
+233,Tamara Smith,volunteer,hp1,Hyland Lake Park Reserve,23,6,2025,yes,no,no,Nest_Search,1.021944444,No
+234,Elizabeth Davis,volunteer,lh_schultz,Lebanon Hills Regional Park,24,6,2025,yes,no,no,Nest_Search,1,No
+235,Janet Orange,volunteer,lh_schultz,Lebanon Hills Regional Park,24,6,2025,yes,no,no,Nest_Search,1.133333333,No
+236,Catherine Grant,volunteer,le_barn,Lake Elmo Park Reserve,27,6,2025,yes,no,no,Nest_Search,1,No
+237,Tom Patterson,volunteer,25lh_eq1,Lebanon Hills Regional Park,27,6,2025,yes,no,no,Nest_Search,1.016666667,No
+238,Maria Cicenas,volunteer,lh_schultz,Lebanon Hills Regional Park,27,6,2025,yes,no,no,Nest_Search,1,No
+239,Sara Williams,volunteer,lh_eq2,Lebanon Hills Regional Park,28,6,2025,yes,no,no,Nest_Search,0.85,No
+240,Kevin McKinney,volunteer,crow3,Crow-Hassan Park Reserve,29,6,2025,yes,no,no,Nest_Search,1.183333333,No
+241,Lucia Webb,volunteer,lh_schultz,Lebanon Hills Regional Park,29,6,2025,yes,no,no,Nest_Search,0.833333333,No
+242,Catherine Grant,volunteer,le_gc,Lake Elmo Park Reserve,30,6,2025,yes,no,no,Nest_Search,1.066666667,No
+243,Brian Etling,volunteer,le_ski,Lake Elmo Park Reserve,30,6,2025,yes,no,no,Nest_Search,1.397222222,No
+244,Janet Orange,volunteer,lh_schultz,Lebanon Hills Regional Park,30,6,2025,yes,no,no,Nest_Search,1.066666667,No
+245,Ashley Suchomel,volunteer,lh_schultz,Lebanon Hills Regional Park,30,6,2025,yes,no,no,Nest_Search,1.05,No
+246,Emily Hanych,volunteer,lh_eq2,Lebanon Hills Regional Park,1,7,2025,yes,no,no,Nest_Search,1.106666667,No
+247,Gretchen Domek,volunteer,lh_schultz,Lebanon Hills Regional Park,1,7,2025,yes,no,no,Nest_Search,1.033888889,No
+248,Jayden Peterson,staff,le_gc,Lake Elmo Park Reserve,3,7,2025,no,yes,no,Nest_Search,1,No
+249,Fern LaBry,staff,le_gc,Lake Elmo Park Reserve,3,7,2025,no,yes,no,Nest_Search,1,No
+250,Elise Bernstein,staff,le_gc,Lake Elmo Park Reserve,3,7,2025,no,yes,no,Nest_Search,0.861388889,No
+251,Jayden Peterson,staff,le_ski,Lake Elmo Park Reserve,3,7,2025,no,yes,no,Nest_Search,1,No
+252,Fern LaBry,staff,le_ski,Lake Elmo Park Reserve,3,7,2025,no,yes,no,Nest_Search,1,No
+253,David Morrison,volunteer,le_ski,Lake Elmo Park Reserve,3,7,2025,yes,no,no,Nest_Search,1.5375,No
+254,Maria Cicenas,volunteer,lh_schultz,Lebanon Hills Regional Park,3,7,2025,yes,no,no,Nest_Search,1,No
+255,Cathy Seurer,volunteer,25lh_eq1,Lebanon Hills Regional Park,4,7,2025,yes,no,no,Nest_Search,1,No
+256,Megan Plante,volunteer,hp_sled,Hyland Lake Park Reserve,7,7,2025,yes,no,no,Nest_Search,0.9325,No
+257,Micah Sharer,volunteer,hp_sled,Hyland Lake Park Reserve,7,7,2025,yes,no,no,Nest_Search,1.116666667,No
+258,Tamara Smith,volunteer,hp1,Hyland Lake Park Reserve,7,7,2025,yes,no,no,Nest_Search,1.016666667,No
+259,Rebecca Johnson,volunteer,le_gc,Lake Elmo Park Reserve,7,7,2025,yes,no,no,Nest_Search,1.023055556,No
+260,Tom Patterson,volunteer,lh_eq2,Lebanon Hills Regional park,7,7,2025,yes,no,no,Nest_Search,1.033333333,No
+261,Janet Orange,volunteer,lh_schultz,Lebanon Hills Regional Park,7,7,2025,yes,no,no,Nest_Search,1.066666667,No
+262,Elaine Evans,staff,hp1,Hyland Lake Park Reserve,8,7,2025,no,yes,no,Nest_Search,0.983333333,No
+263,Jayden Peterson,staff,crow1,Crow-Hassan Park Reserve,9,7,2025,no,yes,no,Nest_Search,1.016666667,No
+264,Elise Bernstein,staff,crow1,Crow-Hassan Park Reserve,9,7,2025,no,yes,no,Nest_Search,1.006111111,No
+265,Elise Bernstein,staff,crow2,Crow-Hassan Park Reserve,9,7,2025,no,yes,no,Nest_Search,1.064444444,No
+266,Jayden Peterson,staff,crow2,Crow-Hassan Park Reserve,9,7,2025,no,yes,no,Nest_Search,1,No
+267,Elise Bernstein,staff,crow3,Crow-Hassan Park Reserve,9,7,2025,no,yes,no,Nest_Search,1.056388889,No
+268,Jayden Peterson,staff,crow3,Crow-Hassan Park Reserve,9,7,2025,no,yes,no,Nest_Search,1.003611111,No
+269,Kathy Sidles,volunteer,le_gc,Lake Elmo Park Reserve,9,7,2025,yes,no,no,Nest_Search,0.183333333,No
+270,Elise Bernstein,staff,ah_lowerupper,Arden Hills Army Training Site,10,7,2025,no,yes,no,Nest_Search,1.1,No
+271,Fern LaBry,staff,ah_lowerupper,Arden Hills Army Training Site,10,7,2025,no,yes,no,Nest_Search,1.15,No
+272,Jayden Peterson,staff,ah_lowerupper,Arden Hills Army Training Site,10,7,2025,no,yes,no,Nest_Search,1,Yes
+273,Elise Bernstein,staff,ah_north,Arden Hills Army Training Site,10,7,2025,no,yes,no,Nest_Search,0.364166667,No
+274,Fern LaBry,staff,ah_north,Arden Hills Army Training Site,10,7,2025,no,yes,no,Nest_Search,0.35,No
+275,Jayden Peterson,staff,ah_north,Arden Hills Army Training Site,10,7,2025,no,yes,no,Nest_Search,0.333333333,No
+276,Rebecca Lautenschlager,volunteer,le_ski,Lake Elmo Park Reserve,10,7,2025,yes,no,no,Nest_Search,1.116666667,No
+277,Maria Cicenas,volunteer,lh_schultz,Lebanon Hills Regional Park,10,7,2025,yes,no,no,Nest_Search,1,Yes
+278,Jayden Peterson,staff,ah_lowerupper,Arden Hills Army Training Site,11,7,2025,no,yes,no,Nest_Search,1,No
+279,Maria DeLaundreau,volunteer,crow1,Crow-Hassan Park Reserve,11,7,2025,yes,no,no,Nest_Search,1.047222222,No
+280,Micah Sharer,volunteer,crow2,Crow-Hassan Park Reserve,11,7,2025,yes,no,no,Nest_Search,1.043611111,No
+281,Kevin McKinney,volunteer,crow2,Crow-Hassan Park Reserve,11,7,2025,yes,no,no,Nest_Search,1.166666667,No
+282,David Morrison,volunteer,le_gc,Lake Elmo Park Reserve,11,7,2025,yes,no,no,Nest_Search,1.2,No
+283,Dawn Peterson,volunteer,crow3,Crow-Hassan Park Reserve,13,7,2025,yes,no,no,Nest_Search,0.866666667,No
+284,Lucia Webb,volunteer,25lh_eq1,Lebanon Hills Regional Park,13,7,2025,yes,no,no,Nest_Search,1.069166667,No
+285,Jesse Williams,volunteer,lh_schultz,Lebanon Hills Regional Park,13,7,2025,yes,no,no,Nest_Search,1,No
+286,Jesse Williams,volunteer,lh_schultz,Lebanon Hills Regional Park,13,7,2025,yes,no,no,Nest_Search,0.983333333,No
+287,Ashley Suchomel,volunteer,25lh_eq1,Lebanon Hills Regional Park,14,7,2025,yes,no,no,Nest_Search,1,No
+288,Emily Hanych,volunteer,25lh_eq1,Lebanon Hills Regional Park,15,7,2025,yes,no,no,Nest_Search,1.216666667,No
+289,Paul Richtman,volunteer,le_gc,Lake Elmo Park Reserve,16,7,2025,yes,no,no,Nest_Search,0.916666667,No
+290,Dawn Peterson,volunteer,le_gc,Lake Elmo Park Reserve,17,7,2025,yes,no,no,Nest_Search,1.276111111,No
+291,David Morrison,volunteer,le_ski,Lake Elmo Park Reserve,18,7,2025,yes,no,no,Nest_Search,1.25,No
+292,Maria Cicenas,volunteer,lh_eq2,Lebanon Hills Regional Park,18,7,2025,yes,no,no,Nest_Search,1.583333333,No
+293,Dawn Peterson,volunteer,crow2,Crow-Hassan Park Reserve,19,7,2025,yes,no,no,Nest_Search,1.101666667,No
+294,Tom Patterson,volunteer,lh_eq2,Lebanon Hills Regional Park,19,7,2025,yes,no,no,Nest_Search,1.166666667,No
+295,Pamela Carlson,volunteer,le_ski,Lake Elmo Park Reserve,20,7,2025,yes,no,no,Nest_Search,1,No
+296,Cathy Seurer,volunteer,25lh_eq1,Lebanon Hills Regional Park,20,7,2025,yes,no,no,Nest_Search,1.05,No
+297,Jesse Williams,volunteer,lh_schultz,Lebanon Hills Regional Park,20,7,2025,yes,no,no,Nest_Search,1.198055556,No
+298,Jesse Williams,volunteer,lh_schultz,Lebanon Hills Regional Park,20,7,2025,yes,no,no,Nest_Search,1.166666667,No
+299,Paul Richtman,volunteer,le_barn,Lake Elmo Park Reserve,21,7,2025,yes,no,no,Nest_Search,0.890555556,No
+300,Maria Cicenas,volunteer,25lh_eq1,Lebanon Hills Regional Park,22,7,2025,yes,no,no,Nest_Search,1.633333333,No
+301,Rebecca Johnson,volunteer,le_gc,Lake Elmo Park Reserve,23,7,2025,yes,no,no,Nest_Search,0.699722222,No
+302,Brian Etling,volunteer,le_ski,Lake Elmo Park Reserve,25,7,2025,yes,no,no,Nest_Search,1.05,No
+303,Ashley Suchomel,volunteer,25lh_eq1,Lebanon Hills Regional Park,28,7,2025,yes,no,no,Nest_Search,1.05,No
+304,Kyle Wilson,volunteer,25lh_eq1,Lebanon Hills Regional Park,28,7,2025,yes,no,no,Nest_Search,1.0225,No
+305,Elise Bernstein,staff,ah_upper,Arden Hills Army Training Site,29,7,2025,no,yes,no,Nest_Search,1.075833333,No
+306,Fern LaBry,staff,ah_upper,Arden Hills Army Training Site,29,7,2025,no,yes,no,Nest_Search,1.096666667,No
+307,Catherine Grant,volunteer,le_barn,Lake Elmo Park Reserve,30,7,2025,yes,no,no,Nest_Search,1.483333333,No
+308,Tom Patterson,volunteer,lh_eq2,Lebanon Hills Regional Park,30,7,2025,yes,no,no,Nest_Search,0.985277778,No
+309,Kevin McKinney,volunteer,crow2,Crow-Hassan Park Reserve,3,8,2025,yes,no,no,Nest_Search,1.216666667,No
+310,Kevin McKinney,volunteer,crow3,Crow-Hassan Park Reserve,3,8,2025,yes,no,no,Nest_Search,0.856944444,No
+311,Tom Patterson,volunteer,lh_eq2,Lebanon Hills Regional Park,4,8,2025,yes,no,no,Nest_Search,0.583333333,No
+312,Elaine Evans,staff,hp_sled,Hyland Lake Park Reserve,5,8,2025,no,yes,no,Nest_Search,1.133333333,No
+313,Fern LaBry,staff,hp_sled,Hyland Lake Park Reserve,5,8,2025,no,yes,no,Nest_Search,1.1,No
+314,Jayden Peterson,staff,hp_sled,Hyland Lake Park Reserve,5,8,2025,no,yes,no,Nest_Search,1.012777778,No
+315,Fern LaBry,staff,hp1,Hyland Lake Park Reserve,5,8,2025,no,yes,no,Nest_Search,1.205833333,No
+316,Jayden Peterson,staff,hp1,Hyland Lake Park Reserve,5,8,2025,no,yes,no,Nest_Search,0.333333333,Yes
+317,Jayden Peterson,staff,hp1,Hyland Lake Park Reserve,5,8,2025,no,yes,no,Nest_Search,0.25,No
+318,Elise Bernstein,staff,le_barn,Lake Elmo Park Reserve,6,8,2025,no,yes,no,Nest_Search,1.051388889,No
+319,Jayden Peterson,staff,le_barn,Lake Elmo Park Reserve,6,8,2025,no,yes,no,Nest_Search,1.006111111,No
+320,Emily Hanych,volunteer,lh_eq2,Lebanon Hills Regional Park,7,8,2025,yes,no,no,Nest_Search,1.002777778,No
+321,Maria Cicenas,volunteer,lh_schultz,Lebanon Hills Regional Park,7,8,2025,yes,no,no,Nest_Search,1,Yes
+322,Fern LaBry,staff,ah_lowerupper,Arden Hills Army Training Site,8,8,2025,no,yes,no,Nest_Search,0.351944444,No
+323,Jayden Peterson,staff,ah_lowerupper,Arden Hills Army Training Site,8,8,2025,no,yes,no,Nest_Search,0.336666667,No
+324,Clara Costello,staff,ah_lowerupper,Arden Hills Army Training Site,8,8,2025,no,yes,no,Nest_Search,0.351944444,No
+325,Clara Costello,staff,ah_north,Arden Hills Army Training Site,8,8,2025,no,yes,no,Nest_Search,0.7,No
+326,Fern LaBry,staff,ah_north,Arden Hills Army Training Site,8,8,2025,no,yes,no,Nest_Search,0.335277778,No
+327,Jayden Peterson,staff,ah_north,Arden Hills Army Training Site,8,8,2025,no,yes,no,Nest_Search,0.170555556,No
+328,Dawn Peterson,volunteer,le_gc,Lake Elmo Park Reserve,8,8,2025,yes,no,no,Nest_Search,1.116666667,No
+329,Elise Bernstein,staff,hp_sled,Hyland Lake Park Reserve,11,8,2025,no,yes,no,Nest_Search,0.5425,No
+330,Jayden Peterson,staff,hp_sled,Hyland Lake Park Reserve,11,8,2025,no,yes,no,Nest_Search,0.5,No
+331,Elise Bernstein,staff,hp1,Hyland Lake Park Reserve,11,8,2025,no,yes,no,Nest_Search,0.577222222,No
+332,Jayden Peterson,staff,hp1,Hyland Lake Park Reserve,11,8,2025,no,yes,no,Nest_Search,0.516666667,No
+333,Jayden Peterson,staff,hp2,Hyland Lake Park Reserve,11,8,2025,no,yes,no,Nest_Search,0.5,No
+334,Elise Bernstein,staff,hp2,Hyland Lake Park Reserve,11,8,2025,no,yes,no,Nest_Search,0.537222222,No
+335,Tom Patterson,volunteer,25lh_eq1,Lebanon Hills Regional Park,11,8,2025,yes,no,no,Nest_Search,1.05,No
+336,David Morrison,volunteer,le_gc,Lake Elmo Park Reserve,12,8,2025,yes,no,no,Nest_Search,1.329166667,No
+337,Maria Cicenas,volunteer,lh_eq2,Lebanon Hills Regional Park,12,8,2025,yes,no,no,Nest_Search,1,No
+338,Elise Bernstein,staff,ah_north,Arden Hills Army Training Site,19,8,2025,no,yes,no,Nest_Search,0.540833333,No
+339,Jayden Peterson,staff,ah_north,Arden Hills Army Training Site,19,8,2025,no,yes,no,Nest_Search,0.516666667,No
+340,Dawn Peterson,volunteer,le_ski,Lake Elmo Park Reserve,19,8,2025,yes,no,no,Nest_Search,1.147222222,No
+341,Maria Cicenas,volunteer,25lh_eq1,Lebanon Hills Regional Park,19,8,2025,yes,no,no,Nest_Search,1.233333333,No
+342,Jayden Peterson,staff,ah_lowerupper,Arden Hills Army Training Site,20,8,2025,no,yes,no,Nest_Search,0.716666667,Yes
+343,Elise Bernstein,staff,ah_lowerupper,Arden Hills Army Training Site,20,8,2025,no,yes,no,Nest_Search,0.663055556,No
+344,Elise Bernstein,staff,ah_upper,Arden Hills Army Training Site,20,8,2025,no,yes,no,Nest_Search,0.578333333,No
+345,Jayden Peterson,staff,ah_upper,Arden Hills Army Training Site,20,8,2025,no,yes,no,Nest_Search,0.483333333,No
+346,Tom Patterson,volunteer,lh_eq2,Lebanon Hills Regional Park,20,8,2025,yes,no,no,Nest_Search,0.973333333,No
+347,Elise Bernstein,staff,25lh_eq1,Lebanon Hills Regional Park,21,8,2025,no,yes,no,Nest_Search,0.370555556,No
+348,Jayden Peterson,staff,25lh_eq1,Lebanon Hills Regional Park,21,8,2025,no,yes,no,Nest_Search,0.333333333,No
+349,Clara Costello,staff,25lh_eq1,Lebanon Hills Regional Park,21,8,2025,no,yes,no,Nest_Search,0.333333333,No
+350,Elise Bernstein,staff,lh_eq2,Lebanon Hills Regional Park,21,8,2025,no,yes,no,Nest_Search,0.358888889,No
+351,Clara Costello,staff,lh_eq2,Lebanon Hills Regional Park,21,8,2025,no,yes,no,Nest_Search,0.358888889,No
+352,Jayden Peterson,staff,lh_eq2,Lebanon Hills Regional Park,21,8,2025,no,yes,no,Nest_Search,0.333333333,No
+353,Elise Bernstein,staff,lh_schultz,Lebanon Hills Regional Park,21,8,2025,no,yes,no,Nest_Search,0.363888889,No
+354,Jayden Peterson,staff,lh_schultz,Lebanon Hills Regional Park,21,8,2025,no,yes,no,Nest_Search,0.2,Yes
+355,Clara Costello,staff,lh_schultz,Lebanon Hills Regional Park,21,8,2025,no,yes,no,Nest_Search,0.363888889,No
+356,Elise Bernstein,staff,lh_schultz,Lebanon Hills Regional Park,21,8,2025,no,yes,no,Nest_Search,0.1325,No
+357,Kevin McKinney,volunteer,crow1,Crow-Hassan Park Reserve,23,8,2025,yes,no,no,Nest_Search,1.15,No
+358,Elise Bernstein,staff,hp_sled,Hyland Lake Park Reserve,25,8,2025,no,yes,no,Nest_Search,0.536666667,No
+359,Jayden Peterson,staff,hp_sled,Hyland Lake Park Reserve,25,8,2025,no,yes,no,Nest_Search,0.333333333,No
+360,Elise Bernstein,staff,hp1,Hyland Lake Park Reserve,25,8,2025,no,yes,no,Nest_Search,0.550277778,No
+361,Jayden Peterson,staff,hp1,Hyland Lake Park Reserve,25,8,2025,no,yes,no,Nest_Search,0.546666667,No
+362,Elise Bernstein,staff,hp2,Hyland Lake Park Reserve,25,8,2025,no,yes,no,Nest_Search,0.531666667,No
+363,Jayden Peterson,staff,hp2,Hyland Lake Park Reserve,25,8,2025,no,yes,no,Nest_Search,0.348888889,No
+364,Elise Bernstein,staff,crow1,Crow-Hassan Park Reserve,26,8,2025,no,yes,no,Nest_Search,0.333333333,No
+365,Jayden Peterson,staff,crow1,Crow-Hassan Park Reserve,26,8,2025,no,yes,no,Nest_Search,0.733333333,Yes
+366,Elise Bernstein,staff,crow2,Crow-Hassan Park Reserve,26,8,2025,no,yes,no,Nest_Search,0.546388889,No
+367,Jayden Peterson,staff,crow2,Crow-Hassan Park Reserve,26,8,2025,no,yes,no,Nest_Search,0.516666667,No
+368,Elise Bernstein,staff,crow3,Crow-Hassan Park Reserve,26,8,2025,no,yes,no,Nest_Search,0.563888889,No
+369,Jayden Peterson,staff,crow3,Crow-Hassan Park Reserve,26,8,2025,no,yes,no,Nest_Search,0.516666667,No
+370,Elise Bernstein,staff,ah_lowerupper,Arden Hills Army Training Site,28,8,2025,no,yes,no,Nest_Search,0.534444444,No
+371,Jayden Peterson,staff,ah_lowerupper,Arden Hills Army Training Site,28,8,2025,no,yes,no,Nest_Search,0.333333333,No
+372,Elise Bernstein,staff,ah_north,Arden Hills Army Training Site,28,8,2025,no,yes,no,Nest_Search,0.550555556,No
+373,Jayden Peterson,staff,ah_north,Arden Hills Army Training Site,28,8,2025,no,yes,no,Nest_Search,0.539444444,No
+374,Elise Bernstein,staff,ah_upper,Arden Hills Army Training Site,28,8,2025,no,yes,no,Nest_Search,0.546388889,No
+375,Jayden Peterson,staff,ah_upper,Arden Hills Army Training Site,28,8,2025,no,yes,no,Nest_Search,0.333333333,No
+376,Jayden Peterson,staff,le_barn,Lake Elmo Park Reserve,29,8,2025,no,yes,no,Nest_Search,0.583333333,No
+377,Jayden Peterson,staff,le_gc,Lake Elmo Park Reserve,29,8,2025,no,yes,no,Nest_Search,0.5,No
+378,Jayden Peterson,staff,le_ski,Lake Elmo Park Reserve,29,8,2025,no,yes,no,Nest_Search,0.333333333,No
+379,Cathy Seurer,volunteer,25lh_eq1,Lebanon Hills Regional Park,1,9,2025,yes,no,no,Nest_Search,1,No
+380,Sami Dolan,staff,ah_lowerupper,Arden Hills Army Training Site,8,9,2025,no,yes,no,Nest_Search,1.036111111,No
+381,Jayden Peterson,staff,ah_north,Arden Hills Army Training Site,8,9,2025,no,yes,no,Nest_Search,0.166666667,No
+382,Sami Dolan,staff,ah_upper,Arden Hills Army Training Site,8,9,2025,no,yes,no,Nest_Search,1.007222222,No
+383,Jayden Peterson,staff,hp2,Hyland Lake Park Reserve,9,9,2025,no,yes,no,Nest_Search,0.183333333,No
+384,Emma Ambrosi,staff,hp2,Hyland Lake Park Reserve,9,9,2025,no,yes,no,Nest_Search,0.333333333,No
+385,Jayden Peterson,staff,hp2,Hyland Lake Park Reserve,9,9,2025,no,yes,no,Nest_Search,0.316666667,No
+386,Jayden Peterson,staff,le_barn,Lake Elmo Park Reserve,11,9,2025,no,yes,no,Nest_Search,0.4,Yes
+387,Emma Ambrosi,staff,le_barn,Lake Elmo Park Reserve,11,9,2025,no,yes,no,Nest_Search,0.659166667,No
+388,Sami Dolan,staff,crow1,Crow-Hassan Park Reserve,15,9,2025,no,yes,no,Nest_Search,1,No
+389,Sami Dolan,staff,crow3,Crow-Hassan Park Reserve,15,9,2025,no,yes,no,Nest_Search,1,No
+390,Tom Patterson,volunteer,lh_eq2,Lebanon Hills Regional Park,15,9,2025,yes,no,no,Nest_Search,1,No
+391,Elise Bernstein,staff,NA,NA,1,7,2024,no,yes,no,Planning,0.5,NA
+392,Elise Bernstein,staff,NA,NA,12,7,2024,no,yes,no,Planning,1,NA
+393,Elise Bernstein,staff,NA,NA,19,7,2024,no,yes,no,Planning,0.5,NA
+394,Elise Bernstein,staff,NA,NA,26,7,2024,no,yes,no,Planning,0.5,NA
+395,Elise Bernstein,staff,NA,NA,2,8,2024,no,yes,no,Planning,0.5,NA
+396,Elise Bernstein,staff,NA,NA,9,8,2024,no,yes,no,Planning,0.5,NA
+397,Elise Bernstein,staff,NA,NA,16,8,2024,no,yes,no,Planning,0.5,NA
+398,Elise Bernstein,staff,NA,NA,23,8,2024,no,yes,no,Planning,0.5,NA
+399,Elise Bernstein,staff,NA,NA,30,8,2024,no,yes,no,Planning,0.5,NA
+400,Elise Bernstein,staff,NA,NA,6,9,2024,no,yes,no,Planning,0.5,NA
+401,Elaine Evans,staff,NA,NA,NA,?,2024,yes,no,no,Planning,4,NA
+402,Elise Bernstein,staff,NA,NA,NA,?,2024,yes,no,no,Planning,4,NA
+403,Elise Bernstein,staff,NA,NA,30,6,2025,no,yes,no,Planning,0.5,NA
+404,Elise Bernstein,staff,NA,NA,7,7,2025,no,yes,no,Planning,0.5,NA
+405,Elise Bernstein,staff,NA,NA,14,7,2025,no,yes,no,Planning,0.5,NA
+406,Elise Bernstein,staff,NA,NA,21,7,2025,no,yes,no,Planning,0.5,NA
+407,Elise Bernstein,staff,NA,NA,28,7,2025,no,yes,no,Planning,0.5,NA
+408,Elise Bernstein,staff,NA,NA,11,8,2025,no,yes,no,Planning,0.5,NA
+409,Elise Bernstein,staff,NA,NA,18,8,2025,no,yes,no,Planning,1,NA
+410,Elise Bernstein,staff,NA,NA,25,8,2025,no,yes,no,Planning,1,NA
+411,Elaine Evans,staff,Bee Lab,Bee Lab,26,9,2024,no,no,yes,Radio_Tracking,2,NA
+412,Elaine Evans,staff,Bee Lab,Bee Lab,27,9,2024,no,no,yes,Radio_Tracking,2,NA
+413,Elaine Evans,staff,Bee Lab,Bee Lab,6,3,2025,no,no,yes,Radio_Tracking,0.666666667,NA
+414,Elise Bernstein,staff,Bee Lab,Bee Lab,6,3,2025,no,no,yes,Radio_Tracking,0.666666667,NA
+415,Clara Costello,staff,Bee Lab,Bee Lab,6,3,2025,no,no,yes,Radio_Tracking,0.666666667,NA
+416,Elaine Evans,staff,Bee Lab,Bee Lab,24,3,2025,no,no,yes,Radio_Tracking,0.666666667,NA
+417,Elise Bernstein,staff,Bee Lab,Bee Lab,24,3,2025,no,no,yes,Radio_Tracking,0.666666667,NA
+418,Sami Dolan,staff,Bee Lab,Bee Lab,24,3,2025,no,no,yes,Radio_Tracking,0.666666667,NA
+419,Clara Costello,staff,Bee Lab,Bee Lab,2,4,2025,no,no,yes,Radio_Tracking,2,NA
+420,Elise Bernstein,staff,Bee Lab,Bee Lab,2,4,2025,no,no,yes,Radio_Tracking,2,NA
+421,Sami Dolan,staff,Bee Lab,Bee Lab,2,4,2025,no,no,yes,Radio_Tracking,2,NA
+422,Elaine Evans,staff,Bee Lab,Bee Lab,2,4,2025,no,no,yes,Radio_Tracking,5,NA
+423,Elaine Evans,staff,Bee Lab,Bee Lab,7,4,2025,no,no,yes,Radio_Tracking,1,NA
+424,Elise Bernstein,staff,Bee Lab,Bee Lab,7,4,2025,no,no,yes,Radio_Tracking,1,NA
+425,Elaine Evans,staff,Bee Lab,Bee Lab,6,5,2025,no,no,yes,Radio_Tracking,1,NA
+426,Elise Bernstein,staff,Bee Lab,Bee Lab,6,5,2025,no,no,yes,Radio_Tracking,1,NA
+427,Clara Costello,staff,LE,Lake Elmo Park Reserve,2,7,2025,no,no,yes,Radio_Tracking,3,No
+428,Elaine Evans,staff,LE,Lake Elmo Park Reserve,2,7,2025,no,no,yes,Radio_Tracking,3,No
+429,Jayden Peterson,staff,LE,Lake Elmo Park Reserve,2,7,2025,no,no,yes,Radio_Tracking,3,No
+430,Jayden Peterson,staff,LE,Lake Elmo Park Reserve,3,7,2025,no,no,yes,Radio_Tracking,1.5,No
+431,Fern LaBry,staff,LE,Lake Elmo Park Reserve,3,7,2025,no,no,yes,Radio_Tracking,1.5,No
+432,Elise Bernstein,staff,LE,Lake Elmo Park Reserve,3,7,2025,no,no,yes,Radio_Tracking,1.5,No
+433,Fern LaBry,staff,Arden Hills,Arden Hills Army Training Site,7,7,2025,no,no,yes,Radio_Tracking,1,No
+434,Elaine Evans,staff,Arden Hills,Arden Hills Army Training Site,7,7,2025,no,no,yes,Radio_Tracking,1,No
+435,Elise Bernstein,staff,Arden Hills,Arden Hills Army Training Site,17,7,2025,no,no,yes,Radio_Tracking,4,No
+436,Clara Costello,staff,Arden Hills,Arden Hills Army Training Site,17,7,2025,no,no,yes,Radio_Tracking,4,No
+437,Jayden Peterson,staff,Arden Hills,Arden Hills Army Training Site,17,7,2025,no,no,yes,Radio_Tracking,4,No
+438,Elise Bernstein,staff,Arden Hills,Arden Hills Army Training Site,17,7,2025,no,no,yes,Radio_Tracking,2,No
+439,Jayden Peterson,staff,Arden Hills,Arden Hills Army Training Site,17,7,2025,no,no,yes,Radio_Tracking,2,No
+440,Elise Bernstein,staff,Arden Hills,Arden Hills Army Training Site,18,7,2025,no,no,yes,Radio_Tracking,2,No
+441,Jayden Peterson,staff,Arden Hills,Arden Hills Army Training Site,18,7,2025,no,no,yes,Radio_Tracking,2,No
+442,Fern LaBry,staff,Arden Hills,Arden Hills Army Training Site,18,7,2025,no,no,yes,Radio_Tracking,2,No
+443,Elise Bernstein,staff,Arden Hills,Arden Hills Army Training Site,29,7,2025,no,no,yes,Radio_Tracking,4,No
+444,Fern LaBry,staff,Arden Hills,Arden Hills Army Training Site,29,7,2025,no,no,yes,Radio_Tracking,4,No
+445,Elise Bernstein,staff,Arden Hills,Arden Hills Army Training Site,30,7,2025,no,no,yes,Radio_Tracking,4,No
+446,Elaine Evans,staff,Arden Hills,Arden Hills Army Training Site,30,7,2025,no,no,yes,Radio_Tracking,4,No
+447,Jayden Peterson,staff,Arden Hills,Arden Hills Army Training Site,31,7,2025,no,no,yes,Radio_Tracking,4.15,No
+448,Fern LaBry,staff,Arden Hills,Arden Hills Army Training Site,31,7,2025,no,no,yes,Radio_Tracking,4.15,No
+449,Clara Costello,staff,Arden Hills,Arden Hills Army Training Site,31,7,2025,no,no,yes,Radio_Tracking,4.15,No
+450,Elise Bernstein,staff,Arden Hills,Arden Hills Army Training Site,7,8,2025,no,no,yes,Radio_Tracking,3.85,No
+451,Elaine Evans,staff,Arden Hills,Arden Hills Army Training Site,7,8,2025,no,no,yes,Radio_Tracking,3.85,No
+452,Jayden Peterson,staff,Arden Hills,Arden Hills Army Training Site,7,8,2025,no,no,yes,Radio_Tracking,3.85,No
+453,Fern LaBry,staff,Arden Hills,Arden Hills Army Training Site,8,8,2025,no,no,yes,Radio_Tracking,0.5,No
+454,Jayden Peterson,staff,Arden Hills,Arden Hills Army Training Site,8,8,2025,no,no,yes,Radio_Tracking,0.5,No
+455,Fern LaBry,staff,Arden Hills,Arden Hills Army Training Site,8,8,2025,no,no,yes,Radio_Tracking,1,No
+456,Jayden Peterson,staff,Arden Hills,Arden Hills Army Training Site,8,8,2025,no,no,yes,Radio_Tracking,1,No
+457,Clara Costello,staff,Arden Hills,Arden Hills Army Training Site,8,8,2025,no,no,yes,Radio_Tracking,1,No
+458,Jayden Peterson,staff,Arden Hills,Arden Hills Army Training Site,12,8,2025,no,no,yes,Radio_Tracking,3.5,No
+459,Elise Bernstein,staff,Arden Hills,Arden Hills Army Training Site,12,8,2025,no,no,yes,Radio_Tracking,3.5,No
+460,Elaine Evans,staff,Arden Hills,Arden Hills Army Training Site,12,8,2025,no,no,yes,Radio_Tracking,3.5,No
+461,Elise Bernstein,staff,Arden Hills,Arden Hills Army Training Site,13,8,2025,no,no,yes,Radio_Tracking,5.5,No
+462,Jayden Peterson,staff,Arden Hills,Arden Hills Army Training Site,13,8,2025,no,no,yes,Radio_Tracking,5.5,No
+463,Fern LaBry,staff,Arden Hills,Arden Hills Army Training Site,13,8,2025,no,no,yes,Radio_Tracking,5.5,No
+464,Elise Bernstein,staff,Arden Hills,Arden Hills Army Training Site,14,8,2025,no,no,yes,Radio_Tracking,1.5,No
+465,Jayden Peterson,staff,Arden Hills,Arden Hills Army Training Site,14,8,2025,no,no,yes,Radio_Tracking,1.5,No
+466,Elise Bernstein,staff,Arden Hills,Arden Hills Army Training Site,19,8,2025,no,no,yes,Radio_Tracking,3,No
+467,Jayden Peterson,staff,Arden Hills,Arden Hills Army Training Site,19,8,2025,no,no,yes,Radio_Tracking,3,No
+468,Elise Bernstein,staff,Arden Hills,Arden Hills Army Training Site,20,8,2025,no,no,yes,Radio_Tracking,1,No
+469,Jayden Peterson,staff,Arden Hills,Arden Hills Army Training Site,20,8,2025,no,no,yes,Radio_Tracking,1,No
+470,Jayden Peterson,staff,Arden Hills,Arden Hills Army Training Site,8,9,2025,no,no,yes,Radio_Tracking,0.33,No
+471,Emma Ambrosi,staff,Arden Hills,Arden Hills Army Training Site,8,9,2025,no,no,yes,Radio_Tracking,0.33,No
+472,Elise Bernstein,staff,NA,NA,17,6,2024,yes,no,no,Volunteer_Communications_Training,2,NA
+473,Elaine Evans,staff,NA,NA,17,6,2024,yes,no,no,Volunteer_Communications_Training,2,NA
+474,Sami Dolan,staff,NA,NA,17,6,2024,yes,no,no,Volunteer_Communications_Training,2,NA
+475,Elise Bernstein,staff,NA,NA,30,6,2024,yes,no,no,Volunteer_Communications_Training,2,NA
+476,Elaine Evans,staff,NA,NA,30,6,2024,yes,no,no,Volunteer_Communications_Training,2,NA
+477,Sami Dolan,staff,NA,NA,30,6,2024,yes,no,no,Volunteer_Communications_Training,2,NA
+478,Clara Costello,staff,NA,NA,30,6,2024,yes,no,no,Volunteer_Communications_Training,2,NA
+479,Elise Bernstein,staff,HP,Hyland Lake Park Reserve,24,7,2024,yes,no,no,Volunteer_Communications_Training,1,NA
+480,Jayden Peterson,staff,HP,Hyland Lake Park Reserve,24,7,2024,yes,no,no,Volunteer_Communications_Training,1,NA
+481,Sami Dolan,staff,HP,Hyland Lake Park Reserve,24,7,2024,yes,no,no,Volunteer_Communications_Training,1,NA
+482,Elise Bernstein,staff,HP,Hyland Lake Park Reserve,25,7,2024,yes,no,no,Volunteer_Communications_Training,1,NA
+483,Jayden Peterson,staff,HP,Hyland Lake Park Reserve,25,7,2024,yes,no,no,Volunteer_Communications_Training,1,NA
+484,Elaine Evans,staff,NA,NA,7,8,2024,yes,no,no,Volunteer_Communications_Training,1.5,NA
+485,Elise Bernstein,staff,NA,NA,7,8,2024,yes,no,no,Volunteer_Communications_Training,1.5,NA
+486,Jayden Peterson,staff,NA,NA,7,8,2024,yes,no,no,Volunteer_Communications_Training,1.5,NA
+487,Elise Bernstein,staff,NA,NA,2,6,2025,yes,no,no,Volunteer_Communications_Training,0.5,NA
+488,Elaine Evans,staff,NA,NA,2,6,2025,yes,no,no,Volunteer_Communications_Training,0.5,NA
+489,Elise Bernstein,staff,NA,NA,3,6,2025,yes,no,no,Volunteer_Communications_Training,2,NA
+490,Elaine Evans,staff,NA,NA,3,6,2025,yes,no,no,Volunteer_Communications_Training,2,NA
+491,Sami Dolan,staff,NA,NA,16,6,2025,yes,no,no,Volunteer_Communications_Training,5,NA
+492,Elise Bernstein,staff,NA,NA,22,6,2025,yes,no,no,Volunteer_Communications_Training,1.5,NA
+493,Elaine Evans,staff,NA,NA,22,6,2025,yes,no,no,Volunteer_Communications_Training,1.5,NA
+494,Clara Costello,staff,NA,NA,22,6,2025,yes,no,no,Volunteer_Communications_Training,1.5,NA
+495,Elise Bernstein,staff,NA,NA,28,7,2025,yes,no,no,Volunteer_Communications_Training,0.5,NA
+496,Elaine Evans,staff,NA,NA,28,7,2025,yes,no,no,Volunteer_Communications_Training,0.5,NA
+497,Elise Bernstein,staff,NA,NA,14,3,2024,yes,no,no,Volunteer_Communications_Training,4,NA
+498,Elise Bernstein,staff,NA,NA,29,5,2024,yes,no,no,Volunteer_Communications_Training,0.25,NA
+499,Elise Bernstein,staff,NA,NA,10,6,2024,yes,no,no,Volunteer_Communications_Training,0.5,NA
+500,Elise Bernstein,staff,NA,NA,8,7,2024,yes,no,no,Volunteer_Communications_Training,0.5,NA
+501,Elise Bernstein,staff,NA,NA,11,7,2024,yes,no,no,Volunteer_Communications_Training,0.25,NA
+502,Elise Bernstein,staff,NA,NA,15,7,2024,yes,no,no,Volunteer_Communications_Training,0.25,NA
+503,Elise Bernstein,staff,NA,NA,23,7,2024,yes,no,no,Volunteer_Communications_Training,0.25,NA
+504,Elise Bernstein,staff,NA,NA,29,7,2024,yes,no,no,Volunteer_Communications_Training,0.5,NA
+505,Elise Bernstein,staff,NA,NA,1,8,2024,yes,no,no,Volunteer_Communications_Training,0.25,NA
+506,Elise Bernstein,staff,NA,NA,5,8,2024,yes,no,no,Volunteer_Communications_Training,0.25,NA
+507,Elise Bernstein,staff,NA,NA,14,8,2024,yes,no,no,Volunteer_Communications_Training,0.25,NA
+508,Elise Bernstein,staff,NA,NA,26,8,2024,yes,no,no,Volunteer_Communications_Training,0.25,NA
+509,Elise Bernstein,staff,NA,NA,28,8,2024,yes,no,no,Volunteer_Communications_Training,0.25,NA
+510,Elise Bernstein,staff,NA,NA,11,9,2024,yes,no,no,Volunteer_Communications_Training,0.5,NA
+511,Elise Bernstein,staff,NA,NA,17,9,2024,yes,no,no,Volunteer_Communications_Training,0.25,NA
+512,Elise Bernstein,staff,NA,NA,19,9,2024,yes,no,no,Volunteer_Communications_Training,0.25,NA
+513,Elaine Evans,staff,NA,NA,NA,2024,2024,yes,no,no,Volunteer_Communications_Training,10,NA
+514,Elise Bernstein,staff,NA,NA,17,6,2025,yes,no,no,Volunteer_Communications_Training,1.5,NA
+515,Elise Bernstein,staff,NA,NA,24,6,2025,yes,no,no,Volunteer_Communications_Training,1.5,NA
+516,Elise Bernstein,staff,NA,NA,7,7,2025,yes,no,no,Volunteer_Communications_Training,0.25,NA
+517,Elise Bernstein,staff,NA,NA,8,7,2025,yes,no,no,Volunteer_Communications_Training,3,NA
+518,Elise Bernstein,staff,NA,NA,9,7,2025,yes,no,no,Volunteer_Communications_Training,1.5,NA
+519,Elise Bernstein,staff,NA,NA,21,7,2025,yes,no,no,Volunteer_Communications_Training,0.5,NA
+520,Elise Bernstein,staff,NA,NA,21,7,2025,yes,no,no,Volunteer_Communications_Training,2,NA
+521,Elise Bernstein,staff,NA,NA,22,7,2025,yes,no,no,Volunteer_Communications_Training,1.5,NA
+522,Elise Bernstein,staff,NA,NA,6,8,2025,yes,no,no,Volunteer_Communications_Training,0.5,NA
+523,Elise Bernstein,staff,NA,NA,7,8,2025,yes,no,no,Volunteer_Communications_Training,1.5,NA
+524,Elise Bernstein,staff,NA,NA,11,8,2025,yes,no,no,Volunteer_Communications_Training,0.5,NA
+525,Elise Bernstein,staff,NA,NA,19,8,2025,yes,no,no,Volunteer_Communications_Training,1.5,NA
+526,Elise Bernstein,staff,NA,NA,28,8,2025,yes,no,no,Volunteer_Communications_Training,1,NA
+527,Elise Bernstein,staff,NA,NA,25,9,2025,yes,no,no,Volunteer_Communications_Training,1,NA
