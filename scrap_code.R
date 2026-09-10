@@ -54,3 +54,4 @@ chi_bombus_results <- chi_bombus_results %>% rename(nest_found = Var1,
 #     nest = c('yes', 'yes', 'yes','yes', ' yes','yes', 'yes', 'yes' ,'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no', 'no'),
 #    x = c())
 
+#Hi 9/10/2026
