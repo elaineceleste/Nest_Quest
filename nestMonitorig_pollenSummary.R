@@ -131,7 +131,7 @@ survey123 <- survey123 %>%
     day = format(date, "%d")
   ) #Creating day, month, year columns 
 
-all_survey123 <- all_survey123 %>%
+survey123 <- survey123 %>%
   mutate(
     start_time = format(
       as.POSIXct(start_time, format = "%I:%M:%S %p"),
@@ -306,3 +306,4 @@ ggplot(pollen_range, aes(x = nest_ID)) +
   theme(
     axis.text.x = element_text(angle = 45, hjust = 1)
   )
+
